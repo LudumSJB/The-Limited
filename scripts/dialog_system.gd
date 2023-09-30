@@ -42,12 +42,13 @@ func _ready():
 	print("_ready")
 	loadDialogs()
 	root = get_node("../..")
+	sounds.append(talking)
+	sounds.append(talking_2)
+	
 	if showDialogAtSceneStart:
 		showText(dialogs[current_dialog])
 	else:
 		hideText()
-	sounds.append(talking)
-	sounds.append(talking_2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
