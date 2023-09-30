@@ -5749,7 +5749,7 @@ offset_right = 152.0
 offset_bottom = 154.0
 rotation = -0.268526
 theme_override_font_sizes/font_size = 21
-text = "Score: 0"
+text = "FPS: 0"
 script = ExtResource("9_5aavs")
 
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="hit_note"]
