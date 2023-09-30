@@ -16,6 +16,8 @@ extends Node2D
 var current_dialog: int = 0
 var dialogs: Array
 
+var scene_to_after_dialog_close: int = -1
+
 func _ready():
 	loadDialogs()
 	if showDialogAtSceneStart:
@@ -26,6 +28,9 @@ func _process(_delta):
 	if Input.is_action_just_released("next_text"):
 		current_dialog += 1
 		showText(dialogs[current_dialog])
+	if scene_to_after_dialog_close != -1:
+		# TODO: change scene.
+		pass
 
 func loadDialogs():
 	var file = FileAccess.open(dialogsPath, FileAccess.READ)
@@ -36,7 +41,6 @@ func loadDialogs():
 	if obj == null:
 		print("couldn't parse json!")
 	dialogs = obj
-	print(dialogs[0].text)
 
 func hideText():
 	sprite_2d.visible = false
@@ -48,22 +52,28 @@ func showText(dialog):
 	rich_text_label.append_text(dialog.text)
 	
 	# move dialog box position
-	if dialog.dialog_position == 0:
-		sprite_2d.position = dialog_position_0.position
-	elif dialog.dialog_position == 1:
-		sprite_2d.position = dialog_position_1.position
-	elif dialog.dialog_position == 2:
-		sprite_2d.position = dialog_position_2.position
+	if dialog.has("dialog_position"):
+		if dialog.dialog_position == 0:
+			sprite_2d.position = dialog_position_0.position
+		elif dialog.dialog_position == 1:
+			sprite_2d.position = dialog_position_1.position
+		elif dialog.dialog_position == 2:
+			sprite_2d.position = dialog_position_2.position
 	
 	# change face and its position relative to dialog box
-	if dialog.face != -1:
+	if dialog.has("face"):
 		face.visible = true
 		face.texture = faces[dialog.face]
-		if dialog.position == 0:
-			sprite_2d.flip_h = false
-			face.position = face_position_0.position
-		else:
-			sprite_2d.flip_h = true
-			face.position = face_position_1.position
+		if dialog.has("position"):
+			if dialog.position == 0:
+				sprite_2d.flip_h = false
+				face.position = face_position_0.position
+			else:
+				sprite_2d.flip_h = true
+				face.position = face_position_1.position
 	else:
 		face.visible = false
+	
+	if dialog.has("change_scene_to"):
+		print("change_scene_to ", dialog.change_scene_to)
+#		scene_to_after_dialog_close = dialog.change_scene_to
