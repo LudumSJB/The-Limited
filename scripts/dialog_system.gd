@@ -82,3 +82,7 @@ func showText(dialog):
 	
 	if dialog.has("next_scene"):
 		change_scene_after_dialog_close = true
+	
+	if dialog.has("action"):
+		var action = dialog.action
+		print("action: ", action)

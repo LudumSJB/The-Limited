@@ -1,0 +1,25 @@
+[
+	{
+		"dialog_position": 1,
+		"position": 0,
+		"text": "Oh Hello! What can I get for ya?",
+		"face": 1
+	},
+	{
+		"dialog_position": 2,
+		"position": 1,
+		"text": "Hi, could I get one of those hotdogs?",
+		"face": 0
+	},
+	{
+		"dialog_position": 1,
+		"position": 0,
+		"text": "Of course! That would be 5,50€.",
+		"face": 1
+	},
+	{
+		"dialog_position": 0,
+		"text": "You look into your pockets for cash. \nCan't find any.\n\nHow on earth you were gonna get drinks at the club even?",
+		"action": 0
+	},
+]
