@@ -32,8 +32,8 @@ func player_off_point(area):
 	
 func player_on_time():
 	print("On Time!")
-	pass # Replace with function body
+	pass # Replace with function body.
 	
 func player_not_on_time():
 	print("You Fucked Up!")
-	pass # Replace with function body
+	pass # Replace with function body.
