@@ -18,7 +18,7 @@ func _ready():
 	path_length = path_2d.curve.get_baked_length()
 
 func _process(delta):
-	path_follow_2d.progress += speed * delta
+	path_follow_2d.progress += speed * delta # times smooths this out per frame
 	pass
 	
 func deactivateMinigame():
