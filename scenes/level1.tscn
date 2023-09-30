@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://b02ncl0w3nne2"]
 
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="1_4suex"]
+[ext_resource type="Script" path="res://scripts/level1.gd" id="1_5tckd"]
 [ext_resource type="Texture2D" uid="uid://c7anqd02ws3om" path="res://assets/images/background1.png" id="1_qgewf"]
-[ext_resource type="Script" path="res://scenes/level1.gd" id="1_us7w2"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_ubvlv"]
 [ext_resource type="Texture2D" uid="uid://c24hdx5ndn7yc" path="res://assets/images/security.png" id="5_cfdwv"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_na01r"]
@@ -20,7 +20,7 @@ size = Vector2(157.25, 629.75)
 size = Vector2(91.25, 163)
 
 [node name="level1" type="Node2D"]
-script = ExtResource("1_us7w2")
+script = ExtResource("1_5tckd")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
