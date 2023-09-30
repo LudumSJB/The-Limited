@@ -4,7 +4,8 @@ enum DialogActions {
 	None = 0,
 	CloseDialog = 1,
 	NextScene = 2,
-	PlayMiniGame = 3
+	PlayMiniGame = 3,
+	PlaySound = 4
 }
 
 @onready var rich_text_label = $Sprite2D/RichTextLabel
@@ -15,11 +16,15 @@ enum DialogActions {
 @onready var dialog_position_0 = $dialogPosition0
 @onready var dialog_position_1 = $dialogPosition1
 @onready var dialog_position_2 = $dialogPosition2
+@onready var talking = $talking
+@onready var talking_2 = $talking2
 
 @export var showDialogAtSceneStart : bool = true
 @export var dialogsPath: String
 @export var faces: Array[Texture]
 @export var is_active: bool = true;
+
+var sounds: Array[AudioStreamPlayer2D]
 
 var current_dialog: int = 0
 var dialogs: Array
@@ -27,6 +32,8 @@ var dialogs: Array
 var change_scene_after_dialog_close: bool = false
 var close_dialog_after_dialog_close: bool = false
 var play_minigame_after_dialog_close: bool = false
+var play_sound_index: int = -1
+var play_sound: bool = false
 
 var root: Node
 
@@ -37,6 +44,8 @@ func _ready():
 		showText(dialogs[current_dialog])
 	else:
 		hideText()
+	sounds.append(talking)
+	sounds.append(talking_2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -55,6 +64,10 @@ func _process(_delta):
 				startMinigame()
 				play_minigame_after_dialog_close = false
 				return
+			if play_sound && play_sound_index != -1:
+				play_sound = false
+				var sound = sounds[play_sound_index]
+				sound.play()
 			nextText()
 
 func startMinigame():
@@ -118,3 +131,9 @@ func showText(dialog):
 			close_dialog_after_dialog_close = true
 		elif action == DialogActions.PlayMiniGame as int:
 			play_minigame_after_dialog_close = true
+		elif action == DialogActions.PlaySound as int:
+			if !dialog.has("sound"):
+				print("no sound set!")
+				return
+			play_sound_index = dialog.sound
+			play_sound = true

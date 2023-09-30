@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b02ncl0w3nne2"]
+[gd_scene load_steps=13 format=3 uid="uid://b02ncl0w3nne2"]
 
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="1_4suex"]
 [ext_resource type="Texture2D" uid="uid://c7anqd02ws3om" path="res://assets/images/background1.png" id="1_qgewf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_na01r"]
 [ext_resource type="PackedScene" uid="uid://wkjqrijamgh" path="res://scenes/player.tscn" id="6_wh6k6"]
 [ext_resource type="Texture2D" uid="uid://dyrbo5drifsel" path="res://assets/images/action_window.png" id="8_ee0y3"]
+[ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="9_m338p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5q02"]
 size = Vector2(1227.5, 45)
@@ -74,6 +75,11 @@ text = "Talk to"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D__talk_to_security"]
 position = Vector2(997, 533)
 shape = SubResource("RectangleShape2D_v80nv")
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1027, 378)
+stream = ExtResource("9_m338p")
+autoplay = true
 
 [connection signal="body_entered" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_body_entered"]
 [connection signal="body_exited" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_body_exited"]

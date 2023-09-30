@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var dialog_system = $"../dialogSystem"
+@onready var steps = $steps
+@onready var sprite_2d = $Sprite2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
@@ -26,7 +28,14 @@ func _physics_process(delta):
 		var direction = Input.get_axis("left", "right")
 		if direction:
 			velocity.x = direction * SPEED
+			if !steps.playing:
+				steps.play()
+			if direction < 0:
+				sprite_2d.flip_h = true
+			elif direction > 0:
+				sprite_2d.flip_h = false
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+			steps.stop()
 
 	move_and_slide()

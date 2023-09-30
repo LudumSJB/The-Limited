@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctlw8404m37lt"]
+[gd_scene load_steps=9 format=3 uid="uid://ctlw8404m37lt"]
 
 [ext_resource type="Texture2D" uid="uid://b8holljqla57r" path="res://assets/images/background_hotdog.png" id="1_66f5f"]
 [ext_resource type="Script" path="res://Scripts/level2.gd" id="1_wey8r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bxroqdmin4ebs" path="res://assets/images/face_03.png" id="4_qe2ku"]
 [ext_resource type="Texture2D" uid="uid://p6utjqrntdkq" path="res://assets/images/hero.png" id="5_rjxae"]
 [ext_resource type="PackedScene" uid="uid://b6l61udpegwlt" path="res://scenes/TimingAccuracyBar.tscn" id="6_iaaju"]
+[ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="8_qf0iq"]
 
 [node name="level2" type="Node2D"]
 script = ExtResource("1_wey8r")
@@ -26,6 +27,13 @@ flip_h = true
 
 [node name="TimingAccuracyBar" parent="." instance=ExtResource("6_iaaju")]
 visible = false
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1474, 334)
+stream = ExtResource("8_qf0iq")
+volume_db = -5.621
+pitch_scale = 0.89
+autoplay = true
 
 [connection signal="play_minigame" from="." to="." method="_on_play_minigame"]
 [connection signal="NotOnTime" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_not_on_time"]
