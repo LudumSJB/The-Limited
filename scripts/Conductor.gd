@@ -8,6 +8,5 @@ func _ready():
 
 
 func _process(delta):
-	speed += 0.003 * delta
-	position.y -= speed + delta
+	position.y -= speed * delta
 	pass
