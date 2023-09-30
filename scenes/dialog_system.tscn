@@ -1,30 +1,43 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd36h1vyy37d5"]
 
-[ext_resource type="Texture2D" uid="uid://d0tfn84a2r2ym" path="res://assets/images/speechbubble.png" id="1_0x5xd"]
 [ext_resource type="Script" path="res://scripts/dialog_system.gd" id="1_g4nlg"]
+[ext_resource type="Texture2D" uid="uid://capwl0xchsr6w" path="res://assets/images/speechbubble2.png" id="2_urcba"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="3_m5m2a"]
 
 [node name="dialogSystem" type="Node2D"]
 script = ExtResource("1_g4nlg")
 
+[node name="dialogPosition0" type="Node2D" parent="."]
+position = Vector2(543, 177)
+
+[node name="dialogPosition2" type="Node2D" parent="."]
+position = Vector2(246, 405)
+
+[node name="dialogPosition1" type="Node2D" parent="."]
+position = Vector2(880, 405)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(235, 447)
-texture = ExtResource("1_0x5xd")
+texture = ExtResource("2_urcba")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
 texture_filter = 1
-offset_left = -83.0
-offset_right = 109.0
-offset_bottom = 54.0
+anchors_preset = -1
+anchor_right = 0.166667
+anchor_bottom = 0.61
+offset_left = -118.0
+offset_top = -89.0
+offset_right = 74.0
+offset_bottom = -35.0
 text = "Text goes here"
 metadata/_edit_use_anchors_ = true
 
 [node name="face" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(-87, -38)
+position = Vector2(-152, -61)
 texture = ExtResource("3_m5m2a")
 
 [node name="facePosition1" type="Node2D" parent="Sprite2D"]
-position = Vector2(116, -44)
+position = Vector2(153, -62)
 
-[node name="facePosition0" type="Node2D" parent="Sprite2D"]
-position = Vector2(-88, -42)
+[node name="facePosition2" type="Node2D" parent="Sprite2D"]
+position = Vector2(-154, -61)

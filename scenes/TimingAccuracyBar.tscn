@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5qjlf3f1dbym"]
+[gd_scene load_steps=8 format=3 uid="uid://b6l61udpegwlt"]
 
 [ext_resource type="Texture2D" uid="uid://d2ris57do1h7c" path="res://assets/images/generic_testing.png" id="1_bi0sx"]
 [ext_resource type="Script" path="res://Scripts/AreaHitterPath.gd" id="2_cw10n"]
@@ -34,7 +34,6 @@ grow_horizontal = 2
 
 [node name="MissArea" type="Area2D" parent="Control"]
 position = Vector2(0, 68.637)
-scale = Vector2(1, 1)
 
 [node name="MissArea" type="Sprite2D" parent="Control/MissArea"]
 modulate = Color(0.960027, 0.145623, 0.310049, 1)
@@ -42,12 +41,10 @@ scale = Vector2(43.7, 1.6725)
 texture = ExtResource("1_bi0sx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/MissArea"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0huky")
 
 [node name="HitArea" type="Area2D" parent="Control"]
 position = Vector2(0, 68.637)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/HitArea"]
 position = Vector2(0.5, -0.137001)
@@ -75,11 +72,9 @@ script = ExtResource("3_bn6ww")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Path2D/PathFollow2D/AreaHitter"]
 position = Vector2(0.00012207, -0.181353)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_iwd48")
 
 [node name="HitDisplay" type="Sprite2D" parent="Control/Path2D/PathFollow2D/AreaHitter"]
-scale = Vector2(1, 1)
 texture = ExtResource("1_bi0sx")
 
 [connection signal="area_entered" from="Control/Path2D/PathFollow2D/AreaHitter" to="Control/Path2D/PathFollow2D/AreaHitter" method="player_on_point"]

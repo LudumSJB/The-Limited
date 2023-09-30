@@ -1,22 +1,44 @@
 [
 	{
+		"dialog_position": 0,
 		"position": 0,
-		"text": "hello world",
-		"face": 0
+		"text": "It's getting dark and cold outside. \n\nWind sweeps accross your shoulders as you get closer and closer to your destination.",
+		"face": -1
 	},
 	{
+		"dialog_position": 0,
+		"position": 0,
+		"text": "You start to hear [color=#6abe30][i]the music[/i][/color] playing and bass beating. Your fingers start tapping and your head nodding as you walk closer.",
+		"face": -1
+	},
+	{
+		"dialog_position": 0,
+		"position": 0,
+		"text": "You arrive to a local dance club called [color=#76428a][b]'The Limited'[/b][/color]. \n\nThis place has been here for years. People come here often and the place is fabulous.",
+		"face": -1
+	},
+	{
+		"dialog_position": 1,
 		"position": 1,
-		"text": "Hello to you",
+		"text": "Good evening sir. \nWe are full. There's no more space. Nada. \nWe only have [color=#ac3232][u]limited space[/u][/color] available.",
 		"face": 1
 	},
 	{
+		"dialog_position": 0,
 		"position": 0,
-		"text": "Who you are talking to?",
+		"text": "There must be a way to get inside. No matter what it takes. \nYou know [color=#d77bba][i]tonights the night![/i][/color]",
+		"face": -1
+	},
+	{
+		"dialog_position": 2,
+		"position": 0,
+		"text": "I've come a long way to here. \n\nIs there any way I could get inside?",
 		"face": 0
 	},
 	{
+		"dialog_position": 1,
 		"position": 1,
-		"text": "To you of course!",
+		"text": "Now that I think of it. \nI've been getting really hungry and my shift is not gonna end very soon. \nCould you get me a hotdog from that vendor over there?",
 		"face": 1
 	}
 ]
