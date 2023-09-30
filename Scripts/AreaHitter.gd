@@ -9,7 +9,6 @@ signal playerMiss
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	check_if_player_can_hit()
@@ -25,7 +24,6 @@ func player_on_point(area):
 	if area.name == "HitArea": # checks if the current collision area is a hittable area
 		canHit = true
 	pass # Replace with function body.
-
 
 func player_off_point(area):
 	if area.name == "HitArea": # checks if the current collision area is a non-hittable area

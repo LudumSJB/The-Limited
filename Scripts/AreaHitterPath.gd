@@ -1,6 +1,6 @@
 extends PathFollow2D
 
-@export var speed = 0.2
+@export var speed = 0.2 # speed that the input accuracy bar moves at
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
