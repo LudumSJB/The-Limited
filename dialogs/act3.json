@@ -1,0 +1,36 @@
+[
+	{
+		"dialog_position": 0,
+		"text": "You just arrive in time as one last one person in line gets inside.",
+		"action": 1
+	},
+	{
+		"dialog_position": 1,
+		"position": 0,
+		"text": "Oh there you are. \nWhat took you so long? Hotdogs are not hard to come by aren't they?",
+		"face": 1,
+		"sound": 0,
+		"action": 4
+	},
+	{
+		"dialog_position": 1,
+		"position": 0,
+		"text": "One last thing. I need to see your papers before I can let you through.",
+		"face": 1,
+		"sound": 0,
+		"action": 4
+	},
+	{
+		"dialog_position": 0,
+		"position": 1,
+		"text": "Oh where did I put them...",
+		"action": 3
+	},
+	{
+		"dialog_position": 1,
+		"position": 0,
+		"text": "Ok, you're good to go. Watch out, it might be little crowded there.",
+		"face": 1,
+		"action": 2
+	},
+]

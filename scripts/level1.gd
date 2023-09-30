@@ -3,8 +3,6 @@ extends Node2D
 @onready var security_guy_talk_to_action = $Area2D__talk_to_security/Sprite2D
 @onready var dialog_system = $dialogSystem
 
-@onready var music = $music
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,4 +21,5 @@ func _on_area_2d__talk_to_security_body_entered(_body):
 
 func _on_area_2d__talk_to_security_body_exited(_body):
 	security_guy_talk_to_action.visible = false
+
 

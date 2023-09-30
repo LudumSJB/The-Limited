@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://df0m2jrbhdijl"]
+
+[ext_resource type="Texture2D" uid="uid://c1r6nvroycfmm" path="res://assets/images/act2.png" id="2_qqhjr"]
+[ext_resource type="PackedScene" uid="uid://wkjqrijamgh" path="res://scenes/player.tscn" id="3_10s1h"]
+[ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="4_ym8v5"]
+[ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="5_0uddc"]
+[ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="6_1no3t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
+size = Vector2(1179, 43)
+
+[node name="level4" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(585, 274)
+texture = ExtResource("2_qqhjr")
+
+[node name="player" parent="." instance=ExtResource("3_10s1h")]
+position = Vector2(551, 538)
+
+[node name="dialogSystem" parent="." instance=ExtResource("4_ym8v5")]
+dialogsPath = "res://dialogs/act4.json"
+faces = Array[Texture]([ExtResource("5_0uddc"), ExtResource("6_1no3t")])
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578, 629)
+shape = SubResource("RectangleShape2D_fno7i")

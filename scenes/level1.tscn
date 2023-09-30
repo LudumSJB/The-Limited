@@ -1,85 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://b02ncl0w3nne2"]
+[gd_scene load_steps=8 format=3 uid="uid://b02ncl0w3nne2"]
 
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="1_4suex"]
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_5tckd"]
-[ext_resource type="Texture2D" uid="uid://c7anqd02ws3om" path="res://assets/images/background1.png" id="1_qgewf"]
+[ext_resource type="PackedScene" uid="uid://dca1x0aaq5qv7" path="res://scenes/outside_scene_props.tscn" id="2_f5vow"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_ubvlv"]
-[ext_resource type="Texture2D" uid="uid://c24hdx5ndn7yc" path="res://assets/images/security.png" id="5_cfdwv"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_na01r"]
 [ext_resource type="PackedScene" uid="uid://wkjqrijamgh" path="res://scenes/player.tscn" id="6_wh6k6"]
-[ext_resource type="Texture2D" uid="uid://dyrbo5drifsel" path="res://assets/images/action_window.png" id="8_ee0y3"]
-[ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="9_m338p"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5q02"]
-size = Vector2(1227.5, 45)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n5x4"]
-size = Vector2(157.25, 629.75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v80nv"]
-size = Vector2(91.25, 163)
+[ext_resource type="PackedScene" uid="uid://xpqxmn8xqk4v" path="res://scenes/area_2d__talk_to_security.tscn" id="7_wkitw"]
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_5tckd")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-texture = ExtResource("1_qgewf")
+[node name="outside_scene_props" parent="." instance=ExtResource("2_f5vow")]
+
+[node name="player" parent="." instance=ExtResource("6_wh6k6")]
+position = Vector2(408, 535)
 
 [node name="dialogSystem" parent="." instance=ExtResource("1_4suex")]
 dialogsPath = "res://dialogs/act1.json"
 faces = Array[Texture]([ExtResource("4_ubvlv"), ExtResource("5_na01r")])
 
-[node name="security" type="Sprite2D" parent="."]
-position = Vector2(1027, 529)
-texture = ExtResource("5_cfdwv")
-flip_h = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(584.75, 634.5)
-shape = SubResource("RectangleShape2D_k5q02")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-64, 302)
-shape = SubResource("RectangleShape2D_5n5x4")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1227, 314)
-shape = SubResource("RectangleShape2D_5n5x4")
-
-[node name="player" parent="." instance=ExtResource("6_wh6k6")]
-position = Vector2(408, 535)
-
-[node name="Area2D__talk_to_security" type="Area2D" parent="."]
-position = Vector2(6, -13)
-collision_layer = 2
-collision_mask = 2
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D__talk_to_security"]
-visible = false
-position = Vector2(1025, 411)
-texture = ExtResource("8_ee0y3")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Area2D__talk_to_security/Sprite2D"]
-offset_left = -32.0
-offset_top = -15.0
-offset_right = 37.0
-offset_bottom = 14.0
-text = "Talk to"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D__talk_to_security"]
-position = Vector2(997, 533)
-shape = SubResource("RectangleShape2D_v80nv")
-
-[node name="music" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1027, 378)
-stream = ExtResource("9_m338p")
-autoplay = true
+[node name="Area2D__talk_to_security" parent="." instance=ExtResource("7_wkitw")]
 
 [connection signal="body_entered" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_body_entered"]
 [connection signal="body_exited" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_body_exited"]

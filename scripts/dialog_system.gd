@@ -33,7 +33,7 @@ var change_scene_after_dialog_close: bool = false
 var close_dialog_after_dialog_close: bool = false
 var play_minigame_after_dialog_close: bool = false
 
-var timeout_press_time = 0.1
+var timeout_press_time = 0.5
 var timeout_press = 0
 
 var root: Node

@@ -21,6 +21,10 @@ func _process(delta):
 	path_follow_2d.progress += speed + delta
 	pass
 	
+func deactivateMinigame():
+	timing_accuracy_bar.visible = false
+	area_hitter.endMinigame()
+
 func activateMinigame():
 	timing_accuracy_bar.visible = true
 	area_hitter.activateMinigame()

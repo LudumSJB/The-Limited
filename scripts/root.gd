@@ -7,7 +7,9 @@ signal change_to_next_scene
 var current_level: int = 0
 var levels = [
 	"level1",
-	"level2"
+	"level2",
+	"level3",
+	"level4"
 ]
 
 # store global vars here that need to stay between scenes

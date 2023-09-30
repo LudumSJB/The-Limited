@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dca1x0aaq5qv7"]
+
+[ext_resource type="Texture2D" uid="uid://c7anqd02ws3om" path="res://assets/images/background1.png" id="1_ccbne"]
+[ext_resource type="Texture2D" uid="uid://c24hdx5ndn7yc" path="res://assets/images/security.png" id="2_c0p2o"]
+[ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="3_nsg17"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5q02"]
+size = Vector2(1227.5, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n5x4"]
+size = Vector2(157.25, 629.75)
+
+[node name="outside_scene_props" type="Node2D"]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_ccbne")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(584.75, 634.5)
+shape = SubResource("RectangleShape2D_k5q02")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-64, 302)
+shape = SubResource("RectangleShape2D_5n5x4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1227, 314)
+shape = SubResource("RectangleShape2D_5n5x4")
+
+[node name="security" type="Sprite2D" parent="."]
+position = Vector2(1027, 529)
+texture = ExtResource("2_c0p2o")
+flip_h = true
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1030, 412)
+stream = ExtResource("3_nsg17")
+autoplay = true
