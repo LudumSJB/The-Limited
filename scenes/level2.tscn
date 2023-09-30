@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctlw8404m37lt"]
 
-[ext_resource type="Texture2D" uid="uid://c1r6nvroycfmm" path="res://assets/images/act2.png" id="1_sk27i"]
+[ext_resource type="Texture2D" uid="uid://b8holljqla57r" path="res://assets/images/background_hotdog.png" id="1_66f5f"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="2_6ig56"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="3_5dw1c"]
 [ext_resource type="Texture2D" uid="uid://bxroqdmin4ebs" path="res://assets/images/face_03.png" id="4_qe2ku"]
@@ -8,8 +8,8 @@
 [node name="level2" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(235, 239)
-texture = ExtResource("1_sk27i")
+position = Vector2(576, 324)
+texture = ExtResource("1_66f5f")
 
 [node name="dialogSystem" parent="." instance=ExtResource("2_6ig56")]
 dialogsPath = "res://dialogs/act2.json"
