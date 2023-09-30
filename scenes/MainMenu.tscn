@@ -1,3 +1,60 @@
-[gd_scene format=3 uid="uid://byl3ag5ttswiv"]
+[gd_scene load_steps=4 format=3 uid="uid://byl3ag5ttswiv"]
 
-[node name="MainMenu" type="Node2D"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_bck45"]
+[ext_resource type="Texture2D" uid="uid://belh2j4spbyqj" path="res://assets/images/background_welcome.png" id="1_ch85g"]
+[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="2_5belk"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_bck45")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Background" type="Sprite2D" parent="Control"]
+position = Vector2(576, 324)
+texture = ExtResource("1_ch85g")
+
+[node name="PlayButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -3.0
+offset_right = 54.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_5belk")
+theme_override_font_sizes/font_size = 25
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 61.0
+offset_right = 54.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_5belk")
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
+[connection signal="pressed" from="Control/PlayButton" to="." method="play_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="quit_button_pressed"]
