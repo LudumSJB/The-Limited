@@ -36,8 +36,8 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-152, -61)
 texture = ExtResource("3_m5m2a")
 
-[node name="facePosition1" type="Node2D" parent="Sprite2D"]
+[node name="facePosition0" type="Node2D" parent="Sprite2D"]
 position = Vector2(153, -62)
 
-[node name="facePosition2" type="Node2D" parent="Sprite2D"]
+[node name="facePosition1" type="Node2D" parent="Sprite2D"]
 position = Vector2(-154, -61)
