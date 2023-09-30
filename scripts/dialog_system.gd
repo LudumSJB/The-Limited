@@ -12,6 +12,7 @@ extends Node2D
 @export var showDialogAtSceneStart : bool = true
 @export var dialogsPath: String
 @export var faces: Array[Texture]
+@export var is_active: bool = true;
 
 var current_dialog: int = 0
 var dialogs: Array
@@ -24,13 +25,14 @@ func _ready():
 		showText(dialogs[current_dialog])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):	
-	if Input.is_action_just_released("next_text"):
-		current_dialog += 1
-		showText(dialogs[current_dialog])
-	if scene_to_after_dialog_close != -1:
-		# TODO: change scene.
-		pass
+func _process(_delta):
+	if is_active:
+		if Input.is_action_just_released("action_button"):
+			current_dialog += 1
+			showText(dialogs[current_dialog])
+		if scene_to_after_dialog_close != -1:
+			# TODO: change scene.
+			pass
 
 func loadDialogs():
 	var file = FileAccess.open(dialogsPath, FileAccess.READ)
