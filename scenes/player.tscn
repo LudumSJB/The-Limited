@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://wkjqrijamgh"]
+[gd_scene load_steps=5 format=3 uid="uid://duuwin15j36fv"]
 
-[ext_resource type="Texture2D" uid="uid://p6utjqrntdkq" path="res://assets/images/hero.png" id="1_ejgm5"]
+[ext_resource type="Texture2D" path="res://assets/images/hero.png" id="1_ejgm5"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wfxt1"]
 [ext_resource type="AudioStream" uid="uid://dap1fkj6cihyr" path="res://assets/sounds/steps.wav" id="3_42w1b"]
 

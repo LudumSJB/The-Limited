@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://b02ncl0w3nne2"]
 
-[ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="1_4suex"]
+[ext_resource type="PackedScene" uid="uid://df82i05edhf8" path="res://scenes/dialog_system.tscn" id="1_4suex"]
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_5tckd"]
-[ext_resource type="PackedScene" uid="uid://dca1x0aaq5qv7" path="res://scenes/outside_scene_props.tscn" id="2_f5vow"]
-[ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_ubvlv"]
-[ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_na01r"]
-[ext_resource type="PackedScene" uid="uid://wkjqrijamgh" path="res://scenes/player.tscn" id="6_wh6k6"]
-[ext_resource type="PackedScene" uid="uid://xpqxmn8xqk4v" path="res://scenes/area_2d__talk_to_security.tscn" id="7_wkitw"]
+[ext_resource type="PackedScene" uid="uid://dhewr01h4o1vr" path="res://scenes/outside_scene_props.tscn" id="2_f5vow"]
+[ext_resource type="Texture2D" path="res://assets/images/face_01.png" id="4_ubvlv"]
+[ext_resource type="Texture2D" path="res://assets/images/face_02.png" id="5_na01r"]
+[ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="6_wh6k6"]
+[ext_resource type="PackedScene" uid="uid://dgyci8kv6qgm8" path="res://scenes/area_2d__talk_to_security.tscn" id="7_wkitw"]
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_5tckd")
