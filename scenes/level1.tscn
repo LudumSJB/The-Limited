@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://b02ncl0w3nne2"]
+[gd_scene load_steps=6 format=3 uid="uid://b02ncl0w3nne2"]
 
+[ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="1_4suex"]
+[ext_resource type="Texture2D" uid="uid://cq5r16lscl8e" path="res://assets/images/background1.png" id="1_qgewf"]
 [ext_resource type="Texture2D" uid="uid://bolkcjq85c62m" path="res://assets/images/act1.png" id="1_y8kr3"]
+[ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_ubvlv"]
+[ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_na01r"]
 
 [node name="level1" type="Node2D"]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_qgewf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(317, 170)
 texture = ExtResource("1_y8kr3")
+
+[node name="dialogSystem" parent="." instance=ExtResource("1_4suex")]
+dialogsPath = "res://dialogs/act1.json"
+faces = Array[Texture]([ExtResource("4_ubvlv"), ExtResource("5_na01r")])

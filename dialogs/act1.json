@@ -1,0 +1,22 @@
+[
+	{
+		"position": 0,
+		"text": "hello world",
+		"face": 0
+	},
+	{
+		"position": 1,
+		"text": "Hello to you",
+		"face": 1
+	},
+	{
+		"position": 0,
+		"text": "Who you are talking to?",
+		"face": 0
+	},
+	{
+		"position": 1,
+		"text": "To you of course!",
+		"face": 1
+	}
+]
