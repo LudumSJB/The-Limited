@@ -60,7 +60,6 @@ func loadDialogs():
 	dialogs = obj
 
 func nextText():
-	print("nextText")
 	current_dialog += 1
 	if current_dialog < dialogs.size():
 		showText(dialogs[current_dialog])
@@ -101,7 +100,6 @@ func showText(dialog):
 		
 	if dialog.has("action"):
 		var action = dialog.action
-		print("action: ", action)
 		if action == DialogActions.NextScene as int:
 			change_scene_after_dialog_close = true
 		elif action == DialogActions.CloseDialog as int:
