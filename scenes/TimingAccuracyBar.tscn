@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5qjlf3f1dbym"]
+
+[ext_resource type="Texture2D" uid="uid://d2ris57do1h7c" path="res://assets/images/generic_testing.png" id="1_bi0sx"]
+[ext_resource type="Script" path="res://Scripts/AreaHitterPath.gd" id="2_cw10n"]
+[ext_resource type="Script" path="res://Scripts/AreaHitter.gd" id="3_bn6ww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0huky"]
+size = Vector2(438, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es6da"]
+size = Vector2(55, 17)
+
+[sub_resource type="Curve2D" id="Curve2D_ygc16"]
+bake_interval = 1.0
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -209, 69, 0, 0, 0, 0, 214, 68, 0, 0, 0, 0, 214, 68, 0, 0, 0, 0, -209, 69)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwd48"]
+size = Vector2(12.6316, 10.2491)
+
+[node name="TimingAccuracyBar" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="MissArea" type="Area2D" parent="Control"]
+position = Vector2(0, 68.637)
+scale = Vector2(1, 1)
+
+[node name="MissArea" type="Sprite2D" parent="Control/MissArea"]
+modulate = Color(0.960027, 0.145623, 0.310049, 1)
+scale = Vector2(43.7, 1.6725)
+texture = ExtResource("1_bi0sx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/MissArea"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0huky")
+
+[node name="HitArea" type="Area2D" parent="Control"]
+position = Vector2(0, 68.637)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/HitArea"]
+position = Vector2(0.5, -0.137001)
+shape = SubResource("RectangleShape2D_es6da")
+
+[node name="AreaToHit" type="Sprite2D" parent="Control/HitArea"]
+modulate = Color(0, 0.686275, 0.262745, 1)
+scale = Vector2(3.15, 1.6725)
+texture = ExtResource("1_bi0sx")
+
+[node name="Path2D" type="Path2D" parent="Control"]
+curve = SubResource("Curve2D_ygc16")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Control/Path2D"]
+position = Vector2(-209, 69)
+rotation = -0.00236406
+rotates = false
+script = ExtResource("2_cw10n")
+
+[node name="AreaHitter" type="Area2D" parent="Control/Path2D/PathFollow2D"]
+position = Vector2(0.000793457, -0.362999)
+rotation = 0.00236406
+scale = Vector2(0.475, 3.5125)
+script = ExtResource("3_bn6ww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Path2D/PathFollow2D/AreaHitter"]
+position = Vector2(0.00012207, -0.181353)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_iwd48")
+
+[node name="HitDisplay" type="Sprite2D" parent="Control/Path2D/PathFollow2D/AreaHitter"]
+scale = Vector2(1, 1)
+texture = ExtResource("1_bi0sx")
+
+[connection signal="area_entered" from="Control/Path2D/PathFollow2D/AreaHitter" to="Control/Path2D/PathFollow2D/AreaHitter" method="player_on_point"]
+[connection signal="area_exited" from="Control/Path2D/PathFollow2D/AreaHitter" to="Control/Path2D/PathFollow2D/AreaHitter" method="player_off_point"]
+[connection signal="playerHit" from="Control/Path2D/PathFollow2D/AreaHitter" to="Control/Path2D/PathFollow2D/AreaHitter" method="player_on_time"]
+[connection signal="playerMiss" from="Control/Path2D/PathFollow2D/AreaHitter" to="Control/Path2D/PathFollow2D/AreaHitter" method="player_not_on_time"]
