@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctlw8404m37lt"]
+[gd_scene load_steps=6 format=3 uid="uid://ctlw8404m37lt"]
 
 [ext_resource type="Texture2D" uid="uid://b8holljqla57r" path="res://assets/images/background_hotdog.png" id="1_66f5f"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="2_6ig56"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="3_5dw1c"]
 [ext_resource type="Texture2D" uid="uid://bxroqdmin4ebs" path="res://assets/images/face_03.png" id="4_qe2ku"]
+[ext_resource type="Texture2D" uid="uid://p6utjqrntdkq" path="res://assets/images/hero.png" id="5_rjxae"]
 
 [node name="level2" type="Node2D"]
 
@@ -14,3 +15,8 @@ texture = ExtResource("1_66f5f")
 [node name="dialogSystem" parent="." instance=ExtResource("2_6ig56")]
 dialogsPath = "res://dialogs/act2.json"
 faces = Array[Texture]([ExtResource("3_5dw1c"), ExtResource("4_qe2ku")])
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(408, 528)
+texture = ExtResource("5_rjxae")
+flip_h = true
