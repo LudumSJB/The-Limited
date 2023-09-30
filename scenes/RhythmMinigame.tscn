@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3w7gyqrs27m5"]
+[gd_scene load_steps=10 format=3 uid="uid://c8u8xguwo7m4c"]
 
-[ext_resource type="Script" path="res://Scripts/RhythmGameInput.gd" id="1_ctr23"]
-[ext_resource type="Script" path="res://Scripts/RhythmMinigameManager.gd" id="1_l7qnh"]
-[ext_resource type="Texture2D" path="res://assets/images/pink note.png" id="1_qa4r4"]
-[ext_resource type="Texture2D" path="res://assets/images/blue note.png" id="2_b3v0x"]
-[ext_resource type="Texture2D" path="res://assets/images/yellow note.png" id="3_qbdkc"]
-[ext_resource type="Texture2D" path="res://assets/images/orange note.png" id="4_bpmeg"]
-[ext_resource type="Script" path="res://Scripts/Conductor.gd" id="6_bv4hc"]
+[ext_resource type="Texture2D" uid="uid://bk684hmlulh1o" path="res://assets/images/pink note.png" id="1_qa4r4"]
+[ext_resource type="Script" path="res://scripts/RhythmMinigameManager.gd" id="1_xjbte"]
+[ext_resource type="Texture2D" uid="uid://043oe83lxps7" path="res://assets/images/blue note.png" id="2_b3v0x"]
+[ext_resource type="Script" path="res://scripts/RhythmGameInput.gd" id="2_e3i65"]
+[ext_resource type="Texture2D" uid="uid://d0u33iv2wmu27" path="res://assets/images/yellow note.png" id="3_qbdkc"]
+[ext_resource type="Texture2D" uid="uid://bhqlge03616mn" path="res://assets/images/orange note.png" id="4_bpmeg"]
+[ext_resource type="Script" path="res://scripts/Conductor.gd" id="7_u1p3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fsn0"]
 size = Vector2(1165, 20)
@@ -15,7 +15,7 @@ size = Vector2(1165, 20)
 radius = 45.0
 
 [node name="RhythmMinigame" type="CanvasLayer"]
-script = ExtResource("1_l7qnh")
+script = ExtResource("1_xjbte")
 
 [node name="RhythmGameHolder" type="Control" parent="."]
 layout_mode = 3
@@ -43,7 +43,7 @@ grow_horizontal = 2
 
 [node name="PlayerNote" type="Node2D" parent="RhythmGameHolder/PlayerSection"]
 position = Vector2(-150, 0)
-script = ExtResource("1_ctr23")
+script = ExtResource("2_e3i65")
 inputKey = "rhythmgame_left"
 
 [node name="Note" type="Area2D" parent="RhythmGameHolder/PlayerSection/PlayerNote"]
@@ -57,7 +57,7 @@ shape = SubResource("CircleShape2D_vs5r6")
 
 [node name="PlayerNote2" type="Node2D" parent="RhythmGameHolder/PlayerSection"]
 position = Vector2(-50, 0)
-script = ExtResource("1_ctr23")
+script = ExtResource("2_e3i65")
 inputKey = "rhythmgame_down"
 
 [node name="Note" type="Area2D" parent="RhythmGameHolder/PlayerSection/PlayerNote2"]
@@ -71,7 +71,7 @@ shape = SubResource("CircleShape2D_vs5r6")
 
 [node name="PlayerNote3" type="Node2D" parent="RhythmGameHolder/PlayerSection"]
 position = Vector2(50, 0)
-script = ExtResource("1_ctr23")
+script = ExtResource("2_e3i65")
 inputKey = "rhythmgame_up"
 
 [node name="Note" type="Area2D" parent="RhythmGameHolder/PlayerSection/PlayerNote3"]
@@ -85,7 +85,7 @@ shape = SubResource("CircleShape2D_vs5r6")
 
 [node name="PlayerNote4" type="Node2D" parent="RhythmGameHolder/PlayerSection"]
 position = Vector2(150, 0)
-script = ExtResource("1_ctr23")
+script = ExtResource("2_e3i65")
 inputKey = "rhythmgame_right"
 
 [node name="Note" type="Area2D" parent="RhythmGameHolder/PlayerSection/PlayerNote4"]
@@ -107,7 +107,7 @@ offset_top = 745.0
 offset_right = 39.0
 offset_bottom = 785.0
 grow_horizontal = 2
-script = ExtResource("6_bv4hc")
+script = ExtResource("7_u1p3x")
 speed = 0.3
 
 [node name="HittableNote" type="Node2D" parent="RhythmGameHolder/NoteScroller"]
