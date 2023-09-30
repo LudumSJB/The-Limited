@@ -17,10 +17,13 @@ extends Node2D
 var current_dialog: int = 0
 var dialogs: Array
 
-var scene_to_after_dialog_close: int = -1
+var change_scene_after_dialog_close: bool = false
+
+var root: Node
 
 func _ready():
 	loadDialogs()
+	root = get_node("../..")
 	if showDialogAtSceneStart:
 		showText(dialogs[current_dialog])
 
@@ -29,10 +32,11 @@ func _process(_delta):
 	if is_active:
 		if Input.is_action_just_released("action_button"):
 			current_dialog += 1
-			showText(dialogs[current_dialog])
-		if scene_to_after_dialog_close != -1:
-			# TODO: change scene.
-			pass
+			if current_dialog < dialogs.size():
+				showText(dialogs[current_dialog])
+		if change_scene_after_dialog_close:
+			print("change_scene_after_dialog_close")
+			root.emit_signal("change_to_next_scene")
 
 func loadDialogs():
 	var file = FileAccess.open(dialogsPath, FileAccess.READ)
@@ -76,6 +80,5 @@ func showText(dialog):
 	else:
 		face.visible = false
 	
-	if dialog.has("change_scene_to"):
-		print("change_scene_to ", dialog.change_scene_to)
-#		scene_to_after_dialog_close = dialog.change_scene_to
+	if dialog.has("next_scene"):
+		change_scene_after_dialog_close = true

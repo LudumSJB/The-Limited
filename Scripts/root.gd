@@ -1,5 +1,7 @@
 extends Node2D
 
+signal change_to_next_scene
+
 @onready var root = $"."
 
 var current_level: int = 0
@@ -39,5 +41,6 @@ func next_level():
 	var new_scene = load("res://scenes/" + levelname + ".tscn").instantiate()
 	add_child(new_scene)
 	move_child(new_scene, 0)
-	
 
+func _on_change_to_next_scene():
+	next_level()

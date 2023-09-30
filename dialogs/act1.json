@@ -36,6 +36,6 @@
 		"dialog_position": 0,
 		"position": 1,
 		"text": "You look to your right where the doorman is pointing. \nThere's a small wagon with huge yellow sign that says [color=#fbf236]'Hotdog to fill ya'[/color].",
-		"change_scene_to": 1
+		"next_scene": true
 	}
 ]

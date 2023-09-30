@@ -7,3 +7,5 @@
 script = ExtResource("1_57e80")
 
 [node name="level1" parent="." instance=ExtResource("2_b7jq3")]
+
+[connection signal="change_to_next_scene" from="." to="." method="_on_change_to_next_scene"]
