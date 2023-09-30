@@ -3,7 +3,8 @@ extends Node2D
 enum DialogActions {
 	None = 0,
 	CloseDialog = 1,
-	NextScene = 2
+	NextScene = 2,
+	PlayMiniGame = 3
 }
 
 @onready var rich_text_label = $Sprite2D/RichTextLabel
@@ -25,6 +26,7 @@ var dialogs: Array
 
 var change_scene_after_dialog_close: bool = false
 var close_dialog_after_dialog_close: bool = false
+var play_minigame_after_dialog_close: bool = false
 
 var root: Node
 
@@ -48,7 +50,16 @@ func _process(_delta):
 				hideText()
 				close_dialog_after_dialog_close = false
 				return
+			if play_minigame_after_dialog_close:
+				hideText()
+				startMinigame()
+				play_minigame_after_dialog_close = false
+				return
 			nextText()
+
+func startMinigame():
+	var level = get_node("..")
+	level.emit_signal("play_minigame")
 
 func loadDialogs():
 	var file = FileAccess.open(dialogsPath, FileAccess.READ)
@@ -100,7 +111,10 @@ func showText(dialog):
 		
 	if dialog.has("action"):
 		var action = dialog.action
+		print("action: ", action)
 		if action == DialogActions.NextScene as int:
 			change_scene_after_dialog_close = true
 		elif action == DialogActions.CloseDialog as int:
 			close_dialog_after_dialog_close = true
+		elif action == DialogActions.PlayMiniGame as int:
+			play_minigame_after_dialog_close = true

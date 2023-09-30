@@ -22,3 +22,4 @@ func _on_area_2d__talk_to_security_body_entered(_body):
 
 func _on_area_2d__talk_to_security_body_exited(_body):
 	security_guy_talk_to_action.visible = false
+

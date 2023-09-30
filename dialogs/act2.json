@@ -19,7 +19,7 @@
 	},
 	{
 		"dialog_position": 0,
-		"text": "You look into your pockets for cash. \nCan't find any.\n\nHow on earth you were gonna get drinks at the club even?",
-		"action": 0
+		"text": "You start looking through your pockets...",
+		"action": 3
 	},
 ]

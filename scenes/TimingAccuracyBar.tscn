@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6l61udpegwlt"]
+[gd_scene load_steps=9 format=3 uid="uid://b6l61udpegwlt"]
 
 [ext_resource type="Texture2D" uid="uid://d2ris57do1h7c" path="res://assets/images/generic_testing.png" id="1_bi0sx"]
+[ext_resource type="Script" path="res://Scripts/TimingAccuracyBar.gd" id="1_pn3d0"]
 [ext_resource type="Script" path="res://Scripts/AreaHitterPath.gd" id="2_cw10n"]
 [ext_resource type="Script" path="res://Scripts/AreaHitter.gd" id="3_bn6ww"]
 
@@ -21,6 +22,7 @@ point_count = 4
 size = Vector2(12.6316, 10.2491)
 
 [node name="TimingAccuracyBar" type="CanvasLayer"]
+script = ExtResource("1_pn3d0")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
