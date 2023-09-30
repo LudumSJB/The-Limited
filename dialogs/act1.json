@@ -8,6 +8,7 @@
 	},
 	{
 		"text": "You arrive to a local dance club called [color=#76428a][b]'The Limited'[/b][/color]. \n\nThis place has been here for years. People come here often and the place is fabulous.",
+		"action": 1
 	},
 	{
 		"dialog_position": 1,
@@ -36,6 +37,6 @@
 		"dialog_position": 0,
 		"position": 1,
 		"text": "You look to your right where the doorman is pointing. \nThere's a small wagon with huge yellow sign that says [color=#fbf236]'Hotdog to fill ya'[/color].",
-		"next_scene": true
+		"action": 2
 	}
 ]

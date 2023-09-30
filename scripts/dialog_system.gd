@@ -1,5 +1,11 @@
 extends Node2D
 
+enum DialogActions {
+	None = 0,
+	CloseDialog = 1,
+	NextScene = 2
+}
+
 @onready var rich_text_label = $Sprite2D/RichTextLabel
 @onready var sprite_2d = $Sprite2D
 @onready var face = $Sprite2D/face
@@ -18,6 +24,7 @@ var current_dialog: int = 0
 var dialogs: Array
 
 var change_scene_after_dialog_close: bool = false
+var close_dialog_after_dialog_close: bool = false
 
 var root: Node
 
@@ -26,17 +33,22 @@ func _ready():
 	root = get_node("../..")
 	if showDialogAtSceneStart:
 		showText(dialogs[current_dialog])
+	else:
+		hideText()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if is_active:
 		if Input.is_action_just_released("action_button"):
-			current_dialog += 1
-			if current_dialog < dialogs.size():
-				showText(dialogs[current_dialog])
-		if change_scene_after_dialog_close:
-			print("change_scene_after_dialog_close")
-			root.emit_signal("change_to_next_scene")
+			if change_scene_after_dialog_close:
+				root.emit_signal("change_to_next_scene")
+				change_scene_after_dialog_close = false
+				return
+			if close_dialog_after_dialog_close:
+				hideText()
+				close_dialog_after_dialog_close = false
+				return
+			nextText()
 
 func loadDialogs():
 	var file = FileAccess.open(dialogsPath, FileAccess.READ)
@@ -47,10 +59,18 @@ func loadDialogs():
 		print("couldn't parse json!")
 	dialogs = obj
 
+func nextText():
+	print("nextText")
+	current_dialog += 1
+	if current_dialog < dialogs.size():
+		showText(dialogs[current_dialog])
+
 func hideText():
 	sprite_2d.visible = false
+	is_active = false
 
 func showText(dialog):
+	is_active = true
 	# show new text in dialog
 	sprite_2d.visible = true
 	rich_text_label.clear()
@@ -78,10 +98,11 @@ func showText(dialog):
 				face.position = face_position_1.position
 	else:
 		face.visible = false
-	
-	if dialog.has("next_scene"):
-		change_scene_after_dialog_close = true
-	
+		
 	if dialog.has("action"):
 		var action = dialog.action
 		print("action: ", action)
+		if action == DialogActions.NextScene as int:
+			change_scene_after_dialog_close = true
+		elif action == DialogActions.CloseDialog as int:
+			close_dialog_after_dialog_close = true
