@@ -28,3 +28,5 @@ flip_h = true
 visible = false
 
 [connection signal="play_minigame" from="." to="." method="_on_play_minigame"]
+[connection signal="NotOnTime" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_not_on_time"]
+[connection signal="OnTime" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_on_time"]

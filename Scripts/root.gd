@@ -44,3 +44,10 @@ func next_level():
 
 func _on_change_to_next_scene():
 	next_level()
+
+func AddScore(amount: int):
+	game_score += amount
+	
+func GameOver():
+	# TODO: show game over screen.
+	print("game over!")

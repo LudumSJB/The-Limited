@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var timing_accuracy_bar = $"../../../.."
+
 @export var canHit = false
 
 signal playerHit
@@ -38,6 +40,8 @@ func player_off_point(area):
 	
 func player_on_time():
 	print("On Time!")
+	timing_accuracy_bar.onTime()
 	
 func player_not_on_time():
 	print("You Fucked Up!")
+	timing_accuracy_bar.notOnTime()
