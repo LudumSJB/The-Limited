@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://df82i05edhf8"]
 
 [ext_resource type="Script" path="res://scripts/dialog_system.gd" id="1_g4nlg"]
-[ext_resource type="Texture2D" path="res://assets/images/speechbubble2.png" id="2_urcba"]
-[ext_resource type="Texture2D" path="res://assets/images/face_01.png" id="3_m5m2a"]
+[ext_resource type="Texture2D" uid="uid://capwl0xchsr6w" path="res://assets/images/speechbubble2.png" id="2_urcba"]
+[ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="3_m5m2a"]
 [ext_resource type="AudioStream" uid="uid://bhfnc63sxl5jj" path="res://assets/sounds/talking.wav" id="4_amrfs"]
 [ext_resource type="AudioStream" uid="uid://es6b83uw1cnc" path="res://assets/sounds/talking2.wav" id="5_wtta4"]
 
