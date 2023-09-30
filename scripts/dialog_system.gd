@@ -42,8 +42,7 @@ func loadDialogs():
 	var file = FileAccess.open(dialogsPath, FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
-	var json = JSON.new()
-	var obj = json.parse_string(content)
+	var obj = JSON.parse_string(content)
 	if obj == null:
 		print("couldn't parse json!")
 	dialogs = obj
