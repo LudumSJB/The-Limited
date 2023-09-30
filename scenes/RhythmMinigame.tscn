@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://chr8s2mrd57b4"]
+[gd_scene load_steps=10 format=3 uid="uid://d3w7gyqrs27m5"]
 
 [ext_resource type="Script" path="res://Scripts/RhythmGameInput.gd" id="1_ctr23"]
 [ext_resource type="Script" path="res://Scripts/RhythmMinigameManager.gd" id="1_l7qnh"]
-[ext_resource type="Texture2D" uid="uid://bk684hmlulh1o" path="res://assets/images/pink note.png" id="1_qa4r4"]
-[ext_resource type="Texture2D" uid="uid://043oe83lxps7" path="res://assets/images/blue note.png" id="2_b3v0x"]
-[ext_resource type="Texture2D" uid="uid://d0u33iv2wmu27" path="res://assets/images/yellow note.png" id="3_qbdkc"]
-[ext_resource type="Texture2D" uid="uid://bhqlge03616mn" path="res://assets/images/orange note.png" id="4_bpmeg"]
+[ext_resource type="Texture2D" path="res://assets/images/pink note.png" id="1_qa4r4"]
+[ext_resource type="Texture2D" path="res://assets/images/blue note.png" id="2_b3v0x"]
+[ext_resource type="Texture2D" path="res://assets/images/yellow note.png" id="3_qbdkc"]
+[ext_resource type="Texture2D" path="res://assets/images/orange note.png" id="4_bpmeg"]
 [ext_resource type="Script" path="res://Scripts/Conductor.gd" id="6_bv4hc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4fsn0"]
