@@ -38,4 +38,6 @@ func next_level():
 	levelname = levels[current_level]	
 	var new_scene = load("res://scenes/" + levelname + ".tscn").instantiate()
 	add_child(new_scene)
+	move_child(new_scene, 0)
+	
 
