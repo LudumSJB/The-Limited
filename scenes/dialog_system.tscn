@@ -10,13 +10,13 @@
 script = ExtResource("1_g4nlg")
 
 [node name="dialogPosition0" type="Node2D" parent="."]
-position = Vector2(543, 177)
+position = Vector2(543, 170)
 
 [node name="dialogPosition2" type="Node2D" parent="."]
-position = Vector2(246, 405)
+position = Vector2(246, 230)
 
 [node name="dialogPosition1" type="Node2D" parent="."]
-position = Vector2(880, 405)
+position = Vector2(880, 230)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(235, 447)

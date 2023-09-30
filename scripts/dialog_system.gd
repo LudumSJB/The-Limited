@@ -32,12 +32,14 @@ var dialogs: Array
 var change_scene_after_dialog_close: bool = false
 var close_dialog_after_dialog_close: bool = false
 var play_minigame_after_dialog_close: bool = false
-var play_sound_index: int = -1
-var play_sound: bool = false
+
+var timeout_press_time = 0.1
+var timeout_press = 0
 
 var root: Node
 
 func _ready():
+	print("_ready")
 	loadDialogs()
 	root = get_node("../..")
 	if showDialogAtSceneStart:
@@ -48,26 +50,28 @@ func _ready():
 	sounds.append(talking_2)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
+	if timeout_press >= 0:
+		timeout_press -= delta
 	if is_active:
-		if Input.is_action_just_released("action_button"):
+		if timeout_press <= 0 && Input.is_action_just_released("action_button"):
+			print("action_button pressed")
 			if change_scene_after_dialog_close:
+				print("change_scene_after_dialog_close")
 				root.emit_signal("change_to_next_scene")
 				change_scene_after_dialog_close = false
 				return
 			if close_dialog_after_dialog_close:
+				print("close_dialog_after_dialog_close")
 				hideText()
 				close_dialog_after_dialog_close = false
 				return
 			if play_minigame_after_dialog_close:
+				print("play_minigame_after_dialog_close")
 				hideText()
 				startMinigame()
 				play_minigame_after_dialog_close = false
 				return
-			if play_sound && play_sound_index != -1:
-				play_sound = false
-				var sound = sounds[play_sound_index]
-				sound.play()
 			nextText()
 
 func startMinigame():
@@ -84,6 +88,8 @@ func loadDialogs():
 	dialogs = obj
 
 func nextText():
+	timeout_press = timeout_press_time
+	print("nextText")
 	current_dialog += 1
 	if current_dialog < dialogs.size():
 		showText(dialogs[current_dialog])
@@ -135,5 +141,6 @@ func showText(dialog):
 			if !dialog.has("sound"):
 				print("no sound set!")
 				return
-			play_sound_index = dialog.sound
-			play_sound = true
+			var sound = sounds[dialog.sound]
+			print("playing sound: ", sound.name)
+			sound.play()
