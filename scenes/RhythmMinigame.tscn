@@ -1,0 +1,185 @@
+[gd_scene load_steps=10 format=3 uid="uid://chr8s2mrd57b4"]
+
+[ext_resource type="Script" path="res://Scripts/RhythmGameInput.gd" id="1_ctr23"]
+[ext_resource type="Script" path="res://Scripts/RhythmMinigameManager.gd" id="1_l7qnh"]
+[ext_resource type="Texture2D" uid="uid://bk684hmlulh1o" path="res://assets/images/pink note.png" id="1_qa4r4"]
+[ext_resource type="Texture2D" uid="uid://043oe83lxps7" path="res://assets/images/blue note.png" id="2_b3v0x"]
+[ext_resource type="Texture2D" uid="uid://d0u33iv2wmu27" path="res://assets/images/yellow note.png" id="3_qbdkc"]
+[ext_resource type="Texture2D" uid="uid://bhqlge03616mn" path="res://assets/images/orange note.png" id="4_bpmeg"]
+[ext_resource type="Script" path="res://Scripts/Conductor.gd" id="6_bv4hc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fsn0"]
+size = Vector2(1165, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vs5r6"]
+radius = 45.0
+
+[node name="RhythmMinigame" type="CanvasLayer"]
+script = ExtResource("1_l7qnh")
+
+[node name="RhythmGameHolder" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="MissArea" type="Area2D" parent="RhythmGameHolder"]
+position = Vector2(0, -79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/MissArea"]
+position = Vector2(572.5, 0)
+shape = SubResource("RectangleShape2D_4fsn0")
+
+[node name="PlayerSection" type="Control" parent="RhythmGameHolder"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1.0
+offset_top = 94.0
+offset_right = 39.0
+offset_bottom = 134.0
+grow_horizontal = 2
+
+[node name="PlayerNote" type="Node2D" parent="RhythmGameHolder/PlayerSection"]
+position = Vector2(-150, 0)
+script = ExtResource("1_ctr23")
+inputKey = "rhythmgame_left"
+
+[node name="Note" type="Area2D" parent="RhythmGameHolder/PlayerSection/PlayerNote"]
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote/Note"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_qa4r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/PlayerSection/PlayerNote/Note"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="PlayerNote2" type="Node2D" parent="RhythmGameHolder/PlayerSection"]
+position = Vector2(-50, 0)
+script = ExtResource("1_ctr23")
+inputKey = "rhythmgame_down"
+
+[node name="Note" type="Area2D" parent="RhythmGameHolder/PlayerSection/PlayerNote2"]
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote2/Note"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_b3v0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/PlayerSection/PlayerNote2/Note"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="PlayerNote3" type="Node2D" parent="RhythmGameHolder/PlayerSection"]
+position = Vector2(50, 0)
+script = ExtResource("1_ctr23")
+inputKey = "rhythmgame_up"
+
+[node name="Note" type="Area2D" parent="RhythmGameHolder/PlayerSection/PlayerNote3"]
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote3/Note"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_qbdkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/PlayerSection/PlayerNote3/Note"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="PlayerNote4" type="Node2D" parent="RhythmGameHolder/PlayerSection"]
+position = Vector2(150, 0)
+script = ExtResource("1_ctr23")
+inputKey = "rhythmgame_right"
+
+[node name="Note" type="Area2D" parent="RhythmGameHolder/PlayerSection/PlayerNote4"]
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote4/Note"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_bpmeg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/PlayerSection/PlayerNote4/Note"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="NoteScroller" type="Control" parent="RhythmGameHolder"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -1.0
+offset_top = 745.0
+offset_right = 39.0
+offset_bottom = 785.0
+grow_horizontal = 2
+script = ExtResource("6_bv4hc")
+speed = 0.3
+
+[node name="HittableNote" type="Node2D" parent="RhythmGameHolder/NoteScroller"]
+position = Vector2(-150, 0)
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/NoteScroller/HittableNote"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/NoteScroller/HittableNote/HittableNote"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_qa4r4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/NoteScroller/HittableNote/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote2" type="Node2D" parent="RhythmGameHolder/NoteScroller"]
+position = Vector2(-50, 200)
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/NoteScroller/HittableNote2"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/NoteScroller/HittableNote2/HittableNote"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_b3v0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/NoteScroller/HittableNote2/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote3" type="Node2D" parent="RhythmGameHolder/NoteScroller"]
+position = Vector2(50, 400)
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/NoteScroller/HittableNote3"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/NoteScroller/HittableNote3/HittableNote"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_qbdkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/NoteScroller/HittableNote3/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote4" type="Node2D" parent="RhythmGameHolder/NoteScroller"]
+position = Vector2(150, 600)
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/NoteScroller/HittableNote4"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/NoteScroller/HittableNote4/HittableNote"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_bpmeg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/NoteScroller/HittableNote4/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 71.57
+offset_right = 141.0
+offset_bottom = 118.57
+rotation = -0.268526
+theme_override_font_sizes/font_size = 31
+text = "Score: 0"
+
+[connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="hit_note"]
+[connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="miss_note"]
+[connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote2" to="." method="hit_note"]
+[connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote2" to="." method="miss_note"]
+[connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote3" to="." method="hit_note"]
+[connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote3" to="." method="miss_note"]
+[connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote4" to="." method="hit_note"]
+[connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote4" to="." method="miss_note"]
+[connection signal="area_entered" from="RhythmGameHolder/NoteScroller/HittableNote/HittableNote" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
+[connection signal="area_entered" from="RhythmGameHolder/NoteScroller/HittableNote2/HittableNote" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
+[connection signal="area_entered" from="RhythmGameHolder/NoteScroller/HittableNote3/HittableNote" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
+[connection signal="area_entered" from="RhythmGameHolder/NoteScroller/HittableNote4/HittableNote" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
