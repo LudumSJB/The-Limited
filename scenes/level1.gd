@@ -16,9 +16,9 @@ func _process(_delta):
 		security_guy_talk_to_action.visible = false
 		dialog_system.nextText()
 
-func _on_area_2d__talk_to_security_body_entered(body):
+func _on_area_2d__talk_to_security_body_entered(_body):
 	security_guy_talk_to_action.visible = true
 
 
-func _on_area_2d__talk_to_security_body_exited(body):
+func _on_area_2d__talk_to_security_body_exited(_body):
 	security_guy_talk_to_action.visible = false
