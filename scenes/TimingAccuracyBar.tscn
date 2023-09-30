@@ -1,8 +1,49 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6l61udpegwlt"]
 
 [ext_resource type="Texture2D" uid="uid://d2ris57do1h7c" path="res://assets/images/generic_testing.png" id="1_bi0sx"]
-[ext_resource type="Script" path="res://Scripts/TimingAccuracyBar.gd" id="1_pn3d0"]
-[ext_resource type="Script" path="res://Scripts/AreaHitter.gd" id="3_bn6ww"]
+
+[sub_resource type="GDScript" id="GDScript_861g7"]
+script/source = "extends CanvasLayer
+
+signal OnTime
+signal NotOnTime
+
+@onready var area_hitter = $Control/Path2D/PathFollow2D/AreaHitter
+@onready var timing_accuracy_bar = $\".\"
+@onready var path_follow_2d = $Control/Path2D/PathFollow2D
+@onready var path_2d = $Control/Path2D
+
+@export var speed = 0.2 # speed that the input accuracy bar moves at
+
+var rng = RandomNumberGenerator.new()
+
+var path_length: float = 0
+
+func _ready():
+	path_length = path_2d.curve.get_baked_length()
+
+func _process(delta):
+	path_follow_2d.progress += speed + delta
+	pass
+	
+func activateMinigame():
+	timing_accuracy_bar.visible = true
+	area_hitter.activateMinigame()
+
+func onTime():
+	print(\"onTime\")
+	setRandomProgress()
+	OnTime.emit()
+
+func notOnTime():
+	print(\"notOnTime\")
+	setRandomProgress()
+	NotOnTime.emit()
+	
+func setRandomProgress():
+	var progress: float = rng.randf_range(0, path_length)
+	path_follow_2d.progress = progress
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0huky"]
 size = Vector2(438, 20)
@@ -17,11 +58,61 @@ _data = {
 }
 point_count = 4
 
+[sub_resource type="GDScript" id="GDScript_gwtfs"]
+script/source = "extends Area2D
+
+@onready var timing_accuracy_bar = $\"../../../..\"
+
+@export var canHit = false
+
+signal playerHit
+signal playerMiss
+
+var is_active = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if is_active:
+		check_if_player_can_hit()
+	
+func activateMinigame():
+	is_active = true
+
+func endMinigame():
+	is_active = false
+	
+func check_if_player_can_hit():
+	if canHit == true and Input.is_action_just_pressed(\"action_button\"): # checks for when the player is able to hit and if they do hit
+		playerHit.emit()
+	elif canHit == false and Input.is_action_just_pressed(\"action_button\"): # checks for when the player is not able to hit and if they still do hit
+		playerMiss.emit()
+
+func player_on_point(area):
+	if area.name == \"HitArea\": # checks if the current collision area is a hittable area
+		canHit = true
+
+func player_off_point(area):
+	if area.name == \"HitArea\": # checks if the current collision area is a non-hittable area
+		canHit = false
+	
+func player_on_time():
+	print(\"On Time!\")
+	timing_accuracy_bar.onTime()
+	
+func player_not_on_time():
+	print(\"You Fucked Up!\")
+	timing_accuracy_bar.notOnTime()
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iwd48"]
 size = Vector2(12.6316, 10.2491)
 
 [node name="TimingAccuracyBar" type="CanvasLayer"]
-script = ExtResource("1_pn3d0")
+script = SubResource("GDScript_861g7")
 speed = 4.0
 
 [node name="Control" type="Control" parent="."]
@@ -69,7 +160,7 @@ rotates = false
 position = Vector2(0.000793457, -0.362999)
 rotation = 0.00236406
 scale = Vector2(0.475, 3.5125)
-script = ExtResource("3_bn6ww")
+script = SubResource("GDScript_gwtfs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Path2D/PathFollow2D/AreaHitter"]
 position = Vector2(0.00012207, -0.181353)
