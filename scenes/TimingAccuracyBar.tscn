@@ -81,7 +81,6 @@ texture = ExtResource("1_bi0sx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/Path2D/PathFollow2D/AreaHitter"]
 position = Vector2(0.000305176, -0.181353)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_iwd48")
 
 [node name="triesParent" type="Node2D" parent="Control"]
