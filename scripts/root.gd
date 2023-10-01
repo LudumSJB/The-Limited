@@ -32,13 +32,13 @@ var levels = [
 ]
 
 var songPerLevelStart = [
-	0,0,0,0,1,1,0,0
+	0,0,0,0,1,1,1,1
 ]
 var songPerLevelEnd = [
-	0,0,0,1,1,1,0,0
+	0,0,0,1,1,1,1,1
 ]
 var audioPlayerPerLevel = [
-	0,1,0,2,3,3,2,0
+	0,1,0,2,4,3,4,4
 ]
 var audioPlayers: Array[AudioStreamPlayer2D]
 var current_audio_player: AudioStreamPlayer2D
@@ -66,8 +66,11 @@ func _process(_delta):
 	if Input.is_action_just_pressed("next_level") && OS.has_feature("debug"):
 		next_level()
 
+# change level node to next one
 func next_level():
-	# change level node to next one
+	if levels.size() == current_level+1:
+		print("no more levels added!")
+		return
 	
 	# remove current level node
 	var levelname = levels[current_level]
@@ -100,6 +103,7 @@ func change_music():
 		var player = audioPlayers[audioPlayerIndex]
 		lastPlayer.stop()
 		player.play(playbackPos)
+		print("playing song from same pos as last one")
 	else:
 		# different song, can play from start.
 		var audioPlayerIndex = audioPlayerPerLevel[current_level]
@@ -107,6 +111,7 @@ func change_music():
 		for p in audioPlayers:
 			p.stop()
 		player.play()
+		print("playing song from start")
 
 func _on_change_to_next_scene():
 	next_level()

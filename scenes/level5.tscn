@@ -64,6 +64,7 @@ label_text = "wc"
 [connection signal="play_minigame" from="." to="." method="_on_play_minigame"]
 [connection signal="DudeGoOut" from="dancer_dude" to="." method="_on_dancer_dude_dude_go_out"]
 [connection signal="HidePlayer" from="dialogSystem" to="player" method="_on_dialog_system_hide_player"]
+[connection signal="OnDialogClose" from="dialogSystem" to="dancer_dude" method="_on_dialog_system_on_dialog_close"]
 [connection signal="ShowPlayer" from="dialogSystem" to="player" method="_on_dialog_system_show_player"]
 [connection signal="MinigameWon" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_minigame_won"]
 [connection signal="OnActionInitated" from="actionArea" to="." method="_on_action_area_on_action_initated"]

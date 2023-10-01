@@ -4,6 +4,7 @@ signal NextActStarted
 signal HidePlayer
 signal ShowPlayer
 signal ChangeSong
+signal OnDialogClose
 
 @onready var rich_text_label = $Sprite2D/RichTextLabel
 @onready var sprite_2d = $Sprite2D
@@ -69,6 +70,7 @@ func _process(delta):
 				if close_dialog_after_dialog_close:
 					hideText()
 					close_dialog_after_dialog_close = false
+					OnDialogClose.emit()
 					return
 				if play_minigame_after_dialog_close:
 					hideText()
