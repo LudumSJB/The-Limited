@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_ubvlv"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_na01r"]
 [ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="6_wh6k6"]
-[ext_resource type="PackedScene" uid="uid://xpqxmn8xqk4v" path="res://scenes/talk_to_person.tscn" id="7_e6yds"]
+[ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="7_e6yds"]
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_5tckd")
@@ -22,5 +22,3 @@ faces = Array[Texture]([ExtResource("4_ubvlv"), ExtResource("5_na01r")])
 
 [node name="Area2D__talk_to_security" parent="." instance=ExtResource("7_e6yds")]
 position = Vector2(1030, 522)
-
-[connection signal="OnTalkInitated" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_on_talk_initated"]

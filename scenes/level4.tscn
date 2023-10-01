@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="5_0uddc"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="6_1no3t"]
 [ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_me5ut"]
-[ext_resource type="PackedScene" uid="uid://xpqxmn8xqk4v" path="res://scenes/talk_to_person.tscn" id="7_pkq5q"]
+[ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="7_pkq5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
 size = Vector2(1179, 43)
@@ -60,5 +60,3 @@ position = Vector2(955, 517)
 monitoring = false
 
 [connection signal="NextActStarted" from="dialogSystem" to="." method="_on_dialog_system_next_act_started"]
-[connection signal="OnTalkInitated" from="Area2D__talk_to_person" to="." method="_on_area_2d__talk_to_person_on_talk_initated"]
-[connection signal="OnTalkInitated" from="Area2D__talk_to_person2" to="." method="_on_area_2d__talk_to_person_2_on_talk_initated"]

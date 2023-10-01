@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://brghk84aof61l"]
+
+[ext_resource type="Script" path="res://scripts/actionArea.gd" id="1_bqkhl"]
+[ext_resource type="Texture2D" uid="uid://dyrbo5drifsel" path="res://assets/images/action_window.png" id="1_ph3w4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v80nv"]
+size = Vector2(91.25, 163)
+
+[node name="actionArea" type="Area2D"]
+position = Vector2(6, -13)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_bqkhl")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -132)
+scale = Vector2(0.408088, 0.38785)
+texture = ExtResource("1_ph3w4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
+offset_left = -91.0
+offset_top = -44.0
+offset_right = -35.0
+offset_bottom = -15.0
+scale = Vector2(3.4909, 3.4909)
+text = "Talk to"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_v80nv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
