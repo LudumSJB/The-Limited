@@ -26,7 +26,7 @@ texture = ExtResource("1_700b8")
 
 [node name="dancer_dude" parent="." instance=ExtResource("7_bdtki")]
 position = Vector2(570, 539)
-speed = 50.0
+speed = 80.0
 
 [node name="player" parent="." instance=ExtResource("2_bp30i")]
 position = Vector2(202, 530)
@@ -68,7 +68,9 @@ position = Vector2(913, 509)
 monitoring = false
 label_text = "wc"
 
+[connection signal="play_minigame" from="." to="." method="_on_play_minigame"]
 [connection signal="DudeGoOut" from="dancer_dude" to="." method="_on_dancer_dude_dude_go_out"]
 [connection signal="HidePlayer" from="dialogSystem" to="player" method="_on_dialog_system_hide_player"]
 [connection signal="ShowPlayer" from="dialogSystem" to="player" method="_on_dialog_system_show_player"]
+[connection signal="MinigameWon" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_minigame_won"]
 [connection signal="OnActionInitated" from="actionArea" to="." method="_on_action_area_on_action_initated"]
