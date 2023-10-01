@@ -33,7 +33,7 @@ var change_scene_after_dialog_close: bool = false
 var close_dialog_after_dialog_close: bool = false
 var play_minigame_after_dialog_close: bool = false
 
-var timeout_press_time = 0.5
+var timeout_press_time = 0.2
 var timeout_press = 0
 
 var root: Node
@@ -112,20 +112,17 @@ func showText(dialog):
 			sprite_2d.position = dialog_position_0.position
 		elif dialog.dialog_position == 1:
 			sprite_2d.position = dialog_position_1.position
+			sprite_2d.flip_h = false
+			face.position = face_position_0.position
 		elif dialog.dialog_position == 2:
 			sprite_2d.position = dialog_position_2.position
+			sprite_2d.flip_h = true
+			face.position = face_position_1.position
 	
 	# change face and its position relative to dialog box
 	if dialog.has("face"):
 		face.visible = true
 		face.texture = faces[dialog.face]
-		if dialog.has("position"):
-			if dialog.position == 0:
-				sprite_2d.flip_h = false
-				face.position = face_position_0.position
-			else:
-				sprite_2d.flip_h = true
-				face.position = face_position_1.position
 	else:
 		face.visible = false
 		
