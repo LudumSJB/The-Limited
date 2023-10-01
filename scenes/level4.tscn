@@ -60,3 +60,5 @@ position = Vector2(955, 517)
 monitoring = false
 
 [connection signal="NextActStarted" from="dialogSystem" to="." method="_on_dialog_system_next_act_started"]
+[connection signal="OnActionInitated" from="Area2D__talk_to_person" to="." method="_on_area_2d__talk_to_person_on_talk_initated"]
+[connection signal="OnActionInitated" from="Area2D__talk_to_person2" to="." method="_on_area_2d__talk_to_person_2_on_talk_initated"]

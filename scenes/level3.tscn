@@ -31,4 +31,5 @@ speed = 500.0
 triesToWin = 3
 
 [connection signal="play_minigame" from="." to="." method="_on_play_minigame"]
+[connection signal="OnActionInitated" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_on_talk_initated"]
 [connection signal="MinigameWon" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_minigame_won"]
