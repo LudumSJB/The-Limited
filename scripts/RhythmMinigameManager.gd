@@ -45,4 +45,4 @@ func on_player_loss():
 	animator.play("player_lose")
 	await get_tree().create_timer(1).timeout
 	# get_tree().reload_current_scene() - we need to queuefree and instance this rather than restart the parent scene
-	root.MiniGameEnded()
+#	root.MiniGameEnded()

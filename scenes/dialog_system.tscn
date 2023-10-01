@@ -13,14 +13,15 @@ script = ExtResource("1_g4nlg")
 position = Vector2(543, 170)
 
 [node name="dialogPosition2" type="Node2D" parent="."]
-position = Vector2(289, 230)
+position = Vector2(346, 230)
 
 [node name="dialogPosition1" type="Node2D" parent="."]
-position = Vector2(853, 230)
+position = Vector2(809, 230)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(292, 227)
+position = Vector2(346, 230)
 texture = ExtResource("2_urcba")
+metadata/_edit_group_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
 texture_filter = 1
