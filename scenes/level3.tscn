@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/level3.gd" id="1_8qq86"]
 [ext_resource type="PackedScene" uid="uid://dca1x0aaq5qv7" path="res://scenes/outside_scene_props.tscn" id="1_rkgy3"]
-[ext_resource type="PackedScene" uid="uid://wkjqrijamgh" path="res://scenes/player.tscn" id="2_6t1de"]
+[ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="2_6t1de"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="3_fw8s5"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_w71oc"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_rthe7"]
@@ -25,9 +25,12 @@ faces = Array[Texture]([ExtResource("4_w71oc"), ExtResource("5_rthe7")])
 
 [node name="TimingAccuracyBar" parent="." instance=ExtResource("7_3ad0c")]
 visible = false
+speed = 500.0
+triesToWin = 3
 
 [connection signal="play_minigame" from="." to="." method="_on_play_minigame"]
 [connection signal="body_entered" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_body_entered"]
 [connection signal="body_exited" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_body_exited"]
+[connection signal="MinigameWon" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_minigame_won"]
 [connection signal="NotOnTime" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_not_on_time"]
 [connection signal="OnTime" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_on_time"]

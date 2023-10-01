@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6l61udpegwlt"]
+[gd_scene load_steps=11 format=3 uid="uid://b6l61udpegwlt"]
 
 [ext_resource type="Script" path="res://scripts/TimingAccuracyBar.gd" id="1_63pw4"]
 [ext_resource type="Texture2D" uid="uid://d2ris57do1h7c" path="res://assets/images/generic_testing.png" id="1_bi0sx"]
+[ext_resource type="PackedScene" uid="uid://18rmx3h5licc" path="res://scenes/tries_indicator.tscn" id="2_io5db"]
 [ext_resource type="Script" path="res://scripts/AreaHitter.gd" id="2_rs3p3"]
+[ext_resource type="AudioStream" uid="uid://o57h8bbi638w" path="res://assets/sounds/success.wav" id="5_4jtat"]
+[ext_resource type="AudioStream" uid="uid://b01e3qbbnkhv6" path="res://assets/sounds/fail.wav" id="6_kq0te"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0huky"]
 size = Vector2(438, 20)
@@ -23,6 +26,7 @@ size = Vector2(25.2631, 10.2491)
 [node name="TimingAccuracyBar" type="CanvasLayer"]
 script = ExtResource("1_63pw4")
 speed = 400.0
+tries_indicator = ExtResource("2_io5db")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -79,6 +83,19 @@ texture = ExtResource("1_bi0sx")
 position = Vector2(0.000305176, -0.181353)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_iwd48")
+
+[node name="triesParent" type="Node2D" parent="Control"]
+position = Vector2(-200, 142)
+
+[node name="sound_success" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(556, 20)
+stream = ExtResource("5_4jtat")
+volume_db = -5.0
+
+[node name="sound_fail" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(556, 20)
+stream = ExtResource("6_kq0te")
+volume_db = -5.0
 
 [connection signal="area_entered" from="Control/Path2D/PathFollow2D/AreaHitter" to="Control/Path2D/PathFollow2D/AreaHitter" method="player_on_point"]
 [connection signal="area_exited" from="Control/Path2D/PathFollow2D/AreaHitter" to="Control/Path2D/PathFollow2D/AreaHitter" method="player_off_point"]

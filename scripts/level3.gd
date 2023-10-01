@@ -8,8 +8,6 @@ signal play_minigame
 
 var root: Node
 
-var triesToWin: int = 3
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	root = get_node("..")
@@ -33,15 +31,12 @@ func _on_area_2d__talk_to_security_body_exited(body):
 
 
 func _on_timing_accuracy_bar_not_on_time():
-	print("_on_timing_accuracy_bar_not_on_time")
 	root.AddScore(-5)
-	pass
 
 func _on_timing_accuracy_bar_on_time():
-	print("_on_timing_accuracy_bar_on_time")
-	triesToWin -= 1
 	root.AddScore(10)
-	if triesToWin == 0:
-		print("minigame won! continue.")
-		timing_accuracy_bar.deactivateMinigame()
-		dialog_system.nextText()
+
+
+func _on_timing_accuracy_bar_minigame_won():
+	timing_accuracy_bar.deactivateMinigame()
+	dialog_system.nextText()
