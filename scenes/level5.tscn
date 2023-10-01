@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://qnl3loe42rgl"]
+
+[ext_resource type="Texture2D" uid="uid://3uq4pa68v0og" path="res://assets/images/background_toilet.png" id="1_700b8"]
+[ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="2_bp30i"]
+[ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="3_xs8v8"]
+[ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_b30m5"]
+[ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_7ikgh"]
+[ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_y2el4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
+size = Vector2(1179, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7brp"]
+size = Vector2(136.5, 625)
+
+[node name="level5" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578, 338)
+texture = ExtResource("1_700b8")
+
+[node name="player" parent="." instance=ExtResource("2_bp30i")]
+position = Vector2(551, 538)
+
+[node name="dialogSystem" parent="." instance=ExtResource("3_xs8v8")]
+dialogsPath = "res://dialogs/act5.json"
+faces = Array[Texture]([ExtResource("4_b30m5"), ExtResource("5_7ikgh")])
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(578, 629)
+shape = SubResource("RectangleShape2D_fno7i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(52.25, 331)
+shape = SubResource("RectangleShape2D_k7brp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1105, 323)
+shape = SubResource("RectangleShape2D_k7brp")
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(553, 333)
+stream = ExtResource("6_y2el4")
+volume_db = 1.0
+autoplay = true

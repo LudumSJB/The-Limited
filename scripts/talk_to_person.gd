@@ -10,8 +10,8 @@ func _process(_delta):
 		sprite_2d.visible = false
 		OnTalkInitated.emit()
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	sprite_2d.visible = true
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	sprite_2d.visible = false

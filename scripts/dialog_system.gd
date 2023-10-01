@@ -1,13 +1,5 @@
 extends Node2D
 
-enum DialogActions {
-	None = 0,
-	CloseDialog = 1,
-	NextScene = 2,
-	PlayMiniGame = 3,
-	PlaySound = 4
-}
-
 @onready var rich_text_label = $Sprite2D/RichTextLabel
 @onready var sprite_2d = $Sprite2D
 @onready var face = $Sprite2D/face
@@ -174,16 +166,12 @@ func showText(dialog):
 	if dialog.has("action"):
 		var action = dialog.action
 		print("action: ", action)
-		if action == DialogActions.NextScene as int:
+		if action == "next_scene":
 			change_scene_after_dialog_close = true
-		elif action == DialogActions.CloseDialog as int:
+		elif action == "close_dialog":
 			close_dialog_after_dialog_close = true
-		elif action == DialogActions.PlayMiniGame as int:
+		elif action == "minigame":
 			play_minigame_after_dialog_close = true
-		elif action == DialogActions.PlaySound as int:
-			if !dialog.has("sound"):
-				print("no sound set!")
-				return
-			var sound = sounds[dialog.sound]
-#			print("playing sound: ", sound.name)
-			sound.play()
+	if dialog.has("sound"):
+		var sound = sounds[dialog.sound]
+		sound.play()

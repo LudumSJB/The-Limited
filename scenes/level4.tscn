@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://df0m2jrbhdijl"]
+[gd_scene load_steps=11 format=3 uid="uid://df0m2jrbhdijl"]
 
+[ext_resource type="Script" path="res://scripts/level4.gd" id="1_w4nf6"]
 [ext_resource type="Texture2D" uid="uid://bjxlroipqra04" path="res://assets/images/background_club.png" id="1_xiwl2"]
 [ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="3_10s1h"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="4_ym8v5"]
@@ -15,6 +16,7 @@ size = Vector2(1179, 43)
 size = Vector2(136.5, 625)
 
 [node name="level4" type="Node2D"]
+script = ExtResource("1_w4nf6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(578, 338)
@@ -24,7 +26,7 @@ texture = ExtResource("1_xiwl2")
 position = Vector2(551, 538)
 
 [node name="dialogSystem" parent="." instance=ExtResource("4_ym8v5")]
-dialogsPath = "res://dialogs/act4.json"
+dialogsPath = "res://dialogs/act5.json"
 faces = Array[Texture]([ExtResource("5_0uddc"), ExtResource("6_1no3t")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -51,4 +53,6 @@ volume_db = 1.0
 autoplay = true
 
 [node name="Area2D__talk_to_person" parent="." instance=ExtResource("7_pkq5q")]
-position = Vector2(956, 517)
+position = Vector2(386, 517)
+
+[connection signal="OnTalkInitated" from="Area2D__talk_to_person" to="." method="_on_area_2d__talk_to_person_on_talk_initated"]

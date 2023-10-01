@@ -3,34 +3,30 @@
 		"dialog_position": 2,
 		"text": "Oh Hello! What can I get for ya?",
 		"face": 1,
-		"sound": 1,
-		"action": 4
+		"sound": 1
 	},
 	{
 		"dialog_position": 1,
 		"text": "Hi, could I get one of those hotdogs?",
 		"face": 0,
-		"sound": 0,
-		"action": 4
+		"sound": 0
 	},
 	{
 		"dialog_position": 2,
 		"text": "Of course! That would be 5,50€.",
 		"face": 1,
-		"sound": 1,
-		"action": 4
+		"sound": 1
 	},
 	{
 		"dialog_position": 0,
 		"text": "You start looking through your pockets...",
-		"action": 3
+		"action": "minigame"
 	},
 	{
 		"dialog_position": 1,
 		"text": "Found em! Here you go.",
 		"face": 0,
-		"sound": 0,
-		"action": 4
+		"sound": 0
 	},
 	{
 		"dialog_position": 0,
@@ -41,6 +37,6 @@
 		"text": "Here ya go! One tasty hotdog!",
 		"face": 1,
 		"sound": 1,
-		"action": 2
+		"action": "next_scene"
 	},
 ]

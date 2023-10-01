@@ -8,14 +8,13 @@
 	},
 	{
 		"text": "You arrive to a local dance club called [color=#76428a][b]'The Limited'[/b][/color]. \n\nThis place has been here for years. People come here often and the place is fabulous.",
-		"action": 1
+		"action": "close_dialog"
 	},
 	{
 		"dialog_position": 1,
 		"text": "Good evening sir. \nWe are full. There's no more space. Nada. \nWe only have [color=#ac3232][u]limited space[/u][/color] available.",
 		"face": 1,
-		"sound": 0,
-		"action": 4
+		"sound": 0
 	},
 	{
 		"dialog_position": 0,
@@ -25,19 +24,17 @@
 		"dialog_position": 2,
 		"text": "I've come a long way to here. \n\nIs there any way I could get inside?",
 		"face": 0,
-		"sound": 1,
-		"action": 4
+		"sound": 1
 	},
 	{
 		"dialog_position": 1,
 		"text": "Now that I think of it. \nI've been getting [i]really hungry[/i] and my shift is not gonna end very soon. \nCould you get me a [color=#8f563b]hotdog[/color] from that vendor over there?",
 		"face": 1,
-		"sound": 0,
-		"action": 4
+		"sound": 0
 	},
 	{
 		"dialog_position": 0,
 		"text": "You look to your right where the doorman is pointing. \nThere's a small wagon with huge yellow sign that says [color=#fbf236]'Hotdog to fill ya'[/color].",
-		"action": 2
+		"action": "next_scene"
 	}
 ]
