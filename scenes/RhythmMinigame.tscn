@@ -286,6 +286,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ScoreLabel" type="Label" parent="UIHolder"]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 71.57
 offset_right = 141.0
@@ -296,6 +297,7 @@ theme_override_font_sizes/font_size = 18
 text = "Score: 0"
 
 [node name="FpsLabel" type="Label" parent="UIHolder"]
+layout_mode = 0
 offset_left = 35.0
 offset_top = 107.0
 offset_right = 152.0
@@ -306,7 +308,6 @@ theme_override_font_sizes/font_size = 12
 text = "FPS: 0"
 script = ExtResource("9_5aavs")
 
-[connection signal="PlayerLoss" from="." to="." method="on_player_loss"]
 [connection signal="area_entered" from="RhythmGameHolder/MissArea" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="hit_note"]
 [connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="miss_note"]

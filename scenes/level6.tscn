@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_k3eyc"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_vu6nn"]
 [ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_kwld7"]
-[ext_resource type="PackedScene" uid="uid://xpqxmn8xqk4v" path="res://scenes/talk_to_person.tscn" id="7_86mrb"]
+[ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="7_86mrb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
 size = Vector2(1179, 43)
