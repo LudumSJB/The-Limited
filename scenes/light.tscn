@@ -5,4 +5,4 @@
 [node name="light" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_yqq3a")
 autoplay = "default"
-frame_progress = 0.77408
+frame_progress = 0.10693
