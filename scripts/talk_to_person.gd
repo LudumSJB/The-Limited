@@ -7,6 +7,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("action_button") && sprite_2d.visible:
+		sprite_2d.visible = false
 		OnTalkInitated.emit()
 
 func _on_body_entered(body):
