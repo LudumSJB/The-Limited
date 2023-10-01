@@ -5,9 +5,13 @@
 	},
 	{
 		"dialog_position": 2,
-		"text": "Party's over, you partypooper.",
+		"text": "Party's over, \nyou partypooper.",
 		"face": 1,
-		"sound": 1,
-		"action": "next_scene"
+		"sound": 1
 	},
+	{
+		"dialog_position": 0,
+		"text": "You head out.",
+		"action": "next_scene"
+	}
 ]

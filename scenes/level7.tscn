@@ -1,55 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://7j6lbnf0sejs"]
+[gd_scene load_steps=6 format=3 uid="uid://c01fv2071x4o1"]
 
-[ext_resource type="Texture2D" uid="uid://belh2j4spbyqj" path="res://assets/images/background_welcome.png" id="2_kyo7a"]
-[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="6_sltpu"]
+[ext_resource type="PackedScene" uid="uid://dca1x0aaq5qv7" path="res://scenes/outside_scene_props.tscn" id="2_knygg"]
+[ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="3_w2ayy"]
+[ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="4_16h7v"]
+[ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="5_j0ia1"]
+[ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="6_gaxir"]
 
 [node name="level7" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-texture = ExtResource("2_kyo7a")
+[node name="outside_scene_props" parent="." instance=ExtResource("2_knygg")]
+show_empty_street = true
 
-[node name="Label" type="Label" parent="."]
-offset_left = 341.0
-offset_top = 283.0
-offset_right = 837.0
-offset_bottom = 492.0
-theme_override_fonts/font = ExtResource("6_sltpu")
-text = "Thanks for playing!
+[node name="player" parent="." instance=ExtResource("3_w2ayy")]
+position = Vector2(803, 539)
 
-Made by:
-Bephane
-Jukepoks1
-sso
+[node name="dialogSystem" parent="." instance=ExtResource("4_16h7v")]
+dialogsPath = "res://dialogs/streets_act3.json"
+faces = Array[Texture]([ExtResource("5_j0ia1"), ExtResource("6_gaxir")])
 
-LudumDare 54
-Sep-Oct 2023
-
-
-
-
-
-
-
-
-(press ESC to get back to start)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 433.0
-offset_top = 289.0
-offset_right = 752.0
-offset_bottom = 492.0
-theme_override_fonts/normal_font = ExtResource("6_sltpu")
-bbcode_enabled = true
-text = "Thanks for playing!
-
-[u]Made by:[/u]
-  Bephane
-  Jukepoks1
-  sso
-
-LudumDare 54
-Sep-Oct 2023"
+[connection signal="ShowPlayer" from="dialogSystem" to="player" method="_on_dialog_system_show_player"]

@@ -1,0 +1,14 @@
+[
+	{
+		"dialog_position": 1,
+		"text": "I'm never gonna go there again!",
+		"face": 0,
+		"sound": 0,
+		"action": "show_player"
+	},
+	{
+		"dialog_position": 0,
+		"text": "Night sets to misty sunrise as you walk towards metro-station. \nHangover maybe, but fun were the night.",
+		"action": "next_scene"
+	},
+]
