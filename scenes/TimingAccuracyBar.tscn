@@ -22,7 +22,7 @@ size = Vector2(25.2631, 10.2491)
 
 [node name="TimingAccuracyBar" type="CanvasLayer"]
 script = ExtResource("1_63pw4")
-speed = 4.0
+speed = 400.0
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

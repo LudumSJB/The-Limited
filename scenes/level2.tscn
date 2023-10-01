@@ -27,7 +27,6 @@ flip_h = true
 
 [node name="TimingAccuracyBar" parent="." instance=ExtResource("6_iaaju")]
 visible = false
-speed = 400.0
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1474, 334)
