@@ -54,7 +54,7 @@ current = true
 [node name="steps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_42w1b")
 volume_db = 24.0
-pitch_scale = 0.5
+pitch_scale = 0.61
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dohvd")

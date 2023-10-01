@@ -23,7 +23,7 @@
 	},
 	{
 		"dialog_position": 0,
-		"text": "DJ puts some deep beats down.\nEverybody gets on the ground.\nIt's \n[color=#d77bba]the boogie of the century![/color]",
+		"text": "DJ puts some deep beats down.\nEverybody gets on the ground.\n[color=#d77bba]It's the boogie of the town![/color]",
 		"action": "change_song"
 	},
 	{
@@ -32,7 +32,7 @@
 	},
 	{
 		"dialog_position": 0,
-		"text": "[i]Until[/i]. [i]you[/i]. [i]can[/i]. [i]not[/i]. [i]dance[/i]. [i]no[/i]. [i]more.[/i]"
+		"text": "[i]Until[/i]. [i]you[/i]. [i]can't[/i]. [i]dance[/i]. [i]no[/i]. [i]more.[/i]"
 	},
 	{
 		"dialog_position": 0,

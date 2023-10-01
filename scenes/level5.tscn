@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qnl3loe42rgl"]
+[gd_scene load_steps=12 format=3 uid="uid://qnl3loe42rgl"]
 
 [ext_resource type="Texture2D" uid="uid://3uq4pa68v0og" path="res://assets/images/background_toilet.png" id="1_700b8"]
 [ext_resource type="Script" path="res://scripts/level5.gd" id="1_k5sq7"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_b30m5"]
 [ext_resource type="PackedScene" uid="uid://hhiifftg4png" path="res://scenes/dancer_dude.tscn" id="7_bdtki"]
 [ext_resource type="Texture2D" uid="uid://cxxnxw27gf6kj" path="res://assets/images/face_06.png" id="7_h0mv2"]
-[ext_resource type="AudioStream" uid="uid://gmfwqvgw4lhn" path="res://assets/sounds/toilets.wav" id="8_8ji14"]
 [ext_resource type="PackedScene" uid="uid://b6l61udpegwlt" path="res://scenes/TimingAccuracyBar.tscn" id="9_uokie"]
 [ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="10_esgja"]
 
@@ -52,11 +51,6 @@ shape = SubResource("RectangleShape2D_k7brp")
 position = Vector2(1105, 323)
 shape = SubResource("RectangleShape2D_k7brp")
 
-[node name="music" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(554, 332)
-stream = ExtResource("8_8ji14")
-autoplay = true
-
 [node name="TimingAccuracyBar" parent="." instance=ExtResource("9_uokie")]
 visible = false
 speed = 500.0
@@ -70,6 +64,7 @@ label_text = "wc"
 [connection signal="play_minigame" from="." to="." method="_on_play_minigame"]
 [connection signal="DudeGoOut" from="dancer_dude" to="." method="_on_dancer_dude_dude_go_out"]
 [connection signal="HidePlayer" from="dialogSystem" to="player" method="_on_dialog_system_hide_player"]
+[connection signal="OnDialogClose" from="dialogSystem" to="dancer_dude" method="_on_dialog_system_on_dialog_close"]
 [connection signal="ShowPlayer" from="dialogSystem" to="player" method="_on_dialog_system_show_player"]
 [connection signal="MinigameWon" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_minigame_won"]
 [connection signal="OnActionInitated" from="actionArea" to="." method="_on_action_area_on_action_initated"]
