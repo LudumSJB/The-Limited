@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://7j6lbnf0sejs"]
+
+[ext_resource type="Texture2D" uid="uid://belh2j4spbyqj" path="res://assets/images/background_welcome.png" id="2_kyo7a"]
+[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="6_sltpu"]
+
+[node name="level7" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_kyo7a")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 341.0
+offset_top = 283.0
+offset_right = 837.0
+offset_bottom = 492.0
+theme_override_fonts/font = ExtResource("6_sltpu")
+text = "Thanks for playing!
+
+Made by:
+Bephane
+Jukepoks1
+sso
+
+LudumDare 54
+Sep-Oct 2023
+
+
+
+
+
+
+
+
+(press ESC to get back to start)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 433.0
+offset_top = 289.0
+offset_right = 752.0
+offset_bottom = 492.0
+theme_override_fonts/normal_font = ExtResource("6_sltpu")
+bbcode_enabled = true
+text = "Thanks for playing!
+
+[u]Made by:[/u]
+  Bephane
+  Jukepoks1
+  sso
+
+LudumDare 54
+Sep-Oct 2023"

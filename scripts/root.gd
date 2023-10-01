@@ -16,7 +16,8 @@ var levels = [
 	"level3",
 	"level4",
 	"level5",
-	"level6"
+	"level6",
+	"level7"
 ]
 
 # store global vars here that need to stay between scenes
@@ -47,7 +48,8 @@ func next_level():
 	
 	# instantiate next level node
 	current_level += 1
-	levelname = levels[current_level]	
+	levelname = levels[current_level]
+	print("changing to scene: '", levelname, "'")
 	var new_scene = load("res://scenes/" + levelname + ".tscn").instantiate()
 	add_child(new_scene)
 	move_child(new_scene, 0)

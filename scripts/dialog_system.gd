@@ -1,6 +1,8 @@
 extends Node2D
 
 signal NextActStarted
+signal HidePlayer
+signal ShowPlayer
 
 @onready var rich_text_label = $Sprite2D/RichTextLabel
 @onready var sprite_2d = $Sprite2D
@@ -87,6 +89,7 @@ func _process(delta):
 			write_character_time -= delta
 
 func startMinigame():
+	print("startMinigame")
 	var level = get_node("..")
 	level.emit_signal("play_minigame")
 
@@ -101,13 +104,14 @@ func loadDialogs():
 	dialogs = obj
 
 func nextText():
+	print("nextText")
 	timeout_press = timeout_press_time
-#	print("nextText")
 	current_dialog += 1
 	if current_dialog < dialogs.size():
 		showText(dialogs[current_dialog])
 
 func hideText():
+	print("hideText")
 	sprite_2d.visible = false
 	is_active = false
 
@@ -116,7 +120,9 @@ func writeAllCharacters():
 	text_to_write = ""
 
 func changeAct():
+	print("changeAct")
 	dialogsPath = "res://dialogs/"+next_act+".json"
+	print("dialogsPath: '", dialogsPath, "'")
 	loadDialogs()
 	current_dialog = -1
 	print("first dialog: ", dialogs[0].text)
@@ -153,6 +159,7 @@ func writeCharacter():
 		write_character_time += timeout_extra_step
 
 func showText(dialog):
+	print("showText")
 	is_active = true
 	# show new text in dialog
 	sprite_2d.visible = true
@@ -189,6 +196,10 @@ func showText(dialog):
 			close_dialog_after_dialog_close = true
 		elif action == "minigame":
 			play_minigame_after_dialog_close = true
+		elif action == "hide_player":
+			HidePlayer.emit()
+		elif action == "show_player":
+			ShowPlayer.emit()
 	
 	if dialog.has("sound"):
 		var sound = sounds[dialog.sound]

@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="2_bp30i"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="3_xs8v8"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_b30m5"]
-[ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_7ikgh"]
-[ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_y2el4"]
 [ext_resource type="PackedScene" uid="uid://hhiifftg4png" path="res://scenes/dancer_dude.tscn" id="7_bdtki"]
+[ext_resource type="Texture2D" uid="uid://cxxnxw27gf6kj" path="res://assets/images/face_06.png" id="7_h0mv2"]
+[ext_resource type="AudioStream" uid="uid://c0k8juko185jp" path="res://assets/sounds/club.wav" id="8_q4kii"]
 [ext_resource type="PackedScene" uid="uid://b6l61udpegwlt" path="res://scenes/TimingAccuracyBar.tscn" id="9_uokie"]
 [ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="10_esgja"]
 
@@ -33,7 +33,7 @@ position = Vector2(202, 530)
 
 [node name="dialogSystem" parent="." instance=ExtResource("3_xs8v8")]
 dialogsPath = "res://dialogs/toilet_act1.json"
-faces = Array[Texture]([ExtResource("4_b30m5"), ExtResource("5_7ikgh")])
+faces = Array[Texture]([ExtResource("4_b30m5"), ExtResource("7_h0mv2")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -53,9 +53,9 @@ position = Vector2(1105, 323)
 shape = SubResource("RectangleShape2D_k7brp")
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(553, 333)
-stream = ExtResource("6_y2el4")
-volume_db = 1.0
+position = Vector2(554, 332)
+stream = ExtResource("8_q4kii")
+volume_db = -17.802
 autoplay = true
 
 [node name="TimingAccuracyBar" parent="." instance=ExtResource("9_uokie")]
@@ -69,4 +69,6 @@ monitoring = false
 label_text = "wc"
 
 [connection signal="DudeGoOut" from="dancer_dude" to="." method="_on_dancer_dude_dude_go_out"]
+[connection signal="HidePlayer" from="dialogSystem" to="player" method="_on_dialog_system_hide_player"]
+[connection signal="ShowPlayer" from="dialogSystem" to="player" method="_on_dialog_system_show_player"]
 [connection signal="OnActionInitated" from="actionArea" to="." method="_on_action_area_on_action_initated"]
