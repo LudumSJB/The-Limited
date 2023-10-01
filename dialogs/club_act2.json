@@ -23,7 +23,8 @@
 	},
 	{
 		"dialog_position": 0,
-		"text": "DJ puts some deep beats down.\nEverybody gets on the ground.\nIt's \n[color=#d77bba]the boogie of the century![/color]"
+		"text": "DJ puts some deep beats down.\nEverybody gets on the ground.\nIt's \n[color=#d77bba]the boogie of the century![/color]",
+		"action": "change_song"
 	},
 	{
 		"dialog_position": 0,

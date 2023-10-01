@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_b30m5"]
 [ext_resource type="PackedScene" uid="uid://hhiifftg4png" path="res://scenes/dancer_dude.tscn" id="7_bdtki"]
 [ext_resource type="Texture2D" uid="uid://cxxnxw27gf6kj" path="res://assets/images/face_06.png" id="7_h0mv2"]
-[ext_resource type="AudioStream" uid="uid://c0k8juko185jp" path="res://assets/sounds/club.wav" id="8_q4kii"]
+[ext_resource type="AudioStream" uid="uid://gmfwqvgw4lhn" path="res://assets/sounds/toilets.wav" id="8_8ji14"]
 [ext_resource type="PackedScene" uid="uid://b6l61udpegwlt" path="res://scenes/TimingAccuracyBar.tscn" id="9_uokie"]
 [ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="10_esgja"]
 
@@ -54,8 +54,7 @@ shape = SubResource("RectangleShape2D_k7brp")
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(554, 332)
-stream = ExtResource("8_q4kii")
-volume_db = -17.802
+stream = ExtResource("8_8ji14")
 autoplay = true
 
 [node name="TimingAccuracyBar" parent="." instance=ExtResource("9_uokie")]

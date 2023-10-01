@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c7anqd02ws3om" path="res://assets/images/background1.png" id="1_ccbne"]
 [ext_resource type="Texture2D" uid="uid://c24hdx5ndn7yc" path="res://assets/images/security.png" id="2_c0p2o"]
 [ext_resource type="Texture2D" uid="uid://llp7ois0m45v" path="res://assets/images/background2.png" id="2_veomb"]
-[ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="3_nsg17"]
+[ext_resource type="AudioStream" uid="uid://ba5qb1lo4nwmr" path="res://assets/sounds/outside.wav" id="5_xjstd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5q02"]
 size = Vector2(1227.5, 45)
@@ -48,5 +48,5 @@ flip_h = true
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1030, 412)
-stream = ExtResource("3_nsg17")
+stream = ExtResource("5_xjstd")
 autoplay = true
