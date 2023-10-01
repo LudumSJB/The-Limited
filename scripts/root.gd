@@ -37,7 +37,7 @@ var songPerLevelStart = [
 var songPerLevelEnd = [
 	0,0,0,1,1,1,0,0
 ]
-var songTypePerLevel = [
+var audioPlayerPerLevel = [
 	0,1,0,2,3,3,2,0
 ]
 var audioPlayers: Array[AudioStreamPlayer2D]
@@ -96,12 +96,14 @@ func change_music():
 			print("no playing audioplayer found!")
 			return
 		var playbackPos = lastPlayer.get_playback_position()
-		var player = audioPlayers[current_level]
+		var audioPlayerIndex = audioPlayerPerLevel[current_level]
+		var player = audioPlayers[audioPlayerIndex]
 		lastPlayer.stop()
 		player.play(playbackPos)
 	else:
 		# different song, can play from start.
-		var player = audioPlayers[current_level]
+		var audioPlayerIndex = audioPlayerPerLevel[current_level]
+		var player = audioPlayers[audioPlayerIndex]
 		for p in audioPlayers:
 			p.stop()
 		player.play()
@@ -130,8 +132,9 @@ func _on_play_music():
 	current_audio_player.play(current_playback_position)
 
 func _on_request_change_music():
-	var nextSong = songPerLevelEnd[current_level]
-	nextSong.play()
+	_on_stop_music()
+	var player = audioPlayers[3] # second club song
+	player.play()
 
 func _on_stop_music():
 	for p in audioPlayers:
