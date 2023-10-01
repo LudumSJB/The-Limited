@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://df0m2jrbhdijl"]
+[gd_scene load_steps=16 format=3 uid="uid://df0m2jrbhdijl"]
 
 [ext_resource type="Script" path="res://scripts/level4.gd" id="1_w4nf6"]
-[ext_resource type="Texture2D" uid="uid://bjxlroipqra04" path="res://assets/images/background_club.png" id="1_xiwl2"]
+[ext_resource type="Texture2D" uid="uid://2dgnmnk34lqw" path="res://assets/images/background_club_nolights.png" id="2_tdqyl"]
 [ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="3_10s1h"]
+[ext_resource type="PackedScene" uid="uid://bnhc6tfpckqj2" path="res://scenes/light.tscn" id="3_ae4wh"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="4_ym8v5"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="5_0uddc"]
 [ext_resource type="Texture2D" uid="uid://c81thoo78506x" path="res://assets/images/face_05.png" id="7_35eev"]
@@ -24,8 +25,19 @@ script = ExtResource("1_w4nf6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(578, 338)
-texture = ExtResource("1_xiwl2")
+texture = ExtResource("2_tdqyl")
 metadata/_edit_lock_ = true
+
+[node name="light" parent="." instance=ExtResource("3_ae4wh")]
+position = Vector2(350, 316)
+
+[node name="light2" parent="." instance=ExtResource("3_ae4wh")]
+position = Vector2(580, 316)
+frame = 1
+frame_progress = 0.0
+
+[node name="light3" parent="." instance=ExtResource("3_ae4wh")]
+position = Vector2(808, 316)
 
 [node name="bartender" parent="." instance=ExtResource("13_yv6qk")]
 position = Vector2(383, 546)
@@ -93,7 +105,7 @@ animation = &"dance2"
 autoplay = "dance2"
 
 [node name="stander3" parent="." instance=ExtResource("10_nbl1a")]
-position = Vector2(229, 573)
+position = Vector2(180.5, 580)
 
 [node name="dancer3" parent="." instance=ExtResource("10_nbl1a")]
 position = Vector2(792, 559)
@@ -109,7 +121,7 @@ autoplay = "dance1"
 frame = 2
 
 [node name="stander5" parent="." instance=ExtResource("10_nbl1a")]
-position = Vector2(376, 576)
+position = Vector2(327.5, 583)
 animation = &"idle2"
 flip_h = true
 
@@ -137,7 +149,7 @@ position = Vector2(616, 582)
 animation = &"idle"
 
 [node name="stander" parent="." instance=ExtResource("10_nbl1a")]
-position = Vector2(312, 564)
+position = Vector2(263.5, 571)
 animation = &"idle"
 flip_h = true
 
