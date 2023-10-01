@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnhc6tfpckqj2"]
+
+[ext_resource type="SpriteFrames" uid="uid://dhwb21jnngbyo" path="res://anims/light.tres" id="1_yqq3a"]
+
+[node name="light" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_yqq3a")
+autoplay = "default"
+frame_progress = 0.10693
