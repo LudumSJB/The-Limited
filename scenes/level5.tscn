@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://qnl3loe42rgl"]
+[gd_scene load_steps=13 format=3 uid="uid://qnl3loe42rgl"]
 
 [ext_resource type="Texture2D" uid="uid://3uq4pa68v0og" path="res://assets/images/background_toilet.png" id="1_700b8"]
+[ext_resource type="Script" path="res://scripts/level5.gd" id="1_k5sq7"]
 [ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="2_bp30i"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="3_xs8v8"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_b30m5"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_7ikgh"]
 [ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_y2el4"]
 [ext_resource type="PackedScene" uid="uid://hhiifftg4png" path="res://scenes/dancer_dude.tscn" id="7_bdtki"]
+[ext_resource type="PackedScene" uid="uid://b6l61udpegwlt" path="res://scenes/TimingAccuracyBar.tscn" id="9_uokie"]
+[ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="10_esgja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
 size = Vector2(1179, 43)
@@ -15,6 +18,7 @@ size = Vector2(1179, 43)
 size = Vector2(136.5, 625)
 
 [node name="level5" type="Node2D"]
+script = ExtResource("1_k5sq7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(578, 338)
@@ -53,3 +57,16 @@ position = Vector2(553, 333)
 stream = ExtResource("6_y2el4")
 volume_db = 1.0
 autoplay = true
+
+[node name="TimingAccuracyBar" parent="." instance=ExtResource("9_uokie")]
+visible = false
+speed = 500.0
+triesToWin = 3
+
+[node name="actionArea" parent="." instance=ExtResource("10_esgja")]
+position = Vector2(913, 509)
+monitoring = false
+label_text = "wc"
+
+[connection signal="DudeGoOut" from="dancer_dude" to="." method="_on_dancer_dude_dude_go_out"]
+[connection signal="OnActionInitated" from="actionArea" to="." method="_on_action_area_on_action_initated"]

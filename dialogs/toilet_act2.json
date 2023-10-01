@@ -1,0 +1,50 @@
+[
+	{
+		"dialog_position": 0,
+		"text": "You just get in time to releave yourself. \nI hope no one listened...",
+	},
+	{
+		"dialog_position": 1,
+		"text": "Ahhahahhahah!",
+		"action": "close_dialog",
+		"face": 1,
+		"sound": 1
+	},
+	{
+		"dialog_position": 0,
+		"text": "You try to quickly open the door, but it jams! \nSomeone has glued it tight from the outside! \n\nTry to find something that will get you out of there.",
+		"action": "minigame"
+	},
+	{
+		"dialog_position": 0,
+		"text": "ChewGum? \nHow that get in my pocket?",
+		"action": "minigame"
+	},
+	{
+		"dialog_position": 0,
+		"text": "A pencil? \nThat's not it either.",
+		"action": "minigame"
+	},
+	{
+		"dialog_position": 0,
+		"text": "A book?\n nah.",
+	},
+	{
+		"dialog_position": 0,
+		"text": "creditcard, keys, razorblade, \ncoins, condom, glowes, \nmy hands, comb...",
+	},
+	{
+		"dialog_position": 0,
+		"text": "Wait. \nRazorblade? \nYou really think I'm gonna cut myself out of here with that? \nMore like myself...",
+	},
+	{
+		"dialog_position": 0,
+		"text": "But there are keys. \nMaybe they will do.",
+		"action": "minigame"
+	},
+	{
+		"dialog_position": 0,
+		"text": "Keys did the job!",
+		"action": "next_scene"
+	},
+]
