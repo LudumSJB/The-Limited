@@ -3,5 +3,12 @@
 		"dialog_position": 0,
 		"text": "toilet scene",
 		"action": "close_dialog"
+	},
+	{
+		"dialog_position": 1,
+		"text": "Yo dude! \nYou forgot to wash your hands!",
+		"action": "close_dialog",
+		"face": 0,
+		"sound": 0
 	}
 ]

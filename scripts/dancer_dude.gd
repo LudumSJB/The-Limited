@@ -1,5 +1,7 @@
 extends Node2D
 
+signal DudeGoOut
+
 @onready var targetpos = $targetpos
 @export var minDistance: float = 0.1
 @export var speed: float = 2
@@ -13,4 +15,5 @@ func _process(delta):
 	if animated_sprite_2d.position.distance_to(targetpos.position) > minDistance:
 		animated_sprite_2d.position = animated_sprite_2d.position.move_toward(targetpos.position, delta * speed)
 	else:
+		DudeGoOut.emit()
 		queue_free()
