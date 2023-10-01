@@ -1,5 +1,7 @@
 extends Node2D
 
+signal NextActStarted
+
 @onready var rich_text_label = $Sprite2D/RichTextLabel
 @onready var sprite_2d = $Sprite2D
 @onready var face = $Sprite2D/face
@@ -24,7 +26,9 @@ var dialogs: Array
 var change_scene_after_dialog_close: bool = false
 var close_dialog_after_dialog_close: bool = false
 var play_minigame_after_dialog_close: bool = false
+var change_act_after_dialog_close: bool = false
 
+var next_act: String = ""
 const timeout_press_time = 0.2
 var timeout_press = 0
 
@@ -55,20 +59,22 @@ func _process(delta):
 #			print("action_button pressed")
 			if text_to_write.is_empty():
 				if change_scene_after_dialog_close:
-#					print("change_scene_after_dialog_close")
 					root.emit_signal("change_to_next_scene")
 					change_scene_after_dialog_close = false
 					return
 				if close_dialog_after_dialog_close:
-#					print("close_dialog_after_dialog_close")
 					hideText()
 					close_dialog_after_dialog_close = false
 					return
 				if play_minigame_after_dialog_close:
-#					print("play_minigame_after_dialog_close")
 					hideText()
 					startMinigame()
 					play_minigame_after_dialog_close = false
+					return
+				if change_act_after_dialog_close:
+					hideText()
+					changeAct()
+					change_act_after_dialog_close = false
 					return
 			if !text_to_write.is_empty():
 				writeAllCharacters()
@@ -84,6 +90,7 @@ func startMinigame():
 	level.emit_signal("play_minigame")
 
 func loadDialogs():
+	print("loading dialogs from path: '", dialogsPath, "'")
 	var file = FileAccess.open(dialogsPath, FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
@@ -106,6 +113,13 @@ func hideText():
 func writeAllCharacters():
 	rich_text_label.append_text(text_to_write)
 	text_to_write = ""
+
+func changeAct():
+	dialogsPath = "res://dialogs/"+next_act+".json"
+	loadDialogs()
+	current_dialog = -1
+	print("first dialog: ", dialogs[0].text)
+	NextActStarted.emit()
 
 func getParamString(textToW: String) -> String:
 	var i = 1
@@ -162,7 +176,7 @@ func showText(dialog):
 	else:
 		face.visible = false
 	
-	# get actiong from the dialog and do things accordingly
+	# get action from the dialog and do things accordingly
 	if dialog.has("action"):
 		var action = dialog.action
 		print("action: ", action)
@@ -172,6 +186,11 @@ func showText(dialog):
 			close_dialog_after_dialog_close = true
 		elif action == "minigame":
 			play_minigame_after_dialog_close = true
+	
 	if dialog.has("sound"):
 		var sound = sounds[dialog.sound]
 		sound.play()
+	
+	if dialog.has("next_act"):
+		next_act = dialog.next_act
+		change_act_after_dialog_close = true

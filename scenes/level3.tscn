@@ -19,7 +19,7 @@ show_empty_street = true
 position = Vector2(551, 538)
 
 [node name="dialogSystem" parent="." instance=ExtResource("3_fw8s5")]
-dialogsPath = "res://dialogs/act3.json"
+dialogsPath = "res://dialogs/streets_act2.json"
 faces = Array[Texture]([ExtResource("4_w71oc"), ExtResource("5_rthe7")])
 
 [node name="Area2D__talk_to_security" parent="." instance=ExtResource("7_iwwnf")]

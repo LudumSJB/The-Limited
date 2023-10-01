@@ -23,7 +23,7 @@ texture = ExtResource("1_700b8")
 position = Vector2(551, 538)
 
 [node name="dialogSystem" parent="." instance=ExtResource("3_xs8v8")]
-dialogsPath = "res://dialogs/act5.json"
+dialogsPath = "res://dialogs/toilet_act1.json"
 faces = Array[Texture]([ExtResource("4_b30m5"), ExtResource("5_7ikgh")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

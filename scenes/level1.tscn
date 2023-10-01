@@ -17,7 +17,7 @@ script = ExtResource("1_5tckd")
 position = Vector2(408, 535)
 
 [node name="dialogSystem" parent="." instance=ExtResource("1_4suex")]
-dialogsPath = "res://dialogs/act1.json"
+dialogsPath = "res://dialogs/streets_act1.json"
 faces = Array[Texture]([ExtResource("4_ubvlv"), ExtResource("5_na01r")])
 
 [node name="Area2D__talk_to_security" parent="." instance=ExtResource("7_e6yds")]

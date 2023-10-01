@@ -21,4 +21,15 @@
 		"face": 0,
 		"sound": 1
 	},
+	{
+		"dialog_position": 0,
+		"text": "You take a peek to the dance floor. \nThere's good boogie going on and you would like to join them.",
+	},
+	{
+		"dialog_position": 1,
+		"text": "Here you go! \n[color=#76428a]One happy martini![/color] \n\nI see you looking at them peeps. \nGo join em!",
+		"face": 0,
+		"sound": 1,
+		"next_act": "club_act2"
+	},
 ]

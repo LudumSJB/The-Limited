@@ -26,7 +26,7 @@ texture = ExtResource("1_xiwl2")
 position = Vector2(551, 538)
 
 [node name="dialogSystem" parent="." instance=ExtResource("4_ym8v5")]
-dialogsPath = "res://dialogs/act5.json"
+dialogsPath = "res://dialogs/club_act1.json"
 faces = Array[Texture]([ExtResource("5_0uddc"), ExtResource("6_1no3t")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -55,4 +55,10 @@ autoplay = true
 [node name="Area2D__talk_to_person" parent="." instance=ExtResource("7_pkq5q")]
 position = Vector2(386, 517)
 
+[node name="Area2D__talk_to_person2" parent="." instance=ExtResource("7_pkq5q")]
+position = Vector2(955, 517)
+monitoring = false
+
+[connection signal="NextActStarted" from="dialogSystem" to="." method="_on_dialog_system_next_act_started"]
 [connection signal="OnTalkInitated" from="Area2D__talk_to_person" to="." method="_on_area_2d__talk_to_person_on_talk_initated"]
+[connection signal="OnTalkInitated" from="Area2D__talk_to_person2" to="." method="_on_area_2d__talk_to_person_2_on_talk_initated"]

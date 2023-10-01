@@ -17,7 +17,7 @@ position = Vector2(576, 324)
 texture = ExtResource("1_66f5f")
 
 [node name="dialogSystem" parent="." instance=ExtResource("2_6ig56")]
-dialogsPath = "res://dialogs/act2.json"
+dialogsPath = "res://dialogs/hotdog_act1.json"
 faces = Array[Texture]([ExtResource("3_5dw1c"), ExtResource("4_qe2ku")])
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
