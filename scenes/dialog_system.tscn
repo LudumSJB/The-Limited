@@ -20,6 +20,7 @@ position = Vector2(346, 230)
 position = Vector2(809, 230)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(506.5, 294.318)
 texture = ExtResource("2_urcba")
 metadata/_edit_group_ = true

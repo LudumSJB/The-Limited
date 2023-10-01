@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://eadb8pay2qnx"]
+
+[ext_resource type="Texture2D" uid="uid://cd761hdodo3jw" path="res://assets/images/barman_1.png" id="1_4a13m"]
+[ext_resource type="Texture2D" uid="uid://c7iaxl4j7kwm5" path="res://assets/images/barman_2.png" id="2_q0pa3"]
+[ext_resource type="Texture2D" uid="uid://c2sweu4ag0ynq" path="res://assets/images/barman_3.png" id="3_cokml"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4a13m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q0pa3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cokml")
+}],
+"loop": true,
+"name": &"throw",
+"speed": 5.0
+}]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qoy2xxj38f17"]
+
+[ext_resource type="SpriteFrames" uid="uid://eadb8pay2qnx" path="res://anims/bartender_anim.tres" id="1_3omo3"]
+
+[node name="bartender" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_3omo3")

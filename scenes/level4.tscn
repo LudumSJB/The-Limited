@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://df0m2jrbhdijl"]
+[gd_scene load_steps=14 format=3 uid="uid://df0m2jrbhdijl"]
 
 [ext_resource type="Script" path="res://scripts/level4.gd" id="1_w4nf6"]
 [ext_resource type="Texture2D" uid="uid://bjxlroipqra04" path="res://assets/images/background_club.png" id="1_xiwl2"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_me5ut"]
 [ext_resource type="Texture2D" uid="uid://c81thoo78506x" path="res://assets/images/face_05.png" id="7_35eev"]
 [ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="7_pkq5q"]
+[ext_resource type="PackedScene" uid="uid://d1p7qrfx4wwiw" path="res://scenes/dancer_1.tscn" id="10_nbl1a"]
+[ext_resource type="PackedScene" uid="uid://qoy2xxj38f17" path="res://scenes/bartender.tscn" id="13_yv6qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
 size = Vector2(1179, 43)
@@ -22,9 +24,25 @@ script = ExtResource("1_w4nf6")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(578, 338)
 texture = ExtResource("1_xiwl2")
+metadata/_edit_lock_ = true
+
+[node name="bartender" parent="." instance=ExtResource("13_yv6qk")]
+position = Vector2(383, 546)
+
+[node name="stander2" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(480, 544)
+animation = &"idle2"
+
+[node name="stander7" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(698, 545)
+flip_h = true
+
+[node name="stander8" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(637, 545)
+animation = &"idle"
 
 [node name="player" parent="." instance=ExtResource("3_10s1h")]
-position = Vector2(551, 538)
+position = Vector2(552, 546)
 
 [node name="dialogSystem" parent="." instance=ExtResource("4_ym8v5")]
 dialogsPath = "res://dialogs/club_act1.json"
@@ -36,7 +54,7 @@ collision_mask = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(578, 629)
+position = Vector2(580, 637)
 shape = SubResource("RectangleShape2D_fno7i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -64,6 +82,75 @@ monitoring = false
 position = Vector2(657, 517)
 monitoring = false
 label_text = "dance"
+
+[node name="dancer2" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(726, 558)
+animation = &"dance2"
+autoplay = "dance2"
+
+[node name="stander3" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(229, 573)
+
+[node name="dancer3" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(792, 559)
+animation = &"dance2"
+autoplay = "dance2"
+frame = 1
+flip_h = true
+
+[node name="dancer6" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(506, 564)
+animation = &"dance1"
+autoplay = "dance1"
+frame = 2
+
+[node name="stander5" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(376, 576)
+animation = &"idle2"
+flip_h = true
+
+[node name="dancer4" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(661, 565)
+animation = &"dance2"
+autoplay = "dance2"
+frame = 1
+
+[node name="dancer7" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(584, 563)
+animation = &"dance3"
+autoplay = "dance3"
+frame = 3
+flip_h = true
+
+[node name="dancer5" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(881, 559)
+animation = &"dance1"
+autoplay = "dance1"
+frame = 1
+
+[node name="stander4" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(616, 582)
+animation = &"idle"
+
+[node name="stander" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(312, 564)
+animation = &"idle"
+flip_h = true
+
+[node name="stander6" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(675, 580)
+flip_h = true
+
+[node name="dancer8" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(825, 575)
+animation = &"dance3"
+autoplay = "dance3"
+flip_h = true
+
+[node name="dancer9" parent="." instance=ExtResource("10_nbl1a")]
+position = Vector2(769, 580)
+animation = &"dance3"
+autoplay = "dance3"
 
 [connection signal="NextActStarted" from="dialogSystem" to="." method="_on_dialog_system_next_act_started"]
 [connection signal="OnActionInitated" from="Area2D__talk_to_person" to="." method="_on_area_2d__talk_to_person_on_talk_initated"]
