@@ -3,6 +3,8 @@ extends CanvasLayer
 signal NoteHit
 signal NoteMiss
 signal PlayerLoss
+signal MiniGameEnded
+signal StartMiniGame
 
 @onready var music = $Music
 
@@ -15,14 +17,8 @@ signal PlayerLoss
 var root: Node
 
 func _ready():
-	root = get_tree().root.get_child(0)
-	music.play()
-	if root.name != "root":
-		root = null
-	else:
-		root.MiniGameStarted()
-	scoreLabel = get_node("UIHolder/ScoreLabel")
-	
+	StartupMiniGame()
+
 
 func hit_note():
 	NoteHit.emit()
@@ -49,3 +45,20 @@ func on_player_loss():
 	await get_tree().create_timer(1).timeout
 	# get_tree().reload_current_scene() - we need to queuefree and instance this rather than restart the parent scene
 #	root.MiniGameEnded()
+
+
+func _on_end_minigame_area_entered(_area):
+	MiniGameEnded.emit()
+	root.MiniGameEnded()
+
+func StartupMiniGame():
+	scoreLabel = get_node("UIHolder/ScoreLabel")
+	root = get_tree().root.get_child(0)
+	music.play()
+	if root.name != "root":
+		root = null
+	else:
+		root.MiniGameStarted()
+
+func _on_start_mini_game():
+	StartupMiniGame()
