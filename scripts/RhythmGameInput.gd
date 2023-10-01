@@ -27,10 +27,10 @@ func check_for_player_input():
 
 func style_on_player_press():
 	if pressed == true:
-		noteSprite.scale = Vector2(0.35, 0.35)
+		noteSprite.scale = Vector2(0.80, 0.80)
 		noteSprite.modulate = Color("#ffffff")
 	else:
-		noteSprite.scale = Vector2(0.4, 0.4)
+		noteSprite.scale = Vector2(0.9, 0.9)
 		noteSprite.modulate = Color("#706e71")
 	
 func allow_input_upon_note_entry():
@@ -40,6 +40,6 @@ func allow_input_upon_note_entry():
 			playerHitNote.emit()
 
 func scrolling_note_miss(area):
-	if area.name == "MissArea":
+	if area.name == "HittableNote":
 		area.queue_free()
 		playerMissNote.emit()
