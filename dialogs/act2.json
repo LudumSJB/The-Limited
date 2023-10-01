@@ -1,7 +1,6 @@
 [
 	{
 		"dialog_position": 2,
-		"position": 1,
 		"text": "Oh Hello! What can I get for ya?",
 		"face": 1,
 		"sound": 1,
@@ -9,7 +8,6 @@
 	},
 	{
 		"dialog_position": 1,
-		"position": 0,
 		"text": "Hi, could I get one of those hotdogs?",
 		"face": 0,
 		"sound": 0,
@@ -17,7 +15,6 @@
 	},
 	{
 		"dialog_position": 2,
-		"position": 1,
 		"text": "Of course! That would be 5,50€.",
 		"face": 1,
 		"sound": 1,
@@ -30,7 +27,6 @@
 	},
 	{
 		"dialog_position": 1,
-		"position": 0,
 		"text": "Found em! Here you go.",
 		"face": 0,
 		"sound": 0,
@@ -42,7 +38,6 @@
 	},
 	{
 		"dialog_position": 2,
-		"position": 1,
 		"text": "Here ya go! One tasty hotdog!",
 		"face": 1,
 		"sound": 1,
