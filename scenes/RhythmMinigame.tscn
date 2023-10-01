@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://chr8s2mrd57b4"]
+[gd_scene load_steps=18 format=3 uid="uid://chr8s2mrd57b4"]
 
 [ext_resource type="Script" path="res://scripts/RhythmMinigameManager.gd" id="1_xjbte"]
 [ext_resource type="AudioStream" uid="uid://kuujalecn71n" path="res://assets/sounds/rhythmdemo.ogg" id="2_ac7ve"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://scripts/FpsLabel.gd" id="9_5aavs"]
 [ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="9_ii8yx"]
 [ext_resource type="AudioStream" uid="uid://b01e3qbbnkhv6" path="res://assets/sounds/fail.wav" id="11_hgsg2"]
+[ext_resource type="AudioStream" uid="uid://o57h8bbi638w" path="res://assets/sounds/success.wav" id="12_j51dc"]
 
 [sub_resource type="Animation" id="Animation_jf2fw"]
 resource_name = "player_lose"
@@ -721,6 +722,11 @@ script = ExtResource("9_5aavs")
 
 [node name="sound_misclick_fail" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_hgsg2")
+volume_db = -5.0
+
+[node name="sound_success" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_j51dc")
+volume_db = -5.0
 
 [connection signal="StartMiniGame" from="." to="." method="_on_start_mini_game"]
 [connection signal="area_entered" from="RhythmGameHolder/MissArea" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
