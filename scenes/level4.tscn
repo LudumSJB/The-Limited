@@ -59,6 +59,12 @@ position = Vector2(386, 517)
 position = Vector2(955, 517)
 monitoring = false
 
+[node name="action_dance" parent="." instance=ExtResource("7_pkq5q")]
+position = Vector2(657, 517)
+monitoring = false
+label_text = "dance"
+
 [connection signal="NextActStarted" from="dialogSystem" to="." method="_on_dialog_system_next_act_started"]
 [connection signal="OnActionInitated" from="Area2D__talk_to_person" to="." method="_on_area_2d__talk_to_person_on_talk_initated"]
 [connection signal="OnActionInitated" from="Area2D__talk_to_person2" to="." method="_on_area_2d__talk_to_person_2_on_talk_initated"]
+[connection signal="OnActionInitated" from="action_dance" to="." method="_on_action_dance_on_action_initated"]

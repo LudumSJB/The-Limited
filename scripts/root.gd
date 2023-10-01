@@ -6,6 +6,8 @@ signal add_score(amount: int)
 
 @onready var root = $"."
 
+var minigame_is_playing: bool = false
+
 var current_level: int = 0
 var levels = [
 	"level1",
@@ -61,3 +63,9 @@ func GameOver():
 
 func ShakeCamera():
 	shake_camera.emit()
+	
+func MiniGameStarted():
+	minigame_is_playing = true
+	
+func MiniGameEnded():
+	minigame_is_playing = false

@@ -16,8 +16,10 @@ func _ready():
 	root = get_tree().root.get_child(0)
 	if root.name != "root":
 		root = null
+	else:
+		root.MiniGameStarted()
 	scoreLabel = get_node("UIHolder/ScoreLabel")
-	pass
+	
 
 func hit_note():
 	NoteHit.emit()
@@ -43,3 +45,4 @@ func on_player_loss():
 	animator.play("player_lose")
 	await get_tree().create_timer(1).timeout
 	# get_tree().reload_current_scene() - we need to queuefree and instance this rather than restart the parent scene
+	root.MiniGameEnded()
