@@ -1,8 +1,10 @@
 extends CanvasLayer
+@onready var quit_button = $Control/QuitButton
 
 
 func _ready():
-	pass
+	if OS.has_feature("web"):
+		quit_button.visible = false
 
 
 func _process(_delta):
