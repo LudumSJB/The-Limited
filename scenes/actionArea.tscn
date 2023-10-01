@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://brghk84aof61l"]
+[gd_scene load_steps=5 format=3 uid="uid://brghk84aof61l"]
 
 [ext_resource type="Script" path="res://scripts/actionArea.gd" id="1_bqkhl"]
 [ext_resource type="Texture2D" uid="uid://dyrbo5drifsel" path="res://assets/images/action_window.png" id="1_ph3w4"]
+[ext_resource type="Texture2D" uid="uid://dkqk3iserg6wm" path="res://assets/images/quest.png" id="3_q2c3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v80nv"]
 size = Vector2(91.25, 163)
@@ -29,6 +30,10 @@ text = "Talk to"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_v80nv")
+
+[node name="indicator" type="Sprite2D" parent="."]
+position = Vector2(1, -105)
+texture = ExtResource("3_q2c3l")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

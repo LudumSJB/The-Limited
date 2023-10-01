@@ -36,7 +36,7 @@
 	},
 	{
 		"dialog_position": 0,
-		"text": "Suddenly you feel [color=#99e550][i]not so well.[/i][/color]\n\n... ... ...\n\nYou run to the toilet room...",
+		"text": "Suddenly you feel [color=#99e550][i]not so well.[/i][/color]\n\n...\n\nYou run to the toilet room...",
 		"action": "next_scene"
 	},
 ]
