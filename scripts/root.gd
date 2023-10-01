@@ -24,7 +24,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("exit"):
-		get_tree().quit()
+		game_score = 0
+		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 	
 	if Input.is_action_just_pressed("next_level"):
 		next_level()
