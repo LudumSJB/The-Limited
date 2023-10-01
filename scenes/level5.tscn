@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qnl3loe42rgl"]
+[gd_scene load_steps=10 format=3 uid="uid://qnl3loe42rgl"]
 
 [ext_resource type="Texture2D" uid="uid://3uq4pa68v0og" path="res://assets/images/background_toilet.png" id="1_700b8"]
 [ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="2_bp30i"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_b30m5"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_7ikgh"]
 [ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_y2el4"]
+[ext_resource type="PackedScene" uid="uid://hhiifftg4png" path="res://scenes/dancer_dude.tscn" id="7_bdtki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
 size = Vector2(1179, 43)
@@ -19,8 +20,12 @@ size = Vector2(136.5, 625)
 position = Vector2(578, 338)
 texture = ExtResource("1_700b8")
 
+[node name="dancer_dude" parent="." instance=ExtResource("7_bdtki")]
+position = Vector2(570, 539)
+speed = 50.0
+
 [node name="player" parent="." instance=ExtResource("2_bp30i")]
-position = Vector2(551, 538)
+position = Vector2(202, 530)
 
 [node name="dialogSystem" parent="." instance=ExtResource("3_xs8v8")]
 dialogsPath = "res://dialogs/toilet_act1.json"

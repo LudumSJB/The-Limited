@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://hhiifftg4png"]
+
+[ext_resource type="Script" path="res://scripts/dancer_dude.gd" id="1_773t1"]
+[ext_resource type="SpriteFrames" uid="uid://b2wnbmmxmwmt5" path="res://anims/dancer_animations.tres" id="1_nxgjm"]
+[ext_resource type="Texture2D" uid="uid://d3wo5i3kor0y8" path="res://assets/images/blue note.png" id="3_lmh6w"]
+
+[node name="dancer_dude" type="Node2D"]
+script = ExtResource("1_773t1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_nxgjm")
+animation = &"dance1"
+autoplay = "dance1"
+flip_h = true
+
+[node name="targetpos" type="Node2D" parent="."]
+position = Vector2(-384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="targetpos"]
+scale = Vector2(0.100973, 0.100973)
+texture = ExtResource("3_lmh6w")
