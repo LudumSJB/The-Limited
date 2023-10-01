@@ -12,13 +12,13 @@
 	},
 	{
 		"dialog_position": 1,
-		"text": "Good evening sir. \nWe are full. There's no more space. Nada. \nWe only have [color=#ac3232][u]limited space[/u][/color] available.",
+		"text": "Good evening sir. \nWe are full. \nThere's no more space. \nNada. \nWe only have [color=#ac3232][u]limited space[/u][/color] available.",
 		"face": 1,
 		"sound": 0
 	},
 	{
 		"dialog_position": 0,
-		"text": "There must be a way to get inside. \nNo. matter. what. it. takes. \nYou know [color=#d77bba][i]tonights the night![/i][/color]",
+		"text": "There must be a way to get inside. \nNo. matter. what. it. takes. \n\nYou know, [color=#d77bba][i]tonights the night![/i][/color]",
 	},
 	{
 		"dialog_position": 2,

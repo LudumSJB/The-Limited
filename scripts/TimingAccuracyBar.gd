@@ -17,6 +17,7 @@ signal MinigameWon
 @export var scoreOnTime: int = 10
 @export var scoreNotOnTime: int = -5
 
+var triesToWinAtStart = 0
 var triesSprites: Array[Sprite2D]
 var rng = RandomNumberGenerator.new()
 
@@ -24,10 +25,14 @@ var path_length: float = 0
 var root: Node
 
 func _ready():
+	triesToWinAtStart = triesToWin
 	root = get_tree().root.get_child(0)
 	if root.name != "root":
 		root = null
 	path_length = path_2d.curve.get_baked_length()
+	addIndicators()
+
+func addIndicators():
 	var indicatorPosition = tries_parent.global_position
 	for try in triesToWin:
 		var sprite = tries_indicator.instantiate()
@@ -42,6 +47,8 @@ func _process(delta):
 	
 func deactivateMinigame():
 	timing_accuracy_bar.visible = false
+	triesToWin = triesToWinAtStart
+	addIndicators()
 	area_hitter.endMinigame()
 
 func activateMinigame():

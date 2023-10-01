@@ -1,7 +1,7 @@
 [
 	{
 		"dialog_position": 2,
-		"text": "Oh Hello! What can I get for ya?",
+		"text": "Oh Hello! \nWhat can I get for ya?",
 		"face": 1,
 		"sound": 1
 	},
@@ -13,7 +13,7 @@
 	},
 	{
 		"dialog_position": 2,
-		"text": "Of course! That would be 5,50€.",
+		"text": "Of course! \nThat would be 5,50€.",
 		"face": 1,
 		"sound": 1
 	},
@@ -24,7 +24,7 @@
 	},
 	{
 		"dialog_position": 1,
-		"text": "Found em! Here you go.",
+		"text": "Found em! \nHere you go.",
 		"face": 0,
 		"sound": 0
 	},
@@ -34,7 +34,7 @@
 	},
 	{
 		"dialog_position": 2,
-		"text": "Here ya go! One tasty hotdog!",
+		"text": "Here ya go! \nOne tasty hotdog!",
 		"face": 1,
 		"sound": 1,
 		"action": "next_scene"

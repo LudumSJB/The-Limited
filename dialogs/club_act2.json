@@ -4,20 +4,20 @@
 		"text": "You see the DJ jamming to the beat, that's so neat!"
 	},
 	{
-		"dialog_position": 2,
-		"text": "Hi! What's up? Do you like the music?",
+		"dialog_position": 1,
+		"text": "Hi! What's up? \nDo you like the music?",
 		"face": 2,
 		"sound": 1
 	},
 	{
-		"dialog_position": 1,
-		"text": "Yeah! I'm living it!",
+		"dialog_position": 2,
+		"text": "Yeah! \nI'm living it!",
 		"face": 0,
 		"sound": 0
 	},
 	{
-		"dialog_position": 2,
-		"text": "That's good! Because we got some more!",
+		"dialog_position": 1,
+		"text": "That's good! \nBecause we got some more!",
 		"face": 2,
 		"sound": 1
 	},
@@ -35,7 +35,7 @@
 	},
 	{
 		"dialog_position": 0,
-		"text": "Suddenly you feel [color=#99e550][i]not so well.[/i][/color]\nYou run to the toilet room...",
+		"text": "Suddenly you feel [color=#99e550][i]not so well.[/i][/color]\n\n... ... ...\n\nYou run to the toilet room...",
 		"action": "next_scene"
 	},
 ]
