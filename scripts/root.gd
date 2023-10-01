@@ -1,6 +1,7 @@
 extends Node2D
 
 signal change_to_next_scene
+signal shake_camera
 
 @onready var root = $"."
 
@@ -54,3 +55,6 @@ func AddScore(amount: int):
 func GameOver():
 	# TODO: show game over screen.
 	print("game over!")
+
+func ShakeCamera():
+	shake_camera.emit()

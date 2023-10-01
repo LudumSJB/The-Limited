@@ -32,6 +32,7 @@ func _on_area_2d__talk_to_security_body_exited(body):
 
 func _on_timing_accuracy_bar_not_on_time():
 	root.AddScore(-5)
+	root.ShakeCamera()
 
 func _on_timing_accuracy_bar_on_time():
 	root.AddScore(10)
