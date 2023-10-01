@@ -1,13 +1,13 @@
 extends RigidBody2D
 
-var speed = 150000
+var speed = 5000
 
 func _ready():
 	add_force_on_creation()
 	pass # Replace with function body.
 
-func _process(_delta):
-	rotate(3)
+func _process(delta):
+	rotate(1)
 
 func add_force_on_creation():
-	apply_force(Vector2(20000, -speed))
+	apply_force(Vector2(2000, -speed))

@@ -64,5 +64,3 @@ slerpSpeed = 3
 
 [node name="BarmanTimer" type="Timer" parent="."]
 autostart = true
-
-[connection signal="body_entered" from="Player" to="Player" method="object_hit_player"]

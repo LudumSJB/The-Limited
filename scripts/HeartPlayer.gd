@@ -1,5 +1,7 @@
 extends Area2D
 
+var lives = 3
+
 @export var speed = 200.0
 @export var maxY = 1.0
 @export var minY = 1.0
@@ -30,3 +32,8 @@ func move_player(delta):
 func clamp_player_position():
 	position.x = clamp(position.x, minX, maxX)
 	position.y = clamp(position.y, minY, maxY)
+
+func object_hit_player(body):
+	if body.name == "Bottle":
+		lives -= 1
+		print("lives left: ", lives)

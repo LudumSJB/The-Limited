@@ -54,7 +54,7 @@ minX = 460.0
 maxX = 670.0
 
 [node name="Barman" type="AnimatedSprite2D" parent="."]
-position = Vector2(533, 150)
+position = Vector2(562, 150)
 scale = Vector2(1.35714, 1.35714)
 sprite_frames = SubResource("SpriteFrames_8o7tn")
 animation = &"Idle"
@@ -64,5 +64,3 @@ slerpSpeed = 3
 
 [node name="BarmanTimer" type="Timer" parent="."]
 autostart = true
-
-[connection signal="body_entered" from="Player" to="Player" method="object_hit_player"]
