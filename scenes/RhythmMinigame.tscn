@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://chr8s2mrd57b4"]
+[gd_scene load_steps=17 format=3 uid="uid://chr8s2mrd57b4"]
 
 [ext_resource type="Script" path="res://scripts/RhythmMinigameManager.gd" id="1_xjbte"]
 [ext_resource type="AudioStream" uid="uid://kuujalecn71n" path="res://assets/sounds/rhythmdemo.ogg" id="2_ac7ve"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/Conductor.gd" id="7_u1p3x"]
 [ext_resource type="Script" path="res://scripts/FpsLabel.gd" id="9_5aavs"]
 [ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="9_ii8yx"]
+[ext_resource type="AudioStream" uid="uid://b01e3qbbnkhv6" path="res://assets/sounds/fail.wav" id="11_hgsg2"]
 
 [sub_resource type="Animation" id="Animation_jf2fw"]
 resource_name = "player_lose"
@@ -230,6 +231,14 @@ grow_horizontal = 2
 script = ExtResource("7_u1p3x")
 speed = 630.253
 
+[node name="end_minigame" type="Area2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(25, 7050)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/end_minigame"]
+position = Vector2(25, 0)
+shape = SubResource("RectangleShape2D_5n4bm")
+
 [node name="HittableNote" type="Node2D" parent="RhythmGameHolder/Conductor"]
 position = Vector2(-150, 550)
 metadata/_edit_group_ = true
@@ -326,6 +335,174 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("7_c7hc3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote4/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote22" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(-150, 4350)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote22"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote22/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_l17yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote22/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote23" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(-50, 4550)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote23"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote23/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_52atg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote23/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote24" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(50, 4750)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote24"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote24/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_p126d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote24/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote25" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(150, 4950)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote25"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote25/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_c7hc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote25/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote26" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(-144, 5150)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote26"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote26/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_l17yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote26/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote27" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(-44, 5350)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote27"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote27/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_52atg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote27/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote28" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(56, 5550)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote28"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote28/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_p126d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote28/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote29" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(156, 5750)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote29"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote29/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_c7hc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote29/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote30" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(-150, 5969)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote30"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote30/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_l17yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote30/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote31" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(-50, 6169)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote31"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote31/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_52atg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote31/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote32" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(50, 6369)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote32"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote32/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_p126d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote32/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote33" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(150, 6569)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote33"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote33/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_c7hc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote33/HittableNote"]
 shape = SubResource("CircleShape2D_vs5r6")
 
 [node name="HittableNote10" type="Node2D" parent="RhythmGameHolder/Conductor"]
@@ -440,6 +617,62 @@ texture = ExtResource("7_c7hc3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote14/HittableNote"]
 shape = SubResource("CircleShape2D_vs5r6")
 
+[node name="HittableNote18" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(-144, 4100)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote18"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote18/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_l17yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote18/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote19" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(-44, 4100)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote19"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote19/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("5_52atg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote19/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote20" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(56, 3750)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote20"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote20/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_p126d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote20/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
+[node name="HittableNote21" type="Node2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(156, 3750)
+metadata/_edit_group_ = true
+
+[node name="HittableNote" type="Area2D" parent="RhythmGameHolder/Conductor/HittableNote21"]
+metadata/hittable = false
+
+[node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/Conductor/HittableNote21/HittableNote"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_c7hc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote21/HittableNote"]
+shape = SubResource("CircleShape2D_vs5r6")
+
 [node name="HittableNote5" type="Node2D" parent="RhythmGameHolder/Conductor"]
 position = Vector2(150, 1300)
 metadata/_edit_group_ = true
@@ -468,30 +701,11 @@ texture = ExtResource("7_c7hc3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote6/HittableNote"]
 shape = SubResource("CircleShape2D_vs5r6")
 
-[node name="end_minigame" type="Area2D" parent="RhythmGameHolder/Conductor"]
-position = Vector2(25, 3950)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/end_minigame"]
-position = Vector2(25, 0)
-shape = SubResource("RectangleShape2D_5n4bm")
-
 [node name="UIHolder" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="ScoreLabel" type="Label" parent="UIHolder"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 71.57
-offset_right = 141.0
-offset_bottom = 118.57
-rotation = -0.268526
-theme_override_fonts/font = ExtResource("9_ii8yx")
-theme_override_font_sizes/font_size = 18
-text = "Score: 0"
 
 [node name="FpsLabel" type="Label" parent="UIHolder"]
 layout_mode = 0
@@ -505,10 +719,14 @@ theme_override_font_sizes/font_size = 12
 text = "FPS: 0"
 script = ExtResource("9_5aavs")
 
+[node name="sound_misclick_fail" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_hgsg2")
+
 [connection signal="StartMiniGame" from="." to="." method="_on_start_mini_game"]
 [connection signal="area_entered" from="RhythmGameHolder/MissArea" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="hit_note"]
 [connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="miss_note"]
+[connection signal="playerPassedNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="_on_player_note_player_passed_note"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote2" to="." method="hit_note"]
 [connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote2" to="." method="miss_note"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote3" to="." method="hit_note"]

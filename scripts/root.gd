@@ -5,6 +5,7 @@ signal shake_camera
 signal add_score(amount: int)
 
 @onready var root = $"."
+@onready var score_label = $ScoreLabel
 
 var minigame_is_playing: bool = false
 
@@ -56,6 +57,7 @@ func _on_change_to_next_scene():
 
 func AddScore(amount: int):
 	game_score += amount
+	score_label.text = "score: " + str(game_score)
 	
 func GameOver():
 	# TODO: show game over screen.
@@ -69,3 +71,4 @@ func MiniGameStarted():
 	
 func MiniGameEnded():
 	minigame_is_playing = false
+
