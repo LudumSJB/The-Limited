@@ -13,14 +13,16 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(1025, 411)
+position = Vector2(994, 405)
+scale = Vector2(0.408088, 0.38785)
 texture = ExtResource("1_4krv3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
-offset_left = -32.0
-offset_top = -15.0
-offset_right = 37.0
-offset_bottom = 14.0
+offset_left = -91.0
+offset_top = -44.0
+offset_right = -35.0
+offset_bottom = -15.0
+scale = Vector2(3.4909, 3.4909)
 text = "Talk to"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
