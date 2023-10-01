@@ -165,11 +165,11 @@ func showText(dialog):
 			sprite_2d.position = dialog_position_0.position
 		elif dialog.dialog_position == 1:
 			sprite_2d.position = dialog_position_1.position
-			sprite_2d.flip_h = false
+			face.flip_h = true
 			face.position = face_position_0.position
 		elif dialog.dialog_position == 2:
 			sprite_2d.position = dialog_position_2.position
-			sprite_2d.flip_h = true
+			face.flip_h = false
 			face.position = face_position_1.position
 	
 	# change face and its position relative to dialog box
