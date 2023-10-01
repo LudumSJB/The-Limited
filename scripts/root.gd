@@ -92,6 +92,9 @@ func change_music():
 		for p in audioPlayers:
 			if p.playing:
 				lastPlayer = p
+		if lastPlayer == null:
+			print("no playing audioplayer found!")
+			return
 		var playbackPos = lastPlayer.get_playback_position()
 		var player = audioPlayers[current_level]
 		lastPlayer.stop()
