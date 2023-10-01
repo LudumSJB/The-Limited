@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://chr8s2mrd57b4"]
+[gd_scene load_steps=16 format=3 uid="uid://chr8s2mrd57b4"]
 
 [ext_resource type="Script" path="res://scripts/RhythmMinigameManager.gd" id="1_xjbte"]
 [ext_resource type="AudioStream" uid="uid://kuujalecn71n" path="res://assets/sounds/rhythmdemo.ogg" id="2_ac7ve"]
@@ -120,6 +120,9 @@ size = Vector2(1165, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vs5r6"]
 radius = 25.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5n4bm"]
+size = Vector2(400, 160)
 
 [node name="RhythmMinigame" type="CanvasLayer"]
 script = ExtResource("1_xjbte")
@@ -465,6 +468,14 @@ texture = ExtResource("7_c7hc3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/HittableNote6/HittableNote"]
 shape = SubResource("CircleShape2D_vs5r6")
 
+[node name="end_minigame" type="Area2D" parent="RhythmGameHolder/Conductor"]
+position = Vector2(25, 3950)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/Conductor/end_minigame"]
+position = Vector2(25, 0)
+shape = SubResource("RectangleShape2D_5n4bm")
+
 [node name="UIHolder" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -494,6 +505,7 @@ theme_override_font_sizes/font_size = 12
 text = "FPS: 0"
 script = ExtResource("9_5aavs")
 
+[connection signal="StartMiniGame" from="." to="." method="_on_start_mini_game"]
 [connection signal="area_entered" from="RhythmGameHolder/MissArea" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="hit_note"]
 [connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="miss_note"]
@@ -503,3 +515,4 @@ script = ExtResource("9_5aavs")
 [connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote3" to="." method="miss_note"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote4" to="." method="hit_note"]
 [connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote4" to="." method="miss_note"]
+[connection signal="area_entered" from="RhythmGameHolder/Conductor/end_minigame" to="." method="_on_end_minigame_area_entered"]

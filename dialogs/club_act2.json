@@ -1,6 +1,7 @@
 [
 	{
 		"dialog_position": 0,
-		"text": "club act 2"
+		"text": "club act 2",
+		"action": "close_dialog"
 	}
 ]
