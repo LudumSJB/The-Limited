@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_w71oc"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_rthe7"]
 [ext_resource type="PackedScene" uid="uid://b6l61udpegwlt" path="res://scenes/TimingAccuracyBar.tscn" id="7_3ad0c"]
-[ext_resource type="PackedScene" uid="uid://xpqxmn8xqk4v" path="res://scenes/area_2d__talk_to_security.tscn" id="7_iwwnf"]
+[ext_resource type="PackedScene" uid="uid://xpqxmn8xqk4v" path="res://scenes/talk_to_person.tscn" id="7_iwwnf"]
 
 [node name="level3" type="Node2D"]
 script = ExtResource("1_8qq86")

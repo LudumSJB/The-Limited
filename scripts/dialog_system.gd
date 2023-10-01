@@ -61,7 +61,7 @@ func _process(delta):
 	if is_active:
 		if timeout_press <= 0 && Input.is_action_just_released("action_button"):
 #			print("action_button pressed")
-			if text_to_write.length() == 0:
+			if text_to_write.is_empty():
 				if change_scene_after_dialog_close:
 #					print("change_scene_after_dialog_close")
 					root.emit_signal("change_to_next_scene")
@@ -78,11 +78,11 @@ func _process(delta):
 					startMinigame()
 					play_minigame_after_dialog_close = false
 					return
-			if text_to_write.length() > 0:
+			if !text_to_write.is_empty():
 				writeAllCharacters()
 			else:
 				nextText()
-		if write_character_time <= 0 && text_to_write.length() > 0:
+		if write_character_time <= 0 && !text_to_write.is_empty():
 			writeCharacter()
 		if write_character_time > 0:
 			write_character_time -= delta
@@ -169,7 +169,8 @@ func showText(dialog):
 		face.texture = faces[dialog.face]
 	else:
 		face.visible = false
-		
+	
+	# get actiong from the dialog and do things accordingly
 	if dialog.has("action"):
 		var action = dialog.action
 		print("action: ", action)

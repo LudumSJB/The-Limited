@@ -19,7 +19,7 @@ position = Vector2(246, 230)
 position = Vector2(880, 230)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(235, 447)
+position = Vector2(246, 230)
 texture = ExtResource("2_urcba")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]

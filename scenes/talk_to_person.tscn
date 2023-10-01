@@ -1,21 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://xpqxmn8xqk4v"]
+[gd_scene load_steps=4 format=3 uid="uid://xpqxmn8xqk4v"]
 
-[ext_resource type="Texture2D" uid="uid://dyrbo5drifsel" path="res://assets/images/action_window.png" id="1_4krv3"]
+[ext_resource type="Script" path="res://scripts/talk_to_person.gd" id="1_kriv5"]
+[ext_resource type="Texture2D" uid="uid://dyrbo5drifsel" path="res://assets/images/action_window.png" id="1_ph3w4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v80nv"]
 size = Vector2(91.25, 163)
 
-[node name="Area2D__talk_to_security" type="Area2D"]
+[node name="Area2D__talk_to_person" type="Area2D"]
 position = Vector2(6, -13)
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_kriv5")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(994, 405)
+position = Vector2(1, -132)
 scale = Vector2(0.408088, 0.38785)
-texture = ExtResource("1_4krv3")
+texture = ExtResource("1_ph3w4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
 offset_left = -91.0
@@ -26,5 +27,8 @@ scale = Vector2(3.4909, 3.4909)
 text = "Talk to"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(997, 533)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_v80nv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
