@@ -14,5 +14,6 @@ position = Vector2(576, 324)
 zoom = Vector2(1.025, 1.025)
 script = ExtResource("3_teugv")
 
+[connection signal="add_score" from="." to="." method="AddScore"]
 [connection signal="change_to_next_scene" from="." to="." method="_on_change_to_next_scene"]
 [connection signal="shake_camera" from="." to="Camera2D" method="_on_root_shake_camera"]

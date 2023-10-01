@@ -2,6 +2,7 @@ extends Node2D
 
 signal change_to_next_scene
 signal shake_camera
+signal add_score(amount: int)
 
 @onready var root = $"."
 

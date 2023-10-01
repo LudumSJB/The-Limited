@@ -10,7 +10,12 @@ signal PlayerLoss
 @export var scoreToMinus = 5
 @export var scoreLabel:Label
 
+var root: Node
+
 func _ready():
+	root = get_tree().root.get_child(0)
+	if root.name != "root":
+		root = null
 	scoreLabel = get_node("UIHolder/ScoreLabel")
 	pass
 
@@ -18,6 +23,8 @@ func hit_note():
 	NoteHit.emit()
 	playerScore += scoreToAdd
 	scoreLabel.text = "Score: " + str(playerScore)
+	if root != null:
+		root.AddScore(scoreToAdd)
 
 func miss_note():
 	NoteMiss.emit()
@@ -26,6 +33,9 @@ func miss_note():
 	if playerScore <= 0: playerScore = 0
 	if playerMisses == 3: PlayerLoss.emit()
 	scoreLabel.text = "Score: " + str(playerScore)
+	if root != null:
+		root.AddScore(-scoreToMinus)
+		root.ShakeCamera()
 
 
 func on_player_loss():

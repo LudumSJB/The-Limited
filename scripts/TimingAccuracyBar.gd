@@ -21,10 +21,12 @@ var triesSprites: Array[Sprite2D]
 var rng = RandomNumberGenerator.new()
 
 var path_length: float = 0
-var root: Node2D
+var root: Node
 
 func _ready():
 	root = get_tree().root.get_child(0)
+	if root.name != "root":
+		root = null
 	path_length = path_2d.curve.get_baked_length()
 	var indicatorPosition = tries_parent.global_position
 	for try in triesToWin:
@@ -49,7 +51,8 @@ func activateMinigame():
 func onTime():
 	triesToWin -= 1
 	sound_success.play()
-	root.AddScore(scoreOnTime)
+	if root != null:
+		root.AddScore(scoreOnTime)
 	if triesSprites.size() > 0:
 		var indicatorSprite = triesSprites[triesSprites.size()-1]
 		triesSprites.remove_at(triesSprites.size()-1)
@@ -60,8 +63,9 @@ func onTime():
 
 func notOnTime():
 	sound_fail.play()
-	root.AddScore(scoreNotOnTime)
-	root.ShakeCamera()
+	if root != null:
+		root.AddScore(scoreNotOnTime)
+		root.ShakeCamera()
 	setRandomProgress()
 	
 func setRandomProgress():
