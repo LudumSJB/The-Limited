@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/outside_scene_props.gd" id="1_8l8h3"]
 [ext_resource type="Texture2D" uid="uid://c7anqd02ws3om" path="res://assets/images/background1.png" id="1_ccbne"]
 [ext_resource type="Texture2D" uid="uid://c24hdx5ndn7yc" path="res://assets/images/security.png" id="2_c0p2o"]
-[ext_resource type="Texture2D" uid="uid://llp7ois0m45v" path="res://assets/images/background2.png" id="2_veomb"]
+[ext_resource type="Texture2D" uid="uid://d3jh5ajmdes7g" path="res://assets/images/background_empty.png" id="3_gawoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5q02"]
 size = Vector2(1227.5, 45)
@@ -22,7 +22,7 @@ texture = ExtResource("1_ccbne")
 
 [node name="city_bg_2" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
-texture = ExtResource("2_veomb")
+texture = ExtResource("3_gawoo")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
