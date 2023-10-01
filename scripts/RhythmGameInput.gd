@@ -20,7 +20,7 @@ func _process(_delta):
 	allow_input_upon_note_entry()
 
 func check_for_player_input():
-	if Input.is_action_pressed(inputKey):
+	if Input.is_action_just_pressed(inputKey):
 		pressed = true
 	else:
 		pressed = false
@@ -38,6 +38,9 @@ func allow_input_upon_note_entry():
 		if pressed:
 			noteArea.get_overlapping_areas().front().queue_free()
 			playerHitNote.emit()
+	else:
+		if pressed:
+			playerMissNote.emit()
 
 func scrolling_note_miss(area):
 	if area.name == "HittableNote":
