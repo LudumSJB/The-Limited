@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="3_ibk6j"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_k3eyc"]
 [ext_resource type="Texture2D" uid="uid://c81thoo78506x" path="res://assets/images/face_05.png" id="5_u51vp"]
-[ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_kwld7"]
+[ext_resource type="AudioStream" uid="uid://c0k8juko185jp" path="res://assets/sounds/club.wav" id="6_gie7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
 size = Vector2(1179, 43)
@@ -45,6 +45,6 @@ shape = SubResource("RectangleShape2D_k7brp")
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(553, 333)
-stream = ExtResource("6_kwld7")
+stream = ExtResource("6_gie7d")
 volume_db = 1.0
 autoplay = true
