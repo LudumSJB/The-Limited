@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1p7qrfx4wwiw"]
+
+[ext_resource type="SpriteFrames" uid="uid://b2wnbmmxmwmt5" path="res://anims/dancer_animations.tres" id="1_3pkp7"]
+
+[node name="dancer1" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_3pkp7")
+animation = &"idle3"
