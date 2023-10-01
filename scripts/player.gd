@@ -24,7 +24,7 @@ func _physics_process(delta):
 #		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	if !dialog_system.is_active:
+	if !dialog_system.is_active && !root.minigame_is_playing:
 		var direction = Input.get_axis("left", "right")
 		if direction:
 			velocity.x = direction * SPEED

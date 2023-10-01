@@ -5,20 +5,20 @@
 		"action": "close_dialog"
 	},
 	{
-		"dialog_position": 1,
+		"dialog_position": 2,
 		"text": "Hi! Nice to see you around! \n\nWhat can I make for you?",
 		"face": 1,
 		"sound": 1
 	},
 	{
-		"dialog_position": 2,
+		"dialog_position": 1,
 		"text": "Oh, a happy martini of course!",
-		"face": 1,
+		"face": 0,
 	},
 	{
-		"dialog_position": 1,
+		"dialog_position": 2,
 		"text": "The usual, I like it! \nComing right up!",
-		"face": 0,
+		"face": 1,
 		"sound": 1
 	},
 	{
@@ -26,9 +26,9 @@
 		"text": "You take a peek to the dance floor. \nThere's good boogie going on and you would like to join them.",
 	},
 	{
-		"dialog_position": 1,
+		"dialog_position": 2,
 		"text": "Here you go! \n[color=#76428a]One happy martini![/color] \n\nI see you looking at them peeps. \nGo join em!",
-		"face": 0,
+		"face": 1,
 		"sound": 1,
 		"next_act": "club_act2"
 	},
