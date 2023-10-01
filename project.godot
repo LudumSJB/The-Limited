@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LD54_game_nightclub"
-run/main_scene="res://scenes/root.tscn"
+run/main_scene="res://scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://assets/images/icon.svg"
 

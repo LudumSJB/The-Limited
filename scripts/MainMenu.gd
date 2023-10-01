@@ -18,7 +18,7 @@ func player_focus_exited():
 
 
 func play_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/level1.tscn")
+	get_tree().change_scene_to_file("res://scenes/root.tscn")
 	pass # Replace with function body.
 
 
