@@ -19,7 +19,7 @@
 	{
 		"dialog_position": 0,
 		"text": "Oh where did I put them...",
-		"action": 3
+		"action": "minigame"
 	},
 	{
 		"dialog_position": 0,
