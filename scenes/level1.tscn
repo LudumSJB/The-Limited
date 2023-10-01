@@ -22,3 +22,5 @@ faces = Array[Texture]([ExtResource("4_ubvlv"), ExtResource("5_na01r")])
 
 [node name="Area2D__talk_to_security" parent="." instance=ExtResource("7_e6yds")]
 position = Vector2(1030, 522)
+
+[connection signal="OnActionInitated" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_on_talk_initated"]
