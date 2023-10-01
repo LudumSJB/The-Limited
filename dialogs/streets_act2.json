@@ -1,12 +1,12 @@
 [
 	{
 		"dialog_position": 0,
-		"text": "You just arrive in time as one last one person in line gets inside.",
+		"text": "You just arrive in time as one last person in line gets in.",
 		"action": "close_dialog"
 	},
 	{
 		"dialog_position": 1,
-		"text": "Oh there you are. \nWhat took you so long? Hotdogs are not hard to come by aren't they?",
+		"text": "Oh there you are. \nWhat took you so long? \nHotdogs are not THAT hard to come by aren't they?",
 		"face": 1,
 		"sound": 0
 	},
