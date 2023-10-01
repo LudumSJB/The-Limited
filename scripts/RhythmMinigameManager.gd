@@ -7,12 +7,13 @@ signal MiniGameEnded
 signal StartMiniGame
 
 @onready var music = $Music
+@onready var sound_success = $sound_success
+@onready var sound_misclick_fail = $sound_misclick_fail
 
 @export var scoreToAdd = 15
 @export var scoreToMinus = 5
 
 var root: Node
-@onready var sound_misclick_fail = $sound_misclick_fail
 
 func _ready():
 	StartupMiniGame()
@@ -22,6 +23,7 @@ func hit_note():
 	NoteHit.emit()
 	if root != null:
 		root.AddScore(scoreToAdd)
+	sound_success.play()
 
 # misclicked, no note on press area
 func miss_note():
