@@ -35,7 +35,7 @@ func _process(_delta):
 		game_score = 0
 		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 	
-	if Input.is_action_just_pressed("next_level"):
+	if Input.is_action_just_pressed("next_level") && OS.has_feature("debug"):
 		next_level()
 
 func next_level():
