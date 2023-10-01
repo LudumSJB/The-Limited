@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://df0m2jrbhdijl"]
+[gd_scene load_steps=12 format=3 uid="uid://df0m2jrbhdijl"]
 
 [ext_resource type="Script" path="res://scripts/level4.gd" id="1_w4nf6"]
 [ext_resource type="Texture2D" uid="uid://bjxlroipqra04" path="res://assets/images/background_club.png" id="1_xiwl2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="5_0uddc"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="6_1no3t"]
 [ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_me5ut"]
+[ext_resource type="Texture2D" uid="uid://c81thoo78506x" path="res://assets/images/face_05.png" id="7_35eev"]
 [ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="7_pkq5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
@@ -27,7 +28,7 @@ position = Vector2(551, 538)
 
 [node name="dialogSystem" parent="." instance=ExtResource("4_ym8v5")]
 dialogsPath = "res://dialogs/club_act1.json"
-faces = Array[Texture]([ExtResource("5_0uddc"), ExtResource("6_1no3t")])
+faces = Array[Texture]([ExtResource("5_0uddc"), ExtResource("6_1no3t"), ExtResource("7_35eev")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
