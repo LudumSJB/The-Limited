@@ -45,3 +45,11 @@ func _physics_process(delta):
 		animated_sprite_2d.play("idle")
 
 	move_and_slide()
+
+
+func _on_dialog_system_hide_player():
+	visible = false
+
+
+func _on_dialog_system_show_player():
+	visible = true

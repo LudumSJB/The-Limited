@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="4_ym8v5"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="5_0uddc"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="6_1no3t"]
-[ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_me5ut"]
 [ext_resource type="Texture2D" uid="uid://c81thoo78506x" path="res://assets/images/face_05.png" id="7_35eev"]
 [ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="7_pkq5q"]
+[ext_resource type="AudioStream" uid="uid://c0k8juko185jp" path="res://assets/sounds/club.wav" id="10_binqc"]
 [ext_resource type="PackedScene" uid="uid://d1p7qrfx4wwiw" path="res://scenes/dancer_1.tscn" id="10_nbl1a"]
 [ext_resource type="PackedScene" uid="uid://qoy2xxj38f17" path="res://scenes/bartender.tscn" id="13_yv6qk"]
 
@@ -67,8 +67,8 @@ shape = SubResource("RectangleShape2D_k7brp")
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(553, 333)
-stream = ExtResource("6_me5ut")
-volume_db = 1.0
+stream = ExtResource("10_binqc")
+volume_db = -5.559
 autoplay = true
 
 [node name="Area2D__talk_to_person" parent="." instance=ExtResource("7_pkq5q")]

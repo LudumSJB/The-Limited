@@ -1,0 +1,13 @@
+[
+	{
+		"dialog_position": 0,
+		"text": "You come back to the club. \nEveryone has left except DJ and few of his fellows."
+	},
+	{
+		"dialog_position": 2,
+		"text": "Party's over, you partypooper.",
+		"face": 1,
+		"sound": 1,
+		"action": "next_scene"
+	},
+]
