@@ -5,6 +5,7 @@ extends Node2D
 @onready var dj = $Area2D__talk_to_person2
 @onready var action_dance = $action_dance
 @onready var music = $music
+@onready var music_2 = $music2
 
 var minigame = preload("res://scenes/RhythmMinigame.tscn")
 var minigame_instance: Node
@@ -42,3 +43,12 @@ func _on_area_2d__talk_to_person_2_on_talk_initated():
 func _on_action_dance_on_action_initated():
 	print("_on_action_dance_on_action_initated")
 	startMinigame()
+
+
+func _on_dialog_system_change_song():
+	if music.playing:
+		music.stop()
+		music_2.play()
+	else:
+		music.play()
+		music_2.stop()

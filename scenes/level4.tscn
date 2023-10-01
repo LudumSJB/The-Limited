@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://df0m2jrbhdijl"]
+[gd_scene load_steps=15 format=3 uid="uid://df0m2jrbhdijl"]
 
 [ext_resource type="Script" path="res://scripts/level4.gd" id="1_w4nf6"]
 [ext_resource type="Texture2D" uid="uid://bjxlroipqra04" path="res://assets/images/background_club.png" id="1_xiwl2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ia57gjv28xni" path="res://assets/images/face_04.png" id="8_86kfa"]
 [ext_resource type="AudioStream" uid="uid://c0k8juko185jp" path="res://assets/sounds/club.wav" id="10_binqc"]
 [ext_resource type="PackedScene" uid="uid://d1p7qrfx4wwiw" path="res://scenes/dancer_1.tscn" id="10_nbl1a"]
+[ext_resource type="AudioStream" uid="uid://d1q78m707qk8" path="res://assets/sounds/club2.wav" id="10_qjr6g"]
 [ext_resource type="PackedScene" uid="uid://qoy2xxj38f17" path="res://scenes/bartender.tscn" id="13_yv6qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
@@ -67,9 +68,12 @@ shape = SubResource("RectangleShape2D_k7brp")
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(553, 333)
-stream = ExtResource("10_binqc")
-volume_db = -5.559
+stream = ExtResource("10_qjr6g")
 autoplay = true
+
+[node name="music2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(553, 333)
+stream = ExtResource("10_binqc")
 
 [node name="Area2D__talk_to_person" parent="." instance=ExtResource("7_pkq5q")]
 position = Vector2(386, 517)
@@ -152,6 +156,7 @@ position = Vector2(769, 580)
 animation = &"dance3"
 autoplay = "dance3"
 
+[connection signal="ChangeSong" from="dialogSystem" to="." method="_on_dialog_system_change_song"]
 [connection signal="NextActStarted" from="dialogSystem" to="." method="_on_dialog_system_next_act_started"]
 [connection signal="OnActionInitated" from="Area2D__talk_to_person" to="." method="_on_area_2d__talk_to_person_on_talk_initated"]
 [connection signal="OnActionInitated" from="Area2D__talk_to_person2" to="." method="_on_area_2d__talk_to_person_2_on_talk_initated"]

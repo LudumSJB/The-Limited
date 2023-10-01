@@ -53,7 +53,7 @@ current = true
 
 [node name="steps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_42w1b")
-volume_db = 14.054
+volume_db = 24.0
 pitch_scale = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

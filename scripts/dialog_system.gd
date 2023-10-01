@@ -3,6 +3,7 @@ extends Node2D
 signal NextActStarted
 signal HidePlayer
 signal ShowPlayer
+signal ChangeSong
 
 @onready var rich_text_label = $Sprite2D/RichTextLabel
 @onready var sprite_2d = $Sprite2D
@@ -200,6 +201,8 @@ func showText(dialog):
 			HidePlayer.emit()
 		elif action == "show_player":
 			ShowPlayer.emit()
+		elif action == "change_song":
+			ChangeSong.emit()
 	
 	if dialog.has("sound"):
 		var sound = sounds[dialog.sound]

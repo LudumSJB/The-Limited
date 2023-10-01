@@ -23,7 +23,8 @@
 	},
 	{
 		"dialog_position": 0,
-		"text": "DJ puts some deep beats down.\nEverybody gets on the ground.\nIt's \n[color=#d77bba]the boogie of the century![/color]"
+		"text": "DJ puts some deep beats down.\nEverybody gets on the ground.\nIt's \n[color=#d77bba]the boogie of the century![/color]",
+		"action": "change_song"
 	},
 	{
 		"dialog_position": 0,
@@ -35,7 +36,7 @@
 	},
 	{
 		"dialog_position": 0,
-		"text": "Suddenly you feel [color=#99e550][i]not so well.[/i][/color]\n\n... ... ...\n\nYou run to the toilet room...",
+		"text": "Suddenly you feel [color=#99e550][i]not so well.[/i][/color]\n\n...\n\nYou run to the toilet room...",
 		"action": "next_scene"
 	},
 ]
