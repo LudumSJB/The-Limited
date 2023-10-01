@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhewr01h4o1vr"]
+[gd_scene load_steps=8 format=3 uid="uid://dca1x0aaq5qv7"]
 
+[ext_resource type="Script" path="res://scripts/outside_scene_props.gd" id="1_8l8h3"]
 [ext_resource type="Texture2D" uid="uid://c7anqd02ws3om" path="res://assets/images/background1.png" id="1_ccbne"]
-[ext_resource type="Texture2D" path="res://assets/images/security.png" id="2_c0p2o"]
+[ext_resource type="Texture2D" uid="uid://c24hdx5ndn7yc" path="res://assets/images/security.png" id="2_c0p2o"]
+[ext_resource type="Texture2D" uid="uid://llp7ois0m45v" path="res://assets/images/background2.png" id="2_veomb"]
 [ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="3_nsg17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k5q02"]
@@ -11,12 +13,17 @@ size = Vector2(1227.5, 45)
 size = Vector2(157.25, 629.75)
 
 [node name="outside_scene_props" type="Node2D"]
+script = ExtResource("1_8l8h3")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="city_bg_1" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
 texture = ExtResource("1_ccbne")
+
+[node name="city_bg_2" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_veomb")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2

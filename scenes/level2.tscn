@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b8holljqla57r" path="res://assets/images/background_hotdog.png" id="1_66f5f"]
 [ext_resource type="Script" path="res://scripts/level2.gd" id="1_qstgb"]
-[ext_resource type="PackedScene" uid="uid://df82i05edhf8" path="res://scenes/dialog_system.tscn" id="2_6ig56"]
+[ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="2_6ig56"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="3_5dw1c"]
 [ext_resource type="Texture2D" uid="uid://bxroqdmin4ebs" path="res://assets/images/face_03.png" id="4_qe2ku"]
 [ext_resource type="Texture2D" uid="uid://p6utjqrntdkq" path="res://assets/images/hero.png" id="5_rjxae"]
@@ -17,7 +17,7 @@ position = Vector2(576, 324)
 texture = ExtResource("1_66f5f")
 
 [node name="dialogSystem" parent="." instance=ExtResource("2_6ig56")]
-dialogsPath = "res://dialogs/act2.json"
+dialogsPath = "res://dialogs/hotdog_act1.json"
 faces = Array[Texture]([ExtResource("3_5dw1c"), ExtResource("4_qe2ku")])
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
@@ -36,5 +36,4 @@ pitch_scale = 0.89
 autoplay = true
 
 [connection signal="play_minigame" from="." to="." method="_on_play_minigame"]
-[connection signal="NotOnTime" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_not_on_time"]
-[connection signal="OnTime" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_on_time"]
+[connection signal="MinigameWon" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_minigame_won"]

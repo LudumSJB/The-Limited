@@ -1,6 +1,7 @@
 extends Node2D
 
 signal change_to_next_scene
+signal shake_camera
 
 @onready var root = $"."
 
@@ -9,7 +10,9 @@ var levels = [
 	"level1",
 	"level2",
 	"level3",
-	"level4"
+	"level4",
+	"level5",
+	"level6"
 ]
 
 # store global vars here that need to stay between scenes
@@ -24,7 +27,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("exit"):
-		get_tree().quit()
+		game_score = 0
+		get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 	
 	if Input.is_action_just_pressed("next_level"):
 		next_level()
@@ -53,3 +57,6 @@ func AddScore(amount: int):
 func GameOver():
 	# TODO: show game over screen.
 	print("game over!")
+
+func ShakeCamera():
+	shake_camera.emit()

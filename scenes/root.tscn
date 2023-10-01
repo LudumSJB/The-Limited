@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfx40oo0d2mdr"]
+[gd_scene load_steps=4 format=3 uid="uid://cfx40oo0d2mdr"]
 
 [ext_resource type="Script" path="res://scripts/root.gd" id="1_6s4h7"]
 [ext_resource type="PackedScene" uid="uid://b02ncl0w3nne2" path="res://scenes/level1.tscn" id="2_b7jq3"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="3_teugv"]
 
 [node name="root" type="Node2D"]
 script = ExtResource("1_6s4h7")
 
 [node name="level1" parent="." instance=ExtResource("2_b7jq3")]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+zoom = Vector2(1.025, 1.025)
+script = ExtResource("3_teugv")
+
 [connection signal="change_to_next_scene" from="." to="." method="_on_change_to_next_scene"]
+[connection signal="shake_camera" from="." to="Camera2D" method="_on_root_shake_camera"]

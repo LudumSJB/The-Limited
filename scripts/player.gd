@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 @onready var dialog_system = $"../dialogSystem"
 @onready var steps = $steps
-@onready var sprite_2d = $Sprite2D
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
-const SPEED = 200.0
+const SPEED = 120.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -31,11 +31,13 @@ func _physics_process(delta):
 			if !steps.playing:
 				steps.play()
 			if direction < 0:
-				sprite_2d.flip_h = true
+				animated_sprite_2d.flip_h = true
 			elif direction > 0:
-				sprite_2d.flip_h = false
+				animated_sprite_2d.flip_h = false
+			animated_sprite_2d.play("walk")
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			steps.stop()
+			animated_sprite_2d.play("idle")
 
 	move_and_slide()

@@ -1,33 +1,35 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyt3ficuy2vkd"]
+[gd_scene load_steps=9 format=3 uid="uid://cvfv01qmcj4ti"]
 
 [ext_resource type="Script" path="res://scripts/level3.gd" id="1_8qq86"]
-[ext_resource type="PackedScene" uid="uid://dhewr01h4o1vr" path="res://scenes/outside_scene_props.tscn" id="1_rkgy3"]
+[ext_resource type="PackedScene" uid="uid://dca1x0aaq5qv7" path="res://scenes/outside_scene_props.tscn" id="1_rkgy3"]
 [ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="2_6t1de"]
-[ext_resource type="PackedScene" uid="uid://df82i05edhf8" path="res://scenes/dialog_system.tscn" id="3_fw8s5"]
+[ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="3_fw8s5"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_w71oc"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="5_rthe7"]
 [ext_resource type="PackedScene" uid="uid://b6l61udpegwlt" path="res://scenes/TimingAccuracyBar.tscn" id="7_3ad0c"]
-[ext_resource type="PackedScene" uid="uid://dgyci8kv6qgm8" path="res://scenes/area_2d__talk_to_security.tscn" id="7_iwwnf"]
+[ext_resource type="PackedScene" uid="uid://xpqxmn8xqk4v" path="res://scenes/talk_to_person.tscn" id="7_iwwnf"]
 
 [node name="level3" type="Node2D"]
 script = ExtResource("1_8qq86")
 
 [node name="outside_scene_props" parent="." instance=ExtResource("1_rkgy3")]
+show_empty_street = true
 
 [node name="player" parent="." instance=ExtResource("2_6t1de")]
 position = Vector2(551, 538)
 
 [node name="dialogSystem" parent="." instance=ExtResource("3_fw8s5")]
-dialogsPath = "res://dialogs/act3.json"
+dialogsPath = "res://dialogs/streets_act2.json"
 faces = Array[Texture]([ExtResource("4_w71oc"), ExtResource("5_rthe7")])
 
 [node name="Area2D__talk_to_security" parent="." instance=ExtResource("7_iwwnf")]
+position = Vector2(1027, 520)
 
 [node name="TimingAccuracyBar" parent="." instance=ExtResource("7_3ad0c")]
 visible = false
+speed = 500.0
+triesToWin = 3
 
 [connection signal="play_minigame" from="." to="." method="_on_play_minigame"]
-[connection signal="body_entered" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_body_entered"]
-[connection signal="body_exited" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_body_exited"]
-[connection signal="NotOnTime" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_not_on_time"]
-[connection signal="OnTime" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_on_time"]
+[connection signal="OnTalkInitated" from="Area2D__talk_to_security" to="." method="_on_area_2d__talk_to_security_on_talk_initated"]
+[connection signal="MinigameWon" from="TimingAccuracyBar" to="." method="_on_timing_accuracy_bar_minigame_won"]

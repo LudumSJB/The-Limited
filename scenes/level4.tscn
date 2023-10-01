@@ -1,26 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcenw1u5uulkk"]
+[gd_scene load_steps=11 format=3 uid="uid://df0m2jrbhdijl"]
 
-[ext_resource type="Texture2D" uid="uid://c1r6nvroycfmm" path="res://assets/images/act2.png" id="2_qqhjr"]
+[ext_resource type="Script" path="res://scripts/level4.gd" id="1_w4nf6"]
+[ext_resource type="Texture2D" uid="uid://bjxlroipqra04" path="res://assets/images/background_club.png" id="1_xiwl2"]
 [ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="3_10s1h"]
-[ext_resource type="PackedScene" uid="uid://df82i05edhf8" path="res://scenes/dialog_system.tscn" id="4_ym8v5"]
+[ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="4_ym8v5"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="5_0uddc"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="6_1no3t"]
 [ext_resource type="AudioStream" uid="uid://wjrks27kv2mn" path="res://assets/sounds/music_placeholder3.wav" id="6_me5ut"]
+[ext_resource type="PackedScene" uid="uid://xpqxmn8xqk4v" path="res://scenes/talk_to_person.tscn" id="7_pkq5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
 size = Vector2(1179, 43)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7brp"]
+size = Vector2(136.5, 625)
+
 [node name="level4" type="Node2D"]
+script = ExtResource("1_w4nf6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(585, 274)
-texture = ExtResource("2_qqhjr")
+position = Vector2(578, 338)
+texture = ExtResource("1_xiwl2")
 
 [node name="player" parent="." instance=ExtResource("3_10s1h")]
 position = Vector2(551, 538)
 
 [node name="dialogSystem" parent="." instance=ExtResource("4_ym8v5")]
-dialogsPath = "res://dialogs/act4.json"
+dialogsPath = "res://dialogs/club_act1.json"
 faces = Array[Texture]([ExtResource("5_0uddc"), ExtResource("6_1no3t")])
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -32,8 +38,27 @@ metadata/_edit_group_ = true
 position = Vector2(578, 629)
 shape = SubResource("RectangleShape2D_fno7i")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(52.25, 331)
+shape = SubResource("RectangleShape2D_k7brp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1105, 323)
+shape = SubResource("RectangleShape2D_k7brp")
+
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(553, 333)
 stream = ExtResource("6_me5ut")
 volume_db = 1.0
 autoplay = true
+
+[node name="Area2D__talk_to_person" parent="." instance=ExtResource("7_pkq5q")]
+position = Vector2(386, 517)
+
+[node name="Area2D__talk_to_person2" parent="." instance=ExtResource("7_pkq5q")]
+position = Vector2(955, 517)
+monitoring = false
+
+[connection signal="NextActStarted" from="dialogSystem" to="." method="_on_dialog_system_next_act_started"]
+[connection signal="OnTalkInitated" from="Area2D__talk_to_person" to="." method="_on_area_2d__talk_to_person_on_talk_initated"]
+[connection signal="OnTalkInitated" from="Area2D__talk_to_person2" to="." method="_on_area_2d__talk_to_person_2_on_talk_initated"]

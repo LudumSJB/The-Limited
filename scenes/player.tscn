@@ -1,11 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://duuwin15j36fv"]
+[gd_scene load_steps=10 format=3 uid="uid://duuwin15j36fv"]
 
-[ext_resource type="Texture2D" path="res://assets/images/hero.png" id="1_ejgm5"]
+[ext_resource type="Texture2D" uid="uid://p6utjqrntdkq" path="res://assets/images/hero.png" id="1_ejgm5"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wfxt1"]
 [ext_resource type="AudioStream" uid="uid://dap1fkj6cihyr" path="res://assets/sounds/steps.wav" id="3_42w1b"]
+[ext_resource type="Texture2D" uid="uid://mme5ix3u730e" path="res://assets/images/walk1.png" id="4_ks5tx"]
+[ext_resource type="Texture2D" uid="uid://do30f4kagkhsl" path="res://assets/images/walk2.png" id="5_5oou0"]
+[ext_resource type="Texture2D" uid="uid://bxwhh13hp4bmb" path="res://assets/images/walk3.png" id="6_qg1l4"]
+[ext_resource type="Texture2D" uid="uid://dqq0uxe80o75s" path="res://assets/images/walk4.png" id="7_vlsuv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnjjm"]
 size = Vector2(27, 132)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dohvd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ejgm5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ks5tx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5oou0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qg1l4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vlsuv")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
@@ -16,12 +48,14 @@ script = ExtResource("1_wfxt1")
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_wnjjm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ejgm5")
-
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
 [node name="steps" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_42w1b")
-volume_db = 11.243
+volume_db = 14.054
+pitch_scale = 0.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dohvd")
+animation = &"idle"

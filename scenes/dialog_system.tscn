@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://df82i05edhf8"]
+[gd_scene load_steps=6 format=3 uid="uid://bd36h1vyy37d5"]
 
 [ext_resource type="Script" path="res://scripts/dialog_system.gd" id="1_g4nlg"]
 [ext_resource type="Texture2D" uid="uid://capwl0xchsr6w" path="res://assets/images/speechbubble2.png" id="2_urcba"]
@@ -19,7 +19,7 @@ position = Vector2(246, 230)
 position = Vector2(880, 230)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(235, 447)
+position = Vector2(246, 230)
 texture = ExtResource("2_urcba")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
