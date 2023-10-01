@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bietq40krg0mh"]
+
+[ext_resource type="Script" path="res://scripts/HeartPlayer.gd" id="1_tknd2"]
+[ext_resource type="Texture2D" uid="uid://b2dvriyk37glq" path="res://assets/images/HeartPlayer.png" id="2_3houl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6clsq"]
+size = Vector2(16.9231, 16.9231)
+
+[node name="Player" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_tknd2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_6clsq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_3houl")

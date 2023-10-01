@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbrhs7mx8h5m4"]
+
+[ext_resource type="PackedScene" uid="uid://bietq40krg0mh" path="res://scenes/heartplayer.tscn" id="2_0kw1s"]
+[ext_resource type="Texture2D" uid="uid://b0eg2lrukk8xo" path="res://assets/images/playerbox.png" id="2_ubqxn"]
+[ext_resource type="Texture2D" uid="uid://cd761hdodo3jw" path="res://assets/images/barman_1.png" id="3_5po0b"]
+[ext_resource type="Texture2D" uid="uid://c7iaxl4j7kwm5" path="res://assets/images/barman_2.png" id="4_m2wkm"]
+[ext_resource type="Texture2D" uid="uid://c2sweu4ag0ynq" path="res://assets/images/barman_3.png" id="5_wcsw8"]
+[ext_resource type="Script" path="res://scripts/UndertaleBarman.gd" id="6_eaenq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8o7tn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5po0b")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m2wkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wcsw8")
+}],
+"loop": true,
+"name": &"Throw",
+"speed": 5.0
+}]
+
+[node name="UndertaleMinigame" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -109.0
+offset_top = 774.0
+offset_right = -69.0
+offset_bottom = 814.0
+scale = Vector2(36.4101, -22.7744)
+color = Color(0, 0, 0, 1)
+
+[node name="Playerbox" type="Sprite2D" parent="."]
+position = Vector2(565, 467)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ubqxn")
+
+[node name="Player" parent="." instance=ExtResource("2_0kw1s")]
+position = Vector2(565, 466)
+collision_layer = 1
+collision_mask = 1
+maxY = 573.0
+minY = 361.0
+minX = 460.0
+maxX = 670.0
+
+[node name="Barman" type="AnimatedSprite2D" parent="."]
+position = Vector2(562, 150)
+scale = Vector2(1.35714, 1.35714)
+sprite_frames = SubResource("SpriteFrames_8o7tn")
+animation = &"Idle"
+frame_progress = 0.985605
+script = ExtResource("6_eaenq")
+slerpSpeed = 3
+
+[node name="BarmanTimer" type="Timer" parent="."]
+autostart = true

@@ -728,11 +728,9 @@ volume_db = -5.0
 stream = ExtResource("12_j51dc")
 volume_db = -5.0
 
-[connection signal="StartMiniGame" from="." to="." method="_on_start_mini_game"]
 [connection signal="area_entered" from="RhythmGameHolder/MissArea" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="hit_note"]
 [connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="miss_note"]
-[connection signal="playerPassedNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="_on_player_note_player_passed_note"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote2" to="." method="hit_note"]
 [connection signal="playerMissNote" from="RhythmGameHolder/PlayerSection/PlayerNote2" to="." method="miss_note"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote3" to="." method="hit_note"]
