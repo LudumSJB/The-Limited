@@ -4,6 +4,8 @@ signal NoteHit
 signal NoteMiss
 signal PlayerLoss
 
+@onready var music = $Music
+
 @export var playerScore = 0
 @export var playerMisses = 0
 @export var scoreToAdd = 15
@@ -14,6 +16,7 @@ var root: Node
 
 func _ready():
 	root = get_tree().root.get_child(0)
+	music.play()
 	if root.name != "root":
 		root = null
 	else:
