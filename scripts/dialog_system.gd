@@ -34,6 +34,7 @@ var timeout_press = 0
 
 var text_to_write: String = ""
 const timeout_write_character_step: float = 0.01
+const timeout_extra_step: float = 0.5
 var write_character_time: float = 0
 
 var root: Node
@@ -148,6 +149,8 @@ func writeCharacter():
 	text_to_write = text_to_write.substr(textToWrite.length(), text_to_write.length())
 	rich_text_label.append_text(textToWrite)
 	write_character_time = timeout_write_character_step
+	if textToWrite == "." or textToWrite == "," or textToWrite == "?" or textToWrite == "!" or textToWrite.ends_with("]"):
+		write_character_time += timeout_extra_step
 
 func showText(dialog):
 	is_active = true
