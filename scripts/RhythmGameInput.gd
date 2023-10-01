@@ -2,6 +2,7 @@ extends Node2D
 
 signal playerHitNote
 signal playerMissNote
+signal playerPassedNote
 
 @export var inputKey = ""
 @export var noteSprite:Sprite2D
@@ -45,4 +46,4 @@ func allow_input_upon_note_entry():
 func scrolling_note_miss(area):
 	if area.name == "HittableNote":
 		area.queue_free()
-		playerMissNote.emit()
+		playerPassedNote.emit()
