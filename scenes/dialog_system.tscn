@@ -13,20 +13,22 @@ script = ExtResource("1_g4nlg")
 position = Vector2(543, 170)
 
 [node name="dialogPosition2" type="Node2D" parent="."]
-position = Vector2(246, 230)
+position = Vector2(289, 230)
 
 [node name="dialogPosition1" type="Node2D" parent="."]
-position = Vector2(880, 230)
+position = Vector2(853, 230)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(246, 230)
+position = Vector2(292, 227)
 texture = ExtResource("2_urcba")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D"]
 texture_filter = 1
 anchors_preset = -1
-anchor_right = 0.166667
-anchor_bottom = 0.61
+anchor_left = -0.215074
+anchor_top = 0.0458716
+anchor_right = 0.290441
+anchor_bottom = 0.527523
 offset_left = -118.0
 offset_top = -89.0
 offset_right = 74.0
@@ -35,14 +37,14 @@ text = "Text goes here"
 metadata/_edit_use_anchors_ = true
 
 [node name="face" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(-152, -61)
+position = Vector2(-254, -112)
 texture = ExtResource("3_m5m2a")
 
 [node name="facePosition0" type="Node2D" parent="Sprite2D"]
-position = Vector2(153, -62)
+position = Vector2(253, -113)
 
 [node name="facePosition1" type="Node2D" parent="Sprite2D"]
-position = Vector2(-154, -61)
+position = Vector2(-254, -112)
 
 [node name="talking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_amrfs")
