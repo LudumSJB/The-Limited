@@ -33,8 +33,12 @@ var change_scene_after_dialog_close: bool = false
 var close_dialog_after_dialog_close: bool = false
 var play_minigame_after_dialog_close: bool = false
 
-var timeout_press_time = 0.2
+const timeout_press_time = 0.2
 var timeout_press = 0
+
+var text_to_write: String = ""
+const timeout_write_character_step: float = 0.01
+var write_character_time: float = 0
 
 var root: Node
 
@@ -56,24 +60,32 @@ func _process(delta):
 		timeout_press -= delta
 	if is_active:
 		if timeout_press <= 0 && Input.is_action_just_released("action_button"):
-			print("action_button pressed")
-			if change_scene_after_dialog_close:
-				print("change_scene_after_dialog_close")
-				root.emit_signal("change_to_next_scene")
-				change_scene_after_dialog_close = false
-				return
-			if close_dialog_after_dialog_close:
-				print("close_dialog_after_dialog_close")
-				hideText()
-				close_dialog_after_dialog_close = false
-				return
-			if play_minigame_after_dialog_close:
-				print("play_minigame_after_dialog_close")
-				hideText()
-				startMinigame()
-				play_minigame_after_dialog_close = false
-				return
-			nextText()
+#			print("action_button pressed")
+			if text_to_write.length() == 0:
+				if change_scene_after_dialog_close:
+#					print("change_scene_after_dialog_close")
+					root.emit_signal("change_to_next_scene")
+					change_scene_after_dialog_close = false
+					return
+				if close_dialog_after_dialog_close:
+#					print("close_dialog_after_dialog_close")
+					hideText()
+					close_dialog_after_dialog_close = false
+					return
+				if play_minigame_after_dialog_close:
+#					print("play_minigame_after_dialog_close")
+					hideText()
+					startMinigame()
+					play_minigame_after_dialog_close = false
+					return
+			if text_to_write.length() > 0:
+				writeAllCharacters()
+			else:
+				nextText()
+		if write_character_time <= 0 && text_to_write.length() > 0:
+			writeCharacter()
+		if write_character_time > 0:
+			write_character_time -= delta
 
 func startMinigame():
 	var level = get_node("..")
@@ -90,7 +102,7 @@ func loadDialogs():
 
 func nextText():
 	timeout_press = timeout_press_time
-	print("nextText")
+#	print("nextText")
 	current_dialog += 1
 	if current_dialog < dialogs.size():
 		showText(dialogs[current_dialog])
@@ -99,13 +111,45 @@ func hideText():
 	sprite_2d.visible = false
 	is_active = false
 
+func writeAllCharacters():
+	rich_text_label.append_text(text_to_write)
+	text_to_write = ""
+
+func getParamString(textToW: String) -> String:
+	var i = 1
+	# get next characters if we have param here
+	while textToW[textToW.length()-1] != "]":
+		textToW = textToW + text_to_write[i]
+		i += 1
+	# get param fully to the end
+	var param = textToW.substr(1, textToW.length()-2)
+	if param.contains("="):
+		param = param.substr(0, param.find("="))
+#	print("param: '", param, "'")
+	while textToW.count(param) < 2:
+		textToW = textToW + text_to_write[i]
+		i += 1
+	while !textToW.ends_with("]"):
+		textToW = textToW + text_to_write[i] # add the last "]"
+		i += 1
+#	print("textToW: '", textToW, "'")
+	return textToW
+
+func writeCharacter():
+	var textToWrite: String = text_to_write[0]
+	if textToWrite == "[":
+		textToWrite = getParamString(textToWrite)
+	text_to_write = text_to_write.substr(textToWrite.length(), text_to_write.length())
+	rich_text_label.append_text(textToWrite)
+	write_character_time = timeout_write_character_step
+
 func showText(dialog):
 	is_active = true
 	# show new text in dialog
 	sprite_2d.visible = true
 	rich_text_label.clear()
-	rich_text_label.append_text(dialog.text)
-	
+	text_to_write = dialog.text
+	writeCharacter()
 	# move dialog box position
 	if dialog.has("dialog_position"):
 		if dialog.dialog_position == 0:
@@ -140,5 +184,5 @@ func showText(dialog):
 				print("no sound set!")
 				return
 			var sound = sounds[dialog.sound]
-			print("playing sound: ", sound.name)
+#			print("playing sound: ", sound.name)
 			sound.play()
