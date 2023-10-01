@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfx40oo0d2mdr"]
+[gd_scene load_steps=10 format=3 uid="uid://cfx40oo0d2mdr"]
 
 [ext_resource type="Script" path="res://scripts/root.gd" id="1_6s4h7"]
 [ext_resource type="PackedScene" uid="uid://b02ncl0w3nne2" path="res://scenes/level1.tscn" id="2_b7jq3"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_teugv"]
 [ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="4_ub7nv"]
+[ext_resource type="AudioStream" uid="uid://ba5qb1lo4nwmr" path="res://assets/sounds/outside.wav" id="5_ritrc"]
 [ext_resource type="AudioStream" uid="uid://dnv14bgbaqlga" path="res://assets/sounds/hotdog.wav" id="6_32vy5"]
 [ext_resource type="AudioStream" uid="uid://d1q78m707qk8" path="res://assets/sounds/club2.wav" id="7_ok8vi"]
 [ext_resource type="AudioStream" uid="uid://c0k8juko185jp" path="res://assets/sounds/club.wav" id="8_ncgqh"]
@@ -30,6 +31,7 @@ theme_override_font_sizes/font_size = 18
 text = "Score: 0"
 
 [node name="music1_street" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ritrc")
 autoplay = true
 
 [node name="music2_hotdog" type="AudioStreamPlayer2D" parent="."]
