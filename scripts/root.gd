@@ -17,7 +17,8 @@ var levels = [
 	"level4",
 	"level5",
 	"level6",
-	"level7"
+	"level7",
+	"level8"
 ]
 
 # store global vars here that need to stay between scenes
