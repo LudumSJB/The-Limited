@@ -87,6 +87,7 @@ monitoring = false
 position = Vector2(657, 517)
 monitoring = false
 label_text = "dance"
+remove_after_activation = false
 
 [node name="dancer2" parent="." instance=ExtResource("10_nbl1a")]
 position = Vector2(726, 558)
