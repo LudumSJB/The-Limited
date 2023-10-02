@@ -1,4 +1,9 @@
 extends CanvasLayer
+
+signal ChangeSceneToMiniGames
+signal ChangeSceneToCredits
+
+
 @onready var quit_button = $Control/QuitButton
 @onready var play_button = $Control/PlayButton
 
@@ -18,7 +23,8 @@ func play_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/root.tscn")
 	
 func minigames_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/MinigamesSelect.tscn")
+	ChangeSceneToMiniGames.emit()
+#	get_tree().change_scene_to_file("res://scenes/MinigamesSelect.tscn")
 
 
 func quit_button_pressed():
@@ -26,4 +32,5 @@ func quit_button_pressed():
 
 
 func _on_credits_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/credits.tscn")
+	ChangeSceneToCredits.emit()
+#	get_tree().change_scene_to_file("res://scenes/credits.tscn")
