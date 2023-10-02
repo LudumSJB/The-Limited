@@ -27,7 +27,6 @@ position = Vector2(1027, 520)
 
 [node name="TimingAccuracyBar" parent="." instance=ExtResource("7_3ad0c")]
 visible = false
-speed = 500.0
 triesToWin = 3
 
 [connection signal="play_minigame" from="." to="." method="_on_play_minigame"]

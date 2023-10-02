@@ -10,6 +10,9 @@ signal MinigameWon
 @onready var sound_success = $sound_success
 @onready var sound_fail = $sound_fail
 
+var particlesuccess = preload("res://scenes/particle_hit2.tscn")
+var particlefail = preload("res://scenes/particle_hit.tscn")
+
 @export var speedIncrementOnSuccess = 50
 @export var speed = 400 # speed that the input accuracy bar moves at
 @export var triesToWin: int = 5 # tries needed to be done to win the minigame
@@ -69,6 +72,7 @@ func onTime():
 	setRandomProgress()
 	if triesToWin <= 0:
 		MinigameWon.emit()
+	addSuccessParticles()
 
 func notOnTime():
 	sound_fail.play()
@@ -76,7 +80,19 @@ func notOnTime():
 		root.AddScore(scoreNotOnTime)
 		root.ShakeCamera()
 	setRandomProgress()
-	
+	addFailParticles()
+
 func setRandomProgress():
 	var progress: float = rng.randf_range(0, path_length)
 	path_follow_2d.progress = progress
+
+func addParticles(particlescene: PackedScene):
+	var particleInstance = particlescene.instantiate()
+	area_hitter.add_child(particleInstance)
+	particleInstance.global_position = area_hitter.global_position
+
+func addFailParticles():
+	addParticles(particlefail)
+
+func addSuccessParticles():
+	addParticles(particlesuccess)
