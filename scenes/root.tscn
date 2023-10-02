@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/root.gd" id="1_6s4h7"]
 [ext_resource type="PackedScene" uid="uid://b02ncl0w3nne2" path="res://scenes/level1.tscn" id="2_b7jq3"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="3_teugv"]
-[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="4_ub7nv"]
+[ext_resource type="PackedScene" uid="uid://dpty01eo202dg" path="res://scenes/score_label.tscn" id="4_fqqi3"]
 [ext_resource type="AudioStream" uid="uid://ba5qb1lo4nwmr" path="res://assets/sounds/outside.wav" id="5_ritrc"]
 [ext_resource type="AudioStream" uid="uid://dnv14bgbaqlga" path="res://assets/sounds/hotdog.wav" id="6_32vy5"]
 [ext_resource type="AudioStream" uid="uid://d1q78m707qk8" path="res://assets/sounds/club2.wav" id="7_ok8vi"]
@@ -20,15 +20,7 @@ position = Vector2(576, 324)
 zoom = Vector2(1.025, 1.025)
 script = ExtResource("3_teugv")
 
-[node name="ScoreLabel" type="Label" parent="."]
-offset_left = 24.0
-offset_top = 71.57
-offset_right = 141.0
-offset_bottom = 118.57
-rotation = -0.268526
-theme_override_fonts/font = ExtResource("4_ub7nv")
-theme_override_font_sizes/font_size = 18
-text = "Score: 0"
+[node name="ScoreLabel" parent="." instance=ExtResource("4_fqqi3")]
 
 [node name="music1_street" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ritrc")

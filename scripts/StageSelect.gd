@@ -1,8 +1,12 @@
 extends CanvasLayer
 
+signal ChangeSceneMainMenu
+
 @onready var rhythm_minigame_button = $Control/RhythmMinigameButton
+var root: Node
 
 func _ready():
+	root = get_tree().root.get_child(0)
 	rhythm_minigame_button.grab_focus() # set focus to first button
 
 func _process(_delta):
@@ -17,4 +21,5 @@ func rhythm_minigame_button_pressed():
 
 
 func _on_back_to_start_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+	ChangeSceneMainMenu.emit()
+#	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

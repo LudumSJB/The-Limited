@@ -17,10 +17,10 @@
 	},
 	{
 		"dialog_position": 2,
-		"text": "Get out of my club,\n you moron! \nYou broke all our plumming!",
+		"text": "Get out of my club, \nyou moron! \nYou broke all our plumming!",
 		"face": 2,
 		"sound": 1,
-		"action_todo": "minigame",
+		"action": "minigame",
 	},
 	{
 		"dialog_position": 1,
