@@ -21,11 +21,14 @@ func _process(delta):
 #	rotate_barman_to_player()
 	pass
 
+var speed = 3
+
 func new_barman_position():
-	await get_tree().create_timer(0.8).timeout
+	if speed > 0.4: speed -= 0.2
+	await get_tree().create_timer(speed).timeout
 	play("Idle")
 	print("new position")
-	randomPos = Vector2(rng.randf_range(400, 500), 150)
+	randomPos = Vector2(rng.randf_range(380, 520), 150) # should cover all positions
 	throw_new_bottle()
 	new_barman_position()
 
