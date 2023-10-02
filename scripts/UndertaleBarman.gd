@@ -1,5 +1,10 @@
 extends AnimatedSprite2D
 
+# things that need fixing:
+#
+# bottle doesn't spawn on barman properly
+# bottle won't collid with area (I have no clue as to what I am doing)
+
 @export var slerpSpeed = 200 
 var randomPos:Vector2 = Vector2(358, 150)
 var rng = RandomNumberGenerator.new()
