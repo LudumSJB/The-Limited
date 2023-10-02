@@ -1,15 +1,19 @@
-[gd_scene load_steps=18 format=3 uid="uid://chr8s2mrd57b4"]
+[gd_scene load_steps=22 format=3 uid="uid://chr8s2mrd57b4"]
 
 [ext_resource type="Script" path="res://scripts/RhythmMinigameManager.gd" id="1_xjbte"]
 [ext_resource type="Script" path="res://scripts/RhythmGameInput.gd" id="2_e3i65"]
 [ext_resource type="AudioStream" uid="uid://3bxjjqsav2sf" path="res://assets/sounds/rythm.wav" id="2_elmhm"]
 [ext_resource type="Texture2D" uid="uid://csffd5yka5yx4" path="res://assets/images/arrow1.png" id="4_l17yx"]
 [ext_resource type="Texture2D" uid="uid://cdauy3llcjie" path="res://assets/images/arrow2.png" id="5_52atg"]
+[ext_resource type="Texture2D" uid="uid://cxgqish1tsblg" path="res://assets/images/xbox_x.png" id="5_oixu0"]
 [ext_resource type="Texture2D" uid="uid://d2ictgkmsfce1" path="res://assets/images/arrow3.png" id="6_p126d"]
 [ext_resource type="Texture2D" uid="uid://cuiinpf3ytpcs" path="res://assets/images/arrow4.png" id="7_c7hc3"]
+[ext_resource type="Texture2D" uid="uid://dqydoho7470jl" path="res://assets/images/xbox_a.png" id="7_eejd0"]
 [ext_resource type="Script" path="res://scripts/Conductor.gd" id="7_u1p3x"]
 [ext_resource type="Script" path="res://scripts/FpsLabel.gd" id="9_5aavs"]
+[ext_resource type="Texture2D" uid="uid://bpnhf1ian7vm6" path="res://assets/images/xbox_y.png" id="9_gaawh"]
 [ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="9_ii8yx"]
+[ext_resource type="Texture2D" uid="uid://dtyahlrjrcclp" path="res://assets/images/xbox_b.png" id="11_55g3b"]
 [ext_resource type="AudioStream" uid="uid://b01e3qbbnkhv6" path="res://assets/sounds/fail.wav" id="11_hgsg2"]
 [ext_resource type="AudioStream" uid="uid://o57h8bbi638w" path="res://assets/sounds/success.wav" id="12_j51dc"]
 
@@ -174,6 +178,11 @@ inputKey = "rhythmgame_left"
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("4_l17yx")
 
+[node name="Sprite2D2" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote/Note"]
+visible = false
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_oixu0")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/PlayerSection/PlayerNote/Note"]
 shape = SubResource("CircleShape2D_vs5r6")
 
@@ -187,6 +196,11 @@ inputKey = "rhythmgame_down"
 [node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote2/Note"]
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("5_52atg")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote2/Note"]
+visible = false
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("7_eejd0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/PlayerSection/PlayerNote2/Note"]
 shape = SubResource("CircleShape2D_vs5r6")
@@ -202,6 +216,11 @@ inputKey = "rhythmgame_up"
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("6_p126d")
 
+[node name="Sprite2D2" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote3/Note"]
+visible = false
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_gaawh")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/PlayerSection/PlayerNote3/Note"]
 shape = SubResource("CircleShape2D_vs5r6")
 
@@ -215,6 +234,11 @@ inputKey = "rhythmgame_right"
 [node name="Sprite2D" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote4/Note"]
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("7_c7hc3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RhythmGameHolder/PlayerSection/PlayerNote4/Note"]
+visible = false
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("11_55g3b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RhythmGameHolder/PlayerSection/PlayerNote4/Note"]
 shape = SubResource("CircleShape2D_vs5r6")
