@@ -8,6 +8,8 @@ signal GivePoint
 
 var lives_indicator = preload("res://scenes/heartSprite.tscn")
 
+@export var freeplay = false
+
 var timeBetweenPointsGiven: float = 1
 var pointTimer = 0
 var score: int = 0
@@ -16,7 +18,7 @@ var triesSprites: Array[Sprite2D]
 var indicatorOffset: float = 30
 
 func _ready():
-	addIndicators()
+	if freeplay == false: addIndicators()
 	
 func removeIndicator():
 	if triesSprites.size()-1 > 0:
