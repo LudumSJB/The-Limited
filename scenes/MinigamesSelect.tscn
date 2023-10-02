@@ -77,4 +77,5 @@ text = "Minigames
 "
 
 [connection signal="pressed" from="Control/RhythmMinigameButton" to="." method="rhythm_minigame_button_pressed"]
+[connection signal="pressed" from="Control/BarmanMinigameButton" to="." method="_on_barman_minigame_button_pressed"]
 [connection signal="OnButtonPressed" from="Control/button" to="." method="_on_back_to_start_button_pressed"]
