@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbrhs7mx8h5m4"]
+[gd_scene load_steps=17 format=3 uid="uid://cbrhs7mx8h5m4"]
 
 [ext_resource type="Script" path="res://scripts/UndertaleMinigameManager.gd" id="1_6u5g0"]
 [ext_resource type="PackedScene" uid="uid://bietq40krg0mh" path="res://scenes/heartplayer.tscn" id="2_0kw1s"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bx03m8vpl0jw7" path="res://assets/sounds/snd_battlefall.wav" id="10_ygkpe"]
 [ext_resource type="AudioStream" uid="uid://dvajiv751xol6" path="res://assets/sounds/glass_smash.wav" id="11_am5if"]
 [ext_resource type="Script" path="res://scripts/GlassSmashAudio.gd" id="12_h40ut"]
+[ext_resource type="PackedScene" uid="uid://dpty01eo202dg" path="res://scenes/score_label.tscn" id="13_5mvs7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o7tn"]
 animations = [{
@@ -173,6 +174,8 @@ volume_db = -5.0
 stream = ExtResource("11_am5if")
 volume_db = -15.0
 script = ExtResource("12_h40ut")
+
+[node name="ScoreLabel" parent="." instance=ExtResource("13_5mvs7")]
 
 [connection signal="PlayGlassSmash" from="Player" to="GlassSmash" method="play_glass_smash"]
 [connection signal="PlayerLoseInternal" from="Player" to="." method="player_lose_internal"]
