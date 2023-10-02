@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dhm32v4tbqddx"]
+[gd_scene load_steps=19 format=3 uid="uid://dwubwyv157wwp"]
 
 [ext_resource type="Script" path="res://scripts/UndertaleMinigameManager.gd" id="1_wxn6c"]
 [ext_resource type="Texture2D" uid="uid://b0eg2lrukk8xo" path="res://assets/images/playerbox.png" id="2_ackex"]
@@ -8,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://c2sweu4ag0ynq" path="res://assets/images/barman_3.png" id="6_fkk8g"]
 [ext_resource type="Script" path="res://scripts/UndertaleBarman.gd" id="7_xxn58"]
 [ext_resource type="Script" path="res://scripts/BarmanMinigameAnimationPlayer.gd" id="8_6rsuf"]
-[ext_resource type="AudioStream" uid="uid://bh7v6uw5b3v1r" path="res://assets/sounds/barman.wav" id="9_j3cqr"]
+[ext_resource type="AudioStream" uid="uid://dlcfy0421apni" path="res://assets/sounds/barman.wav" id="9_j3cqr"]
 [ext_resource type="Script" path="res://scripts/BarmanMusic.gd" id="10_2w07s"]
 [ext_resource type="AudioStream" uid="uid://dmefxxlvca8wq" path="res://assets/sounds/snd_test.wav" id="11_hvau8"]
 [ext_resource type="AudioStream" uid="uid://bx03m8vpl0jw7" path="res://assets/sounds/snd_battlefall.wav" id="12_x2mxh"]
 [ext_resource type="AudioStream" uid="uid://dvajiv751xol6" path="res://assets/sounds/glass_smash.wav" id="13_3c5pf"]
 [ext_resource type="Script" path="res://scripts/GlassSmashAudio.gd" id="14_joatc"]
-[ext_resource type="PackedScene" uid="uid://dpty01eo202dg" path="res://scenes/score_label.tscn" id="15_578u3"]
+[ext_resource type="PackedScene" path="res://scenes/score_label.tscn" id="15_578u3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o7tn"]
 animations = [{
@@ -113,6 +113,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p2au5"]
 _data = {
@@ -124,6 +136,7 @@ script = ExtResource("1_wxn6c")
 freeplay = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 offset_left = -109.0
 offset_top = 774.0
 offset_right = -69.0
