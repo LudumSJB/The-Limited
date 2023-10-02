@@ -107,8 +107,13 @@ func loadDialogs():
 		print("couldn't parse json!")
 	dialogs = obj
 
+func stopEarlierSounds():
+	for s in sounds:
+		s.stop()
+
 func nextText():
 	print("nextText")
+	stopEarlierSounds()
 	dialog_end_indicator.visible = false
 	timeout_press = timeout_press_time
 	current_dialog += 1
