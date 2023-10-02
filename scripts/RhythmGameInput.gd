@@ -4,6 +4,11 @@ signal playerHitNote
 signal playerMissNote
 signal playerHitNothing
 
+@onready var sprite_2d_2 = $Note/Sprite2D2
+@onready var sprite_2d_3 = $"../PlayerNote2/Note/Sprite2D2"
+@onready var sprite_2d_4 = $"../PlayerNote3/Note/Sprite2D2"
+@onready var sprite_2d_5 = $"../PlayerNote4/Note/Sprite2D2"
+
 @export var inputKey = ""
 @export var noteSprite:Sprite2D
 @export var noteArea:Area2D
@@ -15,6 +20,18 @@ func _ready():
 	noteSprite = get_node("Note/Sprite2D")
 	noteArea = get_node("Note")
 	set_process(true)
+
+func _input(event):
+	if event is InputEventKey:
+		_toggleShowGamePadSprites(false)
+	elif event is InputEventJoypadButton:
+		_toggleShowGamePadSprites(true)
+
+func _toggleShowGamePadSprites(show: bool):
+	sprite_2d_2.visible = show
+	sprite_2d_3.visible = show
+	sprite_2d_4.visible = show
+	sprite_2d_5.visible = show
 
 func _process(_delta):
 	check_for_player_input()
