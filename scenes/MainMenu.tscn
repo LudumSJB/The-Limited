@@ -38,7 +38,7 @@ theme_override_fonts/font = ExtResource("2_5belk")
 theme_override_font_sizes/font_size = 25
 text = "Play"
 
-[node name="StagesButton" type="Button" parent="Control"]
+[node name="MinigamesButton" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -54,7 +54,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_5belk")
 theme_override_font_sizes/font_size = 25
-text = "Stages
+text = "Minigames
 "
 
 [node name="CreditsButton" type="Button" parent="Control"]
@@ -94,6 +94,6 @@ theme_override_font_sizes/font_size = 25
 text = "Quit"
 
 [connection signal="pressed" from="Control/PlayButton" to="." method="play_button_pressed"]
-[connection signal="pressed" from="Control/StagesButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/MinigamesButton" to="." method="minigames_button_pressed"]
 [connection signal="pressed" from="Control/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="quit_button_pressed"]

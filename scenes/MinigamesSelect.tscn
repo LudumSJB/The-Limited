@@ -1,18 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://fy40aoeru5ut"]
 
-[ext_resource type="Texture2D" uid="uid://belh2j4spbyqj" path="res://assets/images/background_welcome.png" id="1_3wou4"]
-[ext_resource type="Script" path="res://scripts/StageSelect.gd" id="1_y4ycm"]
-[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="2_cupr6"]
-[ext_resource type="Texture2D" uid="uid://bolkcjq85c62m" path="res://assets/images/act1.png" id="2_traby"]
-[ext_resource type="Texture2D" uid="uid://cp2asflio46wm" path="res://assets/images/rhythm_minigame_banner.png" id="3_c57gg"]
+[ext_resource type="Script" path="res://scripts/StageSelect.gd" id="1_jkphu"]
+[ext_resource type="Texture2D" uid="uid://belh2j4spbyqj" path="res://assets/images/background_welcome.png" id="2_8b6xo"]
+[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="3_ret2d"]
+[ext_resource type="Texture2D" uid="uid://cp2asflio46wm" path="res://assets/images/rhythm_minigame_banner.png" id="4_sha5h"]
+[ext_resource type="Texture2D" uid="uid://bolkcjq85c62m" path="res://assets/images/act1.png" id="5_r20bb"]
 
-[node name="StageSelect" type="CanvasLayer"]
-script = ExtResource("1_y4ycm")
+[node name="MinigamesSelect" type="CanvasLayer"]
+script = ExtResource("1_jkphu")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 269)
 scale = Vector2(1.907, 1.907)
-texture = ExtResource("1_3wou4")
+texture = ExtResource("2_8b6xo")
 
 [node name="RhythmMinigameButton" type="Button" parent="."]
 anchors_preset = 4
@@ -24,10 +24,10 @@ offset_right = 709.0
 offset_bottom = 224.0
 grow_vertical = 2
 scale = Vector2(0.7, 0.7)
-theme_override_fonts/font = ExtResource("2_cupr6")
+theme_override_fonts/font = ExtResource("3_ret2d")
 theme_override_font_sizes/font_size = 32
 text = "Rhythm Minigame"
-icon = ExtResource("3_c57gg")
+icon = ExtResource("4_sha5h")
 icon_alignment = 1
 vertical_icon_alignment = 0
 
@@ -44,10 +44,10 @@ offset_bottom = 224.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.7, 0.7)
-theme_override_fonts/font = ExtResource("2_cupr6")
+theme_override_fonts/font = ExtResource("3_ret2d")
 theme_override_font_sizes/font_size = 32
 text = "Barman Minigame"
-icon = ExtResource("2_traby")
+icon = ExtResource("5_r20bb")
 icon_alignment = 1
 vertical_icon_alignment = 0
 
@@ -58,7 +58,7 @@ offset_right = 770.0
 offset_bottom = 164.0
 theme_override_colors/font_color = Color(0.839216, 0.407843, 0.819608, 1)
 theme_override_colors/font_outline_color = Color(0.588235, 0.709804, 0.764706, 1)
-theme_override_fonts/font = ExtResource("2_cupr6")
+theme_override_fonts/font = ExtResource("3_ret2d")
 theme_override_font_sizes/font_size = 41
 text = "Minigames
 "

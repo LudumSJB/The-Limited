@@ -9,6 +9,9 @@ func _ready():
 
 func play_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/root.tscn")
+	
+func minigames_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/MinigamesSelect.tscn")
 
 
 func quit_button_pressed():
