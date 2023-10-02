@@ -12,6 +12,7 @@ signal StartMiniGame
 
 @export var scoreToAdd = 15
 @export var scoreToMinus = 5
+@export var freeplay = false
 
 var root: Node
 
@@ -35,7 +36,7 @@ func miss_note():
 
 func _on_end_minigame_area_entered(_area):
 	MiniGameEnded.emit()
-	root.MiniGameEnded()
+	if freeplay == false: root.MiniGameEnded()
 
 func StartupMiniGame():
 	root = get_tree().root.get_child(0)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx104uuqw4vj1"]
+
+[ext_resource type="PackedScene" uid="uid://chr8s2mrd57b4" path="res://scenes/RhythmMinigame.tscn" id="1_v00kp"]
+
+[node name="RhythmMinigameFreeplay" type="CanvasLayer"]
+
+[node name="RhythmMinigame" parent="." instance=ExtResource("1_v00kp")]
+freeplay = true

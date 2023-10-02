@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://scripts/level4.gd" id="1_w4nf6"]
 [ext_resource type="Texture2D" uid="uid://2dgnmnk34lqw" path="res://assets/images/background_club_nolights.png" id="2_tdqyl"]
 [ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="3_10s1h"]
-[ext_resource type="PackedScene" uid="uid://bnhc6tfpckqj2" path="res://scenes/light.tscn" id="3_ae4wh"]
+[ext_resource type="PackedScene" path="res://scenes/light.tscn" id="3_ae4wh"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="4_ym8v5"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="5_0uddc"]
 [ext_resource type="Texture2D" uid="uid://c81thoo78506x" path="res://assets/images/face_05.png" id="7_35eev"]
 [ext_resource type="PackedScene" uid="uid://brghk84aof61l" path="res://scenes/actionArea.tscn" id="7_pkq5q"]
 [ext_resource type="Texture2D" uid="uid://ia57gjv28xni" path="res://assets/images/face_04.png" id="8_86kfa"]
-[ext_resource type="PackedScene" uid="uid://d1p7qrfx4wwiw" path="res://scenes/dancer_1.tscn" id="10_nbl1a"]
-[ext_resource type="PackedScene" uid="uid://qoy2xxj38f17" path="res://scenes/bartender.tscn" id="13_yv6qk"]
+[ext_resource type="PackedScene" path="res://scenes/dancer_1.tscn" id="10_nbl1a"]
+[ext_resource type="PackedScene" path="res://scenes/bartender.tscn" id="13_yv6qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
 size = Vector2(1179, 43)
