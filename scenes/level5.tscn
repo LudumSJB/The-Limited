@@ -24,7 +24,7 @@ position = Vector2(578, 338)
 texture = ExtResource("2_5cfi3")
 
 [node name="dancer_dude" parent="." instance=ExtResource("7_bdtki")]
-position = Vector2(570, 539)
+position = Vector2(570, 546)
 speed = 80.0
 
 [node name="player" parent="." instance=ExtResource("2_bp30i")]

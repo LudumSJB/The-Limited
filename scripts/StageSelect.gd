@@ -5,7 +5,7 @@ extends CanvasLayer
 func _ready():
 	rhythm_minigame_button.grab_focus() # set focus to first button
 
-func _process(delta):
+func _process(_delta):
 	# for gamepad menu navigation
 	if Input.is_action_just_released("action_button"):
 		var focusOwner: Control = get_viewport().gui_get_focus_owner()
