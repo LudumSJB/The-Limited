@@ -2,6 +2,7 @@ extends Area2D
 
 signal PlayerLoseInternal
 signal PlayGlassSmash
+signal PlayerGotHit
 
 var lives = 3
 
@@ -45,3 +46,4 @@ func _on_body_entered(body):
 	print("lives left: ", lives)
 	PlayGlassSmash.emit()
 	body.queue_free()
+	PlayerGotHit.emit()

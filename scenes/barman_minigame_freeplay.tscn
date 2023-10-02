@@ -7,3 +7,5 @@
 script = ExtResource("1_tk5ks")
 
 [node name="UndertaleMinigame" parent="." instance=ExtResource("1_kjd7a")]
+
+[connection signal="PlayerLose" from="UndertaleMinigame" to="." method="_on_undertale_minigame_player_lose"]

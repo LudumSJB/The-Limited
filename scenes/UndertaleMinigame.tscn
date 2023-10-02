@@ -177,5 +177,9 @@ script = ExtResource("12_h40ut")
 
 [node name="ScoreLabel" parent="." instance=ExtResource("13_5mvs7")]
 
+[node name="lives_parent" type="Node2D" parent="."]
+position = Vector2(889, 89)
+
 [connection signal="PlayGlassSmash" from="Player" to="GlassSmash" method="play_glass_smash"]
+[connection signal="PlayerGotHit" from="Player" to="." method="_on_player_player_got_hit"]
 [connection signal="PlayerLoseInternal" from="Player" to="." method="player_lose_internal"]
