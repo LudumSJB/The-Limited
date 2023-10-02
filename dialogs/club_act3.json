@@ -1,11 +1,30 @@
 [
 	{
 		"dialog_position": 0,
-		"text": "You come back to the club. \nEveryone has left except DJ and few of his fellows."
+		"text": "You come back to the club. \nEveryone has left except bartender, DJ and few of their fellows."
+	},
+	{
+		"dialog_position": 0,
+		"text": "[color=#d91c1c]They don't seem very happy with you[/color]..."
+	},
+	{
+		"dialog_position": 0,
+		"text": "Turns out [color=#a49b9b]the plumming[/color] has been broken and [color=#8f4d2c]all the nasty stuff[/color] has come out of the bar counter's sink."	
+	},
+	{
+		"dialog_position": 0,
+		"text": "Not only that. \nIt's all on bartender's [i]face[/i]."	
 	},
 	{
 		"dialog_position": 2,
-		"text": "Party's over, \nyou partypooper.",
+		"text": "Get out of my club,\n you moron! \nYou broke all our plumming!",
+		"face": 2,
+		"sound": 1,
+		"action_todo": "minigame",
+	},
+	{
+		"dialog_position": 1,
+		"text": "Party's over, \nYou partypooper.",
 		"face": 1,
 		"sound": 1
 	},

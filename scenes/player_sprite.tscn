@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://esvwxdjq2eta"]
+
+[ext_resource type="Texture2D" uid="uid://p6utjqrntdkq" path="res://assets/images/hero.png" id="1_yotb3"]
+
+[node name="player_sprite" type="Sprite2D"]
+position = Vector2(736, 551)
+texture = ExtResource("1_yotb3")
+flip_h = true

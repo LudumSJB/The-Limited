@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c01fv2071x4o1"]
 
 [ext_resource type="PackedScene" uid="uid://dca1x0aaq5qv7" path="res://scenes/outside_scene_props.tscn" id="2_knygg"]
-[ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="3_w2ayy"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="4_16h7v"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="5_j0ia1"]
+[ext_resource type="PackedScene" uid="uid://esvwxdjq2eta" path="res://scenes/player_sprite.tscn" id="5_t7pqi"]
 [ext_resource type="Texture2D" uid="uid://dvlrkobcb7b65" path="res://assets/images/face_02.png" id="6_gaxir"]
 
 [node name="level7" type="Node2D"]
@@ -11,11 +11,9 @@
 [node name="outside_scene_props" parent="." instance=ExtResource("2_knygg")]
 show_empty_street = true
 
-[node name="player" parent="." instance=ExtResource("3_w2ayy")]
-position = Vector2(803, 539)
-
 [node name="dialogSystem" parent="." instance=ExtResource("4_16h7v")]
 dialogsPath = "res://dialogs/streets_act3.json"
 faces = Array[Texture]([ExtResource("5_j0ia1"), ExtResource("6_gaxir")])
 
-[connection signal="ShowPlayer" from="dialogSystem" to="player" method="_on_dialog_system_show_player"]
+[node name="player_sprite" parent="." instance=ExtResource("5_t7pqi")]
+position = Vector2(620, 541)
