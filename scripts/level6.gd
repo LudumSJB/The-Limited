@@ -12,6 +12,7 @@ func _ready():
 	root = get_tree().root.get_child(0)
 
 func startMinigame():
+	root.stop_music.emit()
 	minigameInstance = minigame.instantiate()
 	add_child(minigameInstance)
 	minigameInstance.PlayerLose.connect(onPlayerLost)
@@ -22,6 +23,7 @@ func onAddPoint():
 	root.AddScore(1)
 
 func onPlayerLost():
+	root.play_music.emit()
 	minigameInstance.queue_free()
 	dialog_system.nextText()
 
