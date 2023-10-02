@@ -1,16 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2qpi3vi0aodb"]
 
 [ext_resource type="Texture2D" uid="uid://bjxlroipqra04" path="res://assets/images/background_club.png" id="1_lyvuo"]
-[ext_resource type="PackedScene" uid="uid://duuwin15j36fv" path="res://scenes/player.tscn" id="2_vdvpb"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="3_ibk6j"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_k3eyc"]
 [ext_resource type="Texture2D" uid="uid://c81thoo78506x" path="res://assets/images/face_05.png" id="5_u51vp"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fno7i"]
-size = Vector2(1179, 43)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7brp"]
-size = Vector2(136.5, 625)
+[ext_resource type="Texture2D" uid="uid://ia57gjv28xni" path="res://assets/images/face_04.png" id="6_26sww"]
+[ext_resource type="PackedScene" uid="uid://qoy2xxj38f17" path="res://scenes/bartender.tscn" id="6_od6mx"]
+[ext_resource type="PackedScene" uid="uid://esvwxdjq2eta" path="res://scenes/player_sprite.tscn" id="7_uy8ua"]
 
 [node name="level6" type="Node2D"]
 
@@ -18,26 +14,11 @@ size = Vector2(136.5, 625)
 position = Vector2(578, 338)
 texture = ExtResource("1_lyvuo")
 
-[node name="player" parent="." instance=ExtResource("2_vdvpb")]
-position = Vector2(551, 538)
-
 [node name="dialogSystem" parent="." instance=ExtResource("3_ibk6j")]
 dialogsPath = "res://dialogs/club_act3.json"
-faces = Array[Texture]([ExtResource("4_k3eyc"), ExtResource("5_u51vp")])
+faces = Array[Texture]([ExtResource("4_k3eyc"), ExtResource("5_u51vp"), ExtResource("6_26sww")])
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-metadata/_edit_group_ = true
+[node name="bartender" parent="." instance=ExtResource("6_od6mx")]
+position = Vector2(610, 548)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(578, 629)
-shape = SubResource("RectangleShape2D_fno7i")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(52.25, 331)
-shape = SubResource("RectangleShape2D_k7brp")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1105, 323)
-shape = SubResource("RectangleShape2D_k7brp")
+[node name="player_sprite" parent="." instance=ExtResource("7_uy8ua")]

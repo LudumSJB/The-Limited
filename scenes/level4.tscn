@@ -38,7 +38,7 @@ frame_progress = 0.0
 position = Vector2(808, 316)
 
 [node name="bartender" parent="." instance=ExtResource("13_yv6qk")]
-position = Vector2(383, 546)
+position = Vector2(412, 545)
 
 [node name="stander2" parent="." instance=ExtResource("10_nbl1a")]
 position = Vector2(480, 544)
