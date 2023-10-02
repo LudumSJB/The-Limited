@@ -208,8 +208,10 @@ func showText(dialog):
 	
 	if dialog.has("sound"):
 		var sound = sounds[dialog.sound]
+		print("playing sound: ", dialog.sound)
 		sound.play()
 	
 	if dialog.has("next_act"):
+		print("next_act")
 		next_act = dialog.next_act
 		change_act_after_dialog_close = true

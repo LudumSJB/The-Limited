@@ -65,6 +65,8 @@ position = Vector2(-254, -112)
 
 [node name="talking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_amrfs")
+volume_db = 10.0
 
 [node name="talking2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_wtta4")
+volume_db = 10.0
