@@ -26,4 +26,4 @@ func _on_back_to_start_button_pressed():
 
 
 func _on_barman_minigame_button_pressed():
-		get_tree().change_scene_to_file("res://scenes/UndertaleMinigameFreeplay.tscn")
+		get_tree().change_scene_to_file("res://scenes/barman_minigame_freeplay.tscn")

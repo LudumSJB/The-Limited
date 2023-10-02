@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dwubwyv157wwp"]
+[gd_scene load_steps=19 format=3 uid="uid://dhm32v4tbqddx"]
 
 [ext_resource type="Script" path="res://scripts/UndertaleMinigameManager.gd" id="1_wxn6c"]
 [ext_resource type="Texture2D" uid="uid://b0eg2lrukk8xo" path="res://assets/images/playerbox.png" id="2_ackex"]
@@ -8,13 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://c2sweu4ag0ynq" path="res://assets/images/barman_3.png" id="6_fkk8g"]
 [ext_resource type="Script" path="res://scripts/UndertaleBarman.gd" id="7_xxn58"]
 [ext_resource type="Script" path="res://scripts/BarmanMinigameAnimationPlayer.gd" id="8_6rsuf"]
-[ext_resource type="AudioStream" uid="uid://dlcfy0421apni" path="res://assets/sounds/barman.wav" id="9_j3cqr"]
+[ext_resource type="AudioStream" uid="uid://bh7v6uw5b3v1r" path="res://assets/sounds/barman.wav" id="9_j3cqr"]
 [ext_resource type="Script" path="res://scripts/BarmanMusic.gd" id="10_2w07s"]
 [ext_resource type="AudioStream" uid="uid://dmefxxlvca8wq" path="res://assets/sounds/snd_test.wav" id="11_hvau8"]
 [ext_resource type="AudioStream" uid="uid://bx03m8vpl0jw7" path="res://assets/sounds/snd_battlefall.wav" id="12_x2mxh"]
 [ext_resource type="AudioStream" uid="uid://dvajiv751xol6" path="res://assets/sounds/glass_smash.wav" id="13_3c5pf"]
 [ext_resource type="Script" path="res://scripts/GlassSmashAudio.gd" id="14_joatc"]
-[ext_resource type="PackedScene" path="res://scenes/score_label.tscn" id="15_578u3"]
+[ext_resource type="PackedScene" uid="uid://dpty01eo202dg" path="res://scenes/score_label.tscn" id="15_578u3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o7tn"]
 animations = [{
@@ -168,6 +168,7 @@ script = ExtResource("8_6rsuf")
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_j3cqr")
 volume_db = -3.0
+autoplay = true
 script = ExtResource("10_2w07s")
 
 [node name="PlayerFlickerSounds" type="AudioStreamPlayer" parent="."]
@@ -187,4 +188,3 @@ script = ExtResource("14_joatc")
 
 [connection signal="PlayGlassSmash" from="Player" to="GlassSmash" method="play_glass_smash"]
 [connection signal="PlayerLoseInternal" from="Player" to="." method="player_lose_internal"]
-[connection signal="PlayMusic" from="AnimationPlayer" to="Music" method="play_music"]
