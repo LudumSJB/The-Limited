@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://caxrpa4bbnpog"]
 
 [ext_resource type="Script" path="res://scripts/Bottle.gd" id="1_wp8dp"]
-[ext_resource type="Texture2D" uid="uid://cg34gx32r44yc" path="res://assets/images/bottle3.png" id="2_f0tes"]
+[ext_resource type="Texture2D" uid="uid://bb1n54hkoqlns" path="res://assets/images/bottle3.png" id="2_f0tes"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjetx"]
 size = Vector2(10, 37)

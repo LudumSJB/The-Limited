@@ -34,6 +34,15 @@ func clamp_player_position():
 	position.y = clamp(position.y, minY, maxY)
 
 func object_hit_player(body):
+	print("object_hit_player: ", body.name)
+	if body.name == "Bottle":
+		lives -= 1
+		print("lives left: ", lives)
+
+
+
+func _on_body_entered(body):
+	print("_on_body_entered: ", body.name)
 	if body.name == "Bottle":
 		lives -= 1
 		print("lives left: ", lives)
