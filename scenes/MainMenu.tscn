@@ -28,15 +28,52 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -54.0
-offset_top = -3.0
+offset_top = -29.0
 offset_right = 54.0
-offset_bottom = 30.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_5belk")
 theme_override_font_sizes/font_size = 25
 text = "Play"
+
+[node name="StagesButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = 27.0
+offset_right = 91.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_5belk")
+theme_override_font_sizes/font_size = 25
+text = "Stages
+"
+
+[node name="CreditsButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.5
+offset_top = 86.0
+offset_right = 91.5
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_5belk")
+theme_override_font_sizes/font_size = 25
+text = "Credits"
 
 [node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 1
@@ -46,9 +83,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -54.0
-offset_top = 131.0
+offset_top = 146.0
 offset_right = 54.0
-offset_bottom = 164.0
+offset_bottom = 179.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -56,25 +93,7 @@ theme_override_fonts/font = ExtResource("2_5belk")
 theme_override_font_sizes/font_size = 25
 text = "Quit"
 
-[node name="CreditsButton" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -54.0
-offset_top = 61.0
-offset_right = 54.0
-offset_bottom = 94.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_5belk")
-theme_override_font_sizes/font_size = 25
-text = "Credits"
-metadata/_edit_lock_ = true
-
 [connection signal="pressed" from="Control/PlayButton" to="." method="play_button_pressed"]
-[connection signal="pressed" from="Control/QuitButton" to="." method="quit_button_pressed"]
+[connection signal="pressed" from="Control/StagesButton" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Control/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="quit_button_pressed"]

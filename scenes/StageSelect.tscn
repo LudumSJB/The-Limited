@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://fy40aoeru5ut"]
+
+[ext_resource type="Texture2D" uid="uid://belh2j4spbyqj" path="res://assets/images/background_welcome.png" id="1_3wou4"]
+[ext_resource type="Script" path="res://scripts/StageSelect.gd" id="1_y4ycm"]
+[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="2_cupr6"]
+[ext_resource type="Texture2D" uid="uid://bolkcjq85c62m" path="res://assets/images/act1.png" id="2_traby"]
+[ext_resource type="Texture2D" uid="uid://cp2asflio46wm" path="res://assets/images/rhythm_minigame_banner.png" id="3_c57gg"]
+
+[node name="StageSelect" type="CanvasLayer"]
+script = ExtResource("1_y4ycm")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 269)
+scale = Vector2(1.907, 1.907)
+texture = ExtResource("1_3wou4")
+
+[node name="RhythmMinigameButton" type="Button" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 201.0
+offset_top = -39.0
+offset_right = 709.0
+offset_bottom = 224.0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_cupr6")
+theme_override_font_sizes/font_size = 32
+text = "Rhythm Minigame"
+icon = ExtResource("3_c57gg")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="BarmanMinigameButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -39.0
+offset_right = 515.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_fonts/font = ExtResource("2_cupr6")
+theme_override_font_sizes/font_size = 32
+text = "Barman Minigame"
+icon = ExtResource("2_traby")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="MinigamesTitle" type="Label" parent="."]
+offset_left = 401.0
+offset_top = 120.0
+offset_right = 770.0
+offset_bottom = 164.0
+theme_override_colors/font_color = Color(0.839216, 0.407843, 0.819608, 1)
+theme_override_colors/font_outline_color = Color(0.588235, 0.709804, 0.764706, 1)
+theme_override_fonts/font = ExtResource("2_cupr6")
+theme_override_font_sizes/font_size = 41
+text = "Minigames
+"
