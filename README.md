@@ -1,2 +1,2 @@
-# jamgame
-Ludem Dare 54
+# The Limited
+## Developed for Ludem Dare 54
