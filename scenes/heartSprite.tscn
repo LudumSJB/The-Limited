@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://belv87pxuej8m"]
+
+[ext_resource type="Texture2D" uid="uid://b2dvriyk37glq" path="res://assets/images/HeartPlayer.png" id="1_p4vrx"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_p4vrx")
