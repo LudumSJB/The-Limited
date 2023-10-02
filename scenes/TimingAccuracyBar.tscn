@@ -88,12 +88,12 @@ position = Vector2(-200, 142)
 [node name="sound_success" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(556, 20)
 stream = ExtResource("5_4jtat")
-volume_db = -5.0
+volume_db = -10.0
 
 [node name="sound_fail" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(556, 20)
 stream = ExtResource("6_kq0te")
-volume_db = -5.0
+volume_db = -10.0
 
 [connection signal="area_entered" from="Control/Path2D/PathFollow2D/AreaHitter" to="Control/Path2D/PathFollow2D/AreaHitter" method="player_on_point"]
 [connection signal="area_exited" from="Control/Path2D/PathFollow2D/AreaHitter" to="Control/Path2D/PathFollow2D/AreaHitter" method="player_off_point"]
