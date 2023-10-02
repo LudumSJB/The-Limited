@@ -1,23 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://7j6lbnf0sejs"]
 
-[ext_resource type="Texture2D" uid="uid://belh2j4spbyqj" path="res://assets/images/background_welcome.png" id="1_pvfel"]
-[ext_resource type="Script" path="res://scripts/level8.gd" id="1_vp038"]
-[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="2_oyr1f"]
-[ext_resource type="Texture2D" uid="uid://dyrbo5drifsel" path="res://assets/images/action_window.png" id="3_0koxq"]
+[ext_resource type="Script" path="res://scripts/level8.gd" id="1_7aeyk"]
+[ext_resource type="Texture2D" uid="uid://belh2j4spbyqj" path="res://assets/images/background_welcome.png" id="2_sm8km"]
+[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="3_v61v2"]
+[ext_resource type="Texture2D" uid="uid://dyrbo5drifsel" path="res://assets/images/action_window.png" id="4_q6wf4"]
 
-[node name="level8" type="Node2D"]
-script = ExtResource("1_vp038")
+[node name="credits" type="Node2D"]
+script = ExtResource("1_7aeyk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
-texture = ExtResource("1_pvfel")
+texture = ExtResource("2_sm8km")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 329.0
 offset_top = 267.0
 offset_right = 825.0
 offset_bottom = 476.0
-theme_override_fonts/font = ExtResource("2_oyr1f")
+theme_override_fonts/font = ExtResource("3_v61v2")
 text = "Thanks for playing!
 
 Made by:
@@ -36,7 +36,7 @@ offset_left = 433.0
 offset_top = 289.0
 offset_right = 752.0
 offset_bottom = 492.0
-theme_override_fonts/normal_font = ExtResource("2_oyr1f")
+theme_override_fonts/normal_font = ExtResource("3_v61v2")
 bbcode_enabled = true
 text = "Thanks for playing!
 
@@ -51,7 +51,7 @@ Sep-Oct 2023"
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(581, 554)
 scale = Vector2(0.808824, 0.471963)
-texture = ExtResource("3_0koxq")
+texture = ExtResource("4_q6wf4")
 
 [node name="Button" type="Button" parent="Sprite2D2"]
 offset_left = -120.0
