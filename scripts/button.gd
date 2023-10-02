@@ -11,3 +11,12 @@ func _ready():
 
 func _on_button_pressed():
 	OnButtonPressed.emit()
+
+func grab_focus():
+	button.grab_focus()
+
+func _process(delta):
+	# for gamepad navigation
+	if Input.is_action_just_released("action_button"):
+		if button.has_focus():
+			button.emit_signal("pressed")
