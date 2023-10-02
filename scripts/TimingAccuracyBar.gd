@@ -10,7 +10,8 @@ signal MinigameWon
 @onready var sound_success = $sound_success
 @onready var sound_fail = $sound_fail
 
-@export var speed = 0.2 # speed that the input accuracy bar moves at
+@export var speedIncrementOnSuccess = 50
+@export var speed = 400 # speed that the input accuracy bar moves at
 @export var triesToWin: int = 5 # tries needed to be done to win the minigame
 @export var tries_indicator: PackedScene # indicator as a scene
 @export var indicatorOffset: float = 50 # offset between indicators
@@ -64,6 +65,7 @@ func onTime():
 		var indicatorSprite = triesSprites[triesSprites.size()-1]
 		triesSprites.remove_at(triesSprites.size()-1)
 		indicatorSprite.queue_free()
+		speed += speedIncrementOnSuccess
 	setRandomProgress()
 	if triesToWin <= 0:
 		MinigameWon.emit()
