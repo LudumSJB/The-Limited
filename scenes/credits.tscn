@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/level8.gd" id="1_7aeyk"]
 [ext_resource type="Texture2D" uid="uid://belh2j4spbyqj" path="res://assets/images/background_welcome.png" id="2_sm8km"]
 [ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="3_v61v2"]
-[ext_resource type="Texture2D" uid="uid://dyrbo5drifsel" path="res://assets/images/action_window.png" id="4_q6wf4"]
+[ext_resource type="PackedScene" uid="uid://g3ygspw556v2" path="res://scenes/button.tscn" id="4_0hyko"]
 
 [node name="credits" type="Node2D"]
 script = ExtResource("1_7aeyk")
@@ -48,17 +48,8 @@ text = "Thanks for playing!
 LudumDare 54
 Sep-Oct 2023"
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(581, 554)
-scale = Vector2(0.808824, 0.471963)
-texture = ExtResource("4_q6wf4")
+[node name="button" parent="." instance=ExtResource("4_0hyko")]
+position = Vector2(577, 555)
+button_text = "Back to start"
 
-[node name="Button" type="Button" parent="Sprite2D2"]
-offset_left = -120.0
-offset_top = -93.0
-offset_right = 122.0
-offset_bottom = 91.0
-theme_override_font_sizes/font_size = 35
-text = "Back to start"
-
-[connection signal="pressed" from="Sprite2D2/Button" to="." method="_on_button_pressed"]
+[connection signal="OnButtonPressed" from="button" to="." method="_on_button_pressed"]
