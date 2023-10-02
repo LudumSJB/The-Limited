@@ -8,6 +8,7 @@ signal playerHitNothing
 @export var noteSprite:Sprite2D
 @export var noteArea:Area2D
 var pressed = false
+var pressedForAnimation = false
 var notesInArea = false
 
 func _ready():
@@ -25,9 +26,14 @@ func check_for_player_input():
 		pressed = true
 	else:
 		pressed = false
+		
+	if Input.is_action_pressed(inputKey):
+		pressedForAnimation = true
+	else:
+		pressedForAnimation = false
 
 func style_on_player_press():
-	if pressed == true:
+	if pressedForAnimation == true:
 		noteSprite.scale = Vector2(0.80, 0.80)
 		noteSprite.modulate = Color("#ffffff")
 	else:
