@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var button = $button
+@onready var button = $Control/button
 
 func _ready():
 	button.grab_focus() # set focus to first button

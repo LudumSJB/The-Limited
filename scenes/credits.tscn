@@ -17,39 +17,62 @@ offset_left = 329.0
 offset_top = 267.0
 offset_right = 825.0
 offset_bottom = 476.0
+theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("3_v61v2")
 text = "Thanks for playing!
 
-Made by:
-Bephane
-Jukepoks1
-sso
-
-LudumDare 54
-Sep-Oct 2023"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-offset_left = 433.0
-offset_top = 289.0
-offset_right = 752.0
-offset_bottom = 492.0
-theme_override_fonts/normal_font = ExtResource("3_v61v2")
-bbcode_enabled = true
-text = "Thanks for playing!
-
-[u]Made by:[/u]
-  Bephane
-  Jukepoks1
-  sso
+MADE BY:
+          - art, music, design
+          - code, writing, design
+          - code, design
 
 LudumDare 54
 Sep-Oct 2023"
 
-[node name="button" parent="." instance=ExtResource("4_0hyko")]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="button" parent="Control" instance=ExtResource("4_0hyko")]
 position = Vector2(577, 555)
 button_text = "Back to start"
 
-[connection signal="OnButtonPressed" from="button" to="." method="_on_button_pressed"]
+[node name="LinkButton" type="LinkButton" parent="Control"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 343.0
+offset_right = 817.0
+offset_bottom = 367.0
+theme_override_colors/font_color = Color(0.764706, 0.388235, 0.533333, 1)
+theme_override_colors/font_hover_color = Color(0.894118, 0.101961, 0.686275, 1)
+theme_override_fonts/font = ExtResource("3_v61v2")
+text = "Bephane"
+uri = "https://xclementx.bandcamp.com/"
+
+[node name="LinkButton2" type="LinkButton" parent="Control"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 370.0
+offset_right = 862.0
+offset_bottom = 394.0
+theme_override_colors/font_color = Color(0.764706, 0.388235, 0.533333, 1)
+theme_override_colors/font_hover_color = Color(0.894118, 0.101961, 0.686275, 1)
+theme_override_fonts/font = ExtResource("3_v61v2")
+text = "Jukepoks1"
+uri = "https://jukepoks1.itch.io/"
+
+[node name="LinkButton3" type="LinkButton" parent="Control"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 397.0
+offset_right = 722.0
+offset_bottom = 421.0
+theme_override_colors/font_color = Color(0.764706, 0.388235, 0.533333, 1)
+theme_override_colors/font_hover_color = Color(0.894118, 0.101961, 0.686275, 1)
+theme_override_fonts/font = ExtResource("3_v61v2")
+text = "sso"
+uri = "https://ssox.itch.io/"
+
+[connection signal="OnButtonPressed" from="Control/button" to="." method="_on_button_pressed"]
