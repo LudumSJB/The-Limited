@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2qpi3vi0aodb"]
+[gd_scene load_steps=9 format=3 uid="uid://d2qpi3vi0aodb"]
 
 [ext_resource type="Texture2D" uid="uid://bjxlroipqra04" path="res://assets/images/background_club.png" id="1_lyvuo"]
+[ext_resource type="Script" path="res://scripts/level6.gd" id="1_quo5d"]
 [ext_resource type="PackedScene" uid="uid://bd36h1vyy37d5" path="res://scenes/dialog_system.tscn" id="3_ibk6j"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="4_k3eyc"]
 [ext_resource type="Texture2D" uid="uid://c81thoo78506x" path="res://assets/images/face_05.png" id="5_u51vp"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://esvwxdjq2eta" path="res://scenes/player_sprite.tscn" id="7_uy8ua"]
 
 [node name="level6" type="Node2D"]
+script = ExtResource("1_quo5d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(578, 338)
@@ -22,3 +24,5 @@ faces = Array[Texture]([ExtResource("4_k3eyc"), ExtResource("5_u51vp"), ExtResou
 position = Vector2(610, 548)
 
 [node name="player_sprite" parent="." instance=ExtResource("7_uy8ua")]
+
+[connection signal="play_minigame" from="." to="." method="_on_play_minigame"]

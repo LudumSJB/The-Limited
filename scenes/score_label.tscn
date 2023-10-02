@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpty01eo202dg"]
+
+[ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="1_6tmty"]
+
+[node name="ScoreLabel" type="Label"]
+offset_left = 24.0
+offset_top = 71.57
+offset_right = 141.0
+offset_bottom = 118.57
+rotation = -0.268526
+theme_override_fonts/font = ExtResource("1_6tmty")
+theme_override_font_sizes/font_size = 18
+text = "Score: 0"
