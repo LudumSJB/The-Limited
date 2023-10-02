@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bd36h1vyy37d5"]
+[gd_scene load_steps=8 format=3 uid="uid://bd36h1vyy37d5"]
 
 [ext_resource type="Script" path="res://scripts/dialog_system.gd" id="1_g4nlg"]
 [ext_resource type="Texture2D" uid="uid://capwl0xchsr6w" path="res://assets/images/speechbubble2.png" id="2_urcba"]
 [ext_resource type="FontFile" uid="uid://c0apde5o5da0g" path="res://assets/fonts/PublicPixel.ttf" id="3_gfdiw"]
 [ext_resource type="Texture2D" uid="uid://y8nlnxed1dhu" path="res://assets/images/face_01.png" id="3_m5m2a"]
 [ext_resource type="AudioStream" uid="uid://bhfnc63sxl5jj" path="res://assets/sounds/talking.wav" id="4_amrfs"]
+[ext_resource type="Texture2D" uid="uid://22wob12ciedk" path="res://assets/images/dialog_end_indicator.png" id="5_4t4fp"]
 [ext_resource type="AudioStream" uid="uid://es6b83uw1cnc" path="res://assets/sounds/talking2.wav" id="5_wtta4"]
 
 [node name="dialogSystem" type="Node2D"]
@@ -62,6 +63,13 @@ position = Vector2(253, -113)
 
 [node name="facePosition1" type="Node2D" parent="Sprite2D"]
 position = Vector2(-254, -112)
+
+[node name="dialogEndIndicator" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(233.5, 76.682)
+rotation = -1.5708
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("5_4t4fp")
 
 [node name="talking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_amrfs")
