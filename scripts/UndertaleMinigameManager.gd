@@ -12,4 +12,5 @@ func _process(_delta):
 
 func player_lose_internal(): # this is the signal from the main player - required as player is not visible to root tree
 	PlayerLose.emit() # emit the main player loss signal
+	print("loss") # edit this to anything you need
 	pass 

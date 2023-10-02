@@ -1,8 +1,11 @@
 extends Area2D
 
 signal PlayerLoseInternal
+signal PlayGlassSmash
 
 var lives = 3
+
+var glassSmash:AudioStream
 
 @export var speed = 200.0
 @export var maxY = 1.0
@@ -11,6 +14,7 @@ var lives = 3
 @export var maxX = 1.0
 
 func _ready():
+	get_tree().get_root().get_node("UndertaleMinigame/GlassSmash")
 	pass 
 
 func _process(delta):
@@ -41,8 +45,7 @@ func check_players_lives():
 		PlayerLoseInternal.emit()
 
 func _on_body_entered(body):
-	print("_on_body_entered: ", body.name)
-	if body.name == "Bottle":
-		lives -= 1
-		print("lives left: ", lives)
-		
+	lives -= 1
+	print("lives left: ", lives)
+	PlayGlassSmash.emit()
+	body.queue_free()
