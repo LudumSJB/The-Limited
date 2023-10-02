@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cbrhs7mx8h5m4"]
+[gd_scene load_steps=19 format=3 uid="uid://cbrhs7mx8h5m4"]
 
 [ext_resource type="Script" path="res://scripts/UndertaleMinigameManager.gd" id="1_6u5g0"]
 [ext_resource type="PackedScene" uid="uid://bietq40krg0mh" path="res://scenes/heartplayer.tscn" id="2_0kw1s"]
@@ -8,12 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://c2sweu4ag0ynq" path="res://assets/images/barman_3.png" id="5_wcsw8"]
 [ext_resource type="Script" path="res://scripts/UndertaleBarman.gd" id="6_eaenq"]
 [ext_resource type="Script" path="res://scripts/BarmanMinigameAnimationPlayer.gd" id="8_1y1lk"]
+[ext_resource type="AudioStream" uid="uid://dlcfy0421apni" path="res://assets/sounds/barman.wav" id="9_3wl5m"]
 [ext_resource type="AudioStream" uid="uid://dmefxxlvca8wq" path="res://assets/sounds/snd_test.wav" id="9_a7dfd"]
+[ext_resource type="Script" path="res://scripts/BarmanMusic.gd" id="10_w1re8"]
 [ext_resource type="AudioStream" uid="uid://bx03m8vpl0jw7" path="res://assets/sounds/snd_battlefall.wav" id="10_ygkpe"]
 [ext_resource type="AudioStream" uid="uid://dvajiv751xol6" path="res://assets/sounds/glass_smash.wav" id="11_am5if"]
 [ext_resource type="Script" path="res://scripts/GlassSmashAudio.gd" id="12_h40ut"]
-[ext_resource type="PackedScene" uid="uid://dpty01eo202dg" path="res://scenes/score_label.tscn" id="13_5mvs7"]
-[ext_resource type="AudioStream" uid="uid://bh7v6uw5b3v1r" path="res://assets/sounds/barman.wav" id="14_am6ci"]
+[ext_resource type="PackedScene" path="res://scenes/score_label.tscn" id="13_5mvs7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o7tn"]
 animations = [{
@@ -112,13 +113,25 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p2au5"]
 _data = {
 "barman_intro": SubResource("Animation_j0uks")
 }
 
-[node name="UndertaleMinigame" type="Node2D"]
+[node name="UndertaleMinigame2" type="Node2D"]
 script = ExtResource("1_6u5g0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -130,13 +143,12 @@ scale = Vector2(36.4101, -22.7744)
 color = Color(0, 0, 0, 1)
 
 [node name="Playerbox" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(565, 467)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_ubqxn")
 
 [node name="Player" parent="." instance=ExtResource("2_0kw1s")]
-position = Vector2(565, 319)
+position = Vector2(565, 466)
 collision_layer = 1
 collision_mask = 1
 maxY = 573.0
@@ -145,7 +157,6 @@ minX = 460.0
 maxX = 670.0
 
 [node name="Barman" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
 position = Vector2(533, 150)
 scale = Vector2(1.35714, 1.35714)
 sprite_frames = SubResource("SpriteFrames_8o7tn")
@@ -163,6 +174,11 @@ libraries = {
 }
 script = ExtResource("8_1y1lk")
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_3wl5m")
+volume_db = -3.0
+script = ExtResource("10_w1re8")
+
 [node name="PlayerFlickerSounds" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_a7dfd")
 volume_db = -5.0
@@ -178,13 +194,6 @@ script = ExtResource("12_h40ut")
 
 [node name="ScoreLabel" parent="." instance=ExtResource("13_5mvs7")]
 
-[node name="lives_parent" type="Node2D" parent="."]
-position = Vector2(889, 89)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_am6ci")
-autoplay = true
-
 [connection signal="PlayGlassSmash" from="Player" to="GlassSmash" method="play_glass_smash"]
-[connection signal="PlayerGotHit" from="Player" to="." method="_on_player_player_got_hit"]
 [connection signal="PlayerLoseInternal" from="Player" to="." method="player_lose_internal"]
+[connection signal="PlayMusic" from="AnimationPlayer" to="Music" method="play_music"]
