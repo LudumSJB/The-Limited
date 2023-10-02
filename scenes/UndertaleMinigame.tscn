@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cbrhs7mx8h5m4"]
+[gd_scene load_steps=18 format=3 uid="uid://cbrhs7mx8h5m4"]
 
 [ext_resource type="Script" path="res://scripts/UndertaleMinigameManager.gd" id="1_6u5g0"]
 [ext_resource type="PackedScene" uid="uid://bietq40krg0mh" path="res://scenes/heartplayer.tscn" id="2_0kw1s"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dvajiv751xol6" path="res://assets/sounds/glass_smash.wav" id="11_am5if"]
 [ext_resource type="Script" path="res://scripts/GlassSmashAudio.gd" id="12_h40ut"]
 [ext_resource type="PackedScene" uid="uid://dpty01eo202dg" path="res://scenes/score_label.tscn" id="13_5mvs7"]
+[ext_resource type="AudioStream" uid="uid://bh7v6uw5b3v1r" path="res://assets/sounds/barman.wav" id="14_am6ci"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8o7tn"]
 animations = [{
@@ -179,6 +180,10 @@ script = ExtResource("12_h40ut")
 
 [node name="lives_parent" type="Node2D" parent="."]
 position = Vector2(889, 89)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_am6ci")
+autoplay = true
 
 [connection signal="PlayGlassSmash" from="Player" to="GlassSmash" method="play_glass_smash"]
 [connection signal="PlayerGotHit" from="Player" to="." method="_on_player_player_got_hit"]
