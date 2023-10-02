@@ -15,14 +15,21 @@ position = Vector2(576, 269)
 scale = Vector2(1.907, 1.907)
 texture = ExtResource("2_8b6xo")
 
-[node name="RhythmMinigameButton" type="Button" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RhythmMinigameButton" type="Button" parent="Control"]
+layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 201.0
-offset_top = -39.0
+offset_top = 265.0
 offset_right = 709.0
-offset_bottom = 224.0
+offset_bottom = 528.0
 grow_vertical = 2
 scale = Vector2(0.7, 0.7)
 theme_override_fonts/font = ExtResource("3_ret2d")
@@ -32,16 +39,17 @@ icon = ExtResource("4_sha5h")
 icon_alignment = 1
 vertical_icon_alignment = 0
 
-[node name="BarmanMinigameButton" type="Button" parent="."]
+[node name="BarmanMinigameButton" type="Button" parent="Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 7.0
-offset_top = -39.0
-offset_right = 515.0
-offset_bottom = 224.0
+offset_left = 563.0
+offset_top = 265.0
+offset_right = 1071.0
+offset_bottom = 528.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.7, 0.7)
@@ -51,6 +59,10 @@ text = "Barman Minigame"
 icon = ExtResource("5_r20bb")
 icon_alignment = 1
 vertical_icon_alignment = 0
+
+[node name="button" parent="Control" instance=ExtResource("6_dqlmp")]
+position = Vector2(573, 574)
+button_text = "Back to start"
 
 [node name="MinigamesTitle" type="Label" parent="."]
 offset_left = 401.0
@@ -64,9 +76,5 @@ theme_override_font_sizes/font_size = 41
 text = "Minigames
 "
 
-[node name="button" parent="." instance=ExtResource("6_dqlmp")]
-position = Vector2(573, 574)
-button_text = "Back to start"
-
-[connection signal="pressed" from="RhythmMinigameButton" to="." method="rhythm_minigame_button_pressed"]
-[connection signal="OnButtonPressed" from="button" to="." method="_on_back_to_start_button_pressed"]
+[connection signal="pressed" from="Control/RhythmMinigameButton" to="." method="rhythm_minigame_button_pressed"]
+[connection signal="OnButtonPressed" from="Control/button" to="." method="_on_back_to_start_button_pressed"]

@@ -1,10 +1,17 @@
 extends CanvasLayer
 @onready var quit_button = $Control/QuitButton
-
+@onready var play_button = $Control/PlayButton
 
 func _ready():
 	if OS.has_feature("web"):
 		quit_button.visible = false
+	play_button.grab_focus() # set focus to first button
+
+func _process(delta):
+	# for gamepad menu navigation
+	if Input.is_action_just_released("action_button"):
+		var focusOwner: Control = get_viewport().gui_get_focus_owner()
+		focusOwner.emit_signal("pressed")
 
 
 func play_button_pressed():
