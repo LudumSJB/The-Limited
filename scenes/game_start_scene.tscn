@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://681ygqx4gqxi"]
+
+[ext_resource type="Script" path="res://scripts/game_start_scene.gd" id="1_arv4r"]
+[ext_resource type="AudioStream" uid="uid://c1tp1euivr6ee" path="res://assets/sounds/menu.wav" id="1_upivs"]
+
+[node name="GameStartScene" type="Node2D"]
+script = ExtResource("1_arv4r")
+
+[node name="menumusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_upivs")
+autoplay = true
