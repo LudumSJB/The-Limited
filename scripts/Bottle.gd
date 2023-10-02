@@ -6,7 +6,7 @@ func _ready():
 	add_force_on_creation()
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	rotate(1)
 
 func add_force_on_creation():

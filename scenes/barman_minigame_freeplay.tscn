@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq2tqo17htnbw"]
+
+[ext_resource type="PackedScene" uid="uid://cbrhs7mx8h5m4" path="res://scenes/UndertaleMinigame.tscn" id="1_kjd7a"]
+[ext_resource type="Script" path="res://scripts/barman_minigame_freeplay.gd" id="1_tk5ks"]
+
+[node name="BarmanMinigameFreeplay" type="Node2D"]
+script = ExtResource("1_tk5ks")
+
+[node name="UndertaleMinigame" parent="." instance=ExtResource("1_kjd7a")]
