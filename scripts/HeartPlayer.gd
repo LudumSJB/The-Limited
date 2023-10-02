@@ -39,8 +39,6 @@ func object_hit_player(body):
 		lives -= 1
 		print("lives left: ", lives)
 
-
-
 func _on_body_entered(body):
 	print("_on_body_entered: ", body.name)
 	if body.name == "Bottle":

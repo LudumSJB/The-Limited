@@ -1940,11 +1940,11 @@ script = ExtResource("9_5aavs")
 
 [node name="sound_misclick_fail" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_hgsg2")
-volume_db = -5.0
+volume_db = -80.0
 
 [node name="sound_success" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_j51dc")
-volume_db = -5.0
+volume_db = -80.0
 
 [connection signal="area_entered" from="RhythmGameHolder/MissArea" to="RhythmGameHolder/PlayerSection/PlayerNote" method="scrolling_note_miss"]
 [connection signal="playerHitNote" from="RhythmGameHolder/PlayerSection/PlayerNote" to="." method="hit_note"]
