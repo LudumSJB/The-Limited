@@ -31,3 +31,7 @@ func shake():
 
 func _on_root_shake_camera():
 	add_trauma(1)
+
+
+func _on_rhythm_minigame_shake_camera():
+	add_trauma(1)

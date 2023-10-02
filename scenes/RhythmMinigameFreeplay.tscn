@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx104uuqw4vj1"]
+[gd_scene load_steps=4 format=3 uid="uid://cx104uuqw4vj1"]
 
+[ext_resource type="Script" path="res://scripts/RhythmMinigameFreeplay.gd" id="1_b20o8"]
 [ext_resource type="PackedScene" uid="uid://chr8s2mrd57b4" path="res://scenes/RhythmMinigame.tscn" id="1_v00kp"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="2_lttfb"]
 
 [node name="RhythmMinigameFreeplay" type="CanvasLayer"]
+script = ExtResource("1_b20o8")
 
 [node name="RhythmMinigame" parent="." instance=ExtResource("1_v00kp")]
 freeplay = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+script = ExtResource("2_lttfb")
+
+[connection signal="ShakeCamera" from="RhythmMinigame" to="Camera2D" method="_on_rhythm_minigame_shake_camera"]

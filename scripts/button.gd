@@ -15,7 +15,7 @@ func _on_button_pressed():
 func grab_focus():
 	button.grab_focus()
 
-func _process(delta):
+func _process(_delta):
 	# for gamepad navigation
 	if Input.is_action_just_released("action_button"):
 		if button.has_focus():
