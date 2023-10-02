@@ -9,9 +9,6 @@ var timeBetweenPointsGiven: float = 1
 var pointTimer = 0
 var score: int = 0
 
-func _ready():
-	pass
-
 func setScoreOnLabel(amount: int):
 	score_label.text = "score: " + str(amount)
 	score = amount
