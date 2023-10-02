@@ -28,7 +28,7 @@ var levels = [
 	"level5",
 	"level6",
 	"level7",
-	"level8"
+	"credits"
 ]
 
 var songPerLevelStart = [
