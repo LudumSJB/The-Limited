@@ -22,10 +22,10 @@ func _process(delta):
 	pass
 
 func new_barman_position():
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(1).timeout
 	play("Idle")
 	print("new position")
-	randomPos = Vector2(rng.randf_range(380, 533), 150)
+	randomPos = Vector2(rng.randf_range(400, 500), 150)
 	throw_new_bottle()
 	new_barman_position()
 

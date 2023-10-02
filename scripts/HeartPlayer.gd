@@ -1,5 +1,7 @@
 extends Area2D
 
+signal PlayerLoseInternal
+
 var lives = 3
 
 @export var speed = 200.0
@@ -14,6 +16,7 @@ func _ready():
 func _process(delta):
 	move_player(delta)
 	clamp_player_position()
+	check_players_lives()
 	pass
 
 func move_player(delta):
@@ -32,15 +35,14 @@ func move_player(delta):
 func clamp_player_position():
 	position.x = clamp(position.x, minX, maxX)
 	position.y = clamp(position.y, minY, maxY)
-
-func object_hit_player(body):
-	print("object_hit_player: ", body.name)
-	if body.name == "Bottle":
-		lives -= 1
-		print("lives left: ", lives)
+	
+func check_players_lives():
+	if lives <= 0:
+		PlayerLoseInternal.emit()
 
 func _on_body_entered(body):
 	print("_on_body_entered: ", body.name)
 	if body.name == "Bottle":
 		lives -= 1
 		print("lives left: ", lives)
+		
