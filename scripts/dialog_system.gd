@@ -16,6 +16,7 @@ signal OnDialogClose
 @onready var dialog_position_2 = $dialogPosition2
 @onready var talking = $talking
 @onready var talking_2 = $talking2
+@onready var dialog_end_indicator = $Sprite2D/dialogEndIndicator
 
 @export var showDialogAtSceneStart : bool = true
 @export var dialogsPath: String
@@ -108,6 +109,7 @@ func loadDialogs():
 
 func nextText():
 	print("nextText")
+	dialog_end_indicator.visible = false
 	timeout_press = timeout_press_time
 	current_dialog += 1
 	if current_dialog < dialogs.size():
@@ -119,6 +121,7 @@ func hideText():
 	is_active = false
 
 func writeAllCharacters():
+	dialog_end_indicator.visible = true
 	rich_text_label.append_text(text_to_write)
 	text_to_write = ""
 
@@ -160,6 +163,8 @@ func writeCharacter():
 	write_character_time = timeout_write_character_step
 	if textToWrite == "." or textToWrite == "," or textToWrite == "?" or textToWrite == "!" or textToWrite.ends_with("]"):
 		write_character_time += timeout_extra_step
+	if text_to_write.is_empty():
+		dialog_end_indicator.visible = true
 
 func showText(dialog):
 	print("showText")
