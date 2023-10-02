@@ -13,10 +13,6 @@ var glassSmash:AudioStream
 @export var minX = 1.0
 @export var maxX = 1.0
 
-func _ready():
-	get_tree().get_root().get_node("UndertaleMinigame/GlassSmash")
-	pass 
-
 func _process(delta):
 	move_player(delta)
 	clamp_player_position()
