@@ -1,5 +1,5 @@
 # The Limited - club
-## Developed for Ludem Dare 54
+## Developed for Ludum Dare 54
 This is a short story of a person who is going to the club having a good time.
 
 What will happen? What will you discover? It is up to you to play and find out!
